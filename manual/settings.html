@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>OREMO - 詳細設定の説明</title>
+</head>
+<body bgcolor=#ffffff>
+<br>
+<br>
+<p>
+<center>OREMO マニュアル - 詳細設定の説明</center>
+<p>
+<center><img src="settings.png"></center>
+<p>
+<dl>
+<p>
+<dt>＜概要＞
+<p>
+<dd>画面の配色や、波形・スペクトル・パワー・F0（ピッチ）の抽出パラメータなどを設定します。
+
+<p>
+<dt>＜波形＞
+<p>
+<dd><table border=1 bgcolor=#ffffe0>
+<tr><th> 波形の色 </th><td> 波形の色を指定する。 </td></tr>
+<tr><th> サンプリング周波数 </th><td> 録音する波形のサンプリング周波数を指定する。お使いのサウンドカードに依存する項目かもしれません。 </td></tr>
+</table>
+
+<p>
+<dt>＜スペクトル＞
+<p>
+<dd><table border=1 bgcolor=#ffffe0>
+<tr><th> スペクトルの色 </th><td> 配色を選ぶ。 </td></tr>
+<tr><th> 最高周波数 </th><td> スペクトルの縦軸（周波数）最大値を指定する。 </td></tr>
+<tr><th> 明るさ </th><td> 明るさを指定する。 </td></tr>
+<tr><th> コントラスト </th><td> コントラストを指定する。 </td></tr>
+<tr><th> FFT長 </th><td> FFT長を選択する。値が大きいほど周波数方向の解像度が高くなる反面、時間方向の解像度が落ちる。必ず窓長以上の値にすること。 </td></tr>
+<tr><th> 窓長 </th><td> 窓の長さを指定する。値が大きいほど周波数方向の解像度が高くなる反面、時間方向の解像度が落ちる。FFT長以下の値にすること。 </td></tr>
+<tr><th> プリエンファシス </th><td> 周波数高域を強調する値を指定する。 </td></tr>
+<tr><th> 窓の種類 </th><td> 窓の種類を選択する。 </td></tr>
+</table>
+
+<p>
+<dt>＜パワー＞
+<p>
+<dd><table border=1 bgcolor=#ffffe0>
+<tr><th> パワー曲線の色 </th><td> 色を選ぶ。 </td></tr>
+<tr><th> パワー抽出間隔 </th><td> 何秒毎にパワー値を求めるかを指定する。 </td></tr>
+<tr><th> プリエンファシス </th><td> 周波数高域を強調する値を指定する。 </td></tr>
+<tr><th> 窓長 </th><td> パワーを求めるフレームにかける窓長を指定する。 </td></tr>
+<tr><th> 窓の種類 </th><td> 窓の種類を選択する。 </td></tr>
+</table>
+
+<p>
+<dt>＜F0（ピッチ）＞
+<p>
+<dd><table border=1 bgcolor=#ffffe0>
+<tr><th> F0曲線の色 </th><td> 色を選ぶ。 </td></tr>
+<tr><th> 抽出アルゴリズム </th><td> 抽出アルゴリズムを選択する。（なお、作者的にはESPSがお奨めです。旧entropic社の商用ソフトで使用されたアルゴリズムです。） </td></tr>
+<tr><th> F0抽出間隔 </th><td> 何秒毎にF0値を求めるかを指定する。 </td></tr>
+<tr><th> 窓長 </th><td> F0を求めるフレームにかける窓長を指定する。恐らく値が大きいほど抽出エラーが起きにくくなるはず。 </td></tr>
+<tr><th> 最高F0 </th><td> 入力されると想定されるF0最高値を指定する。抽出エラーが起きる場合はこの値の範囲を狭めると良いかも。</td></tr>
+<tr><th> 最低F0 </th><td> 入力されると想定されるF0最低値を指定する。抽出エラーが起きる場合はこの値の範囲を狭めると良いかも。</td></tr>
+<tr><th> 表示単位 </th><td> 表示単位を選ぶ（semitone=半音を１とする単位。Hz=略）。</td></tr>
+<tr><th> 表示範囲を固定する </th>
+    <td> 
+    F0画面の縦幅を固定する(デフォルトはON)。
+    デフォルト値は範囲をかなり広く取っているので、録音するキーを決めたらそのキーを中心にして範囲を狭めた方が音のずれを目視できます。
+    <table border=1>
+      <tr><th> 最大値 </th><td> F0表示画面の最高値を指定する。 </td></tr>
+      <tr><th> 最小値 </th><td> F0表示画面の最小値を指定する。 </td></tr>
+    </table></td></tr>
+<tr><th> 各音の線を描画する </th>
+    <td> 
+    半音毎に横線を引く(デフォルトはOFF)。
+    <table border=1>
+      <tr><th> 線の色 </th><td> 横線の色を指定する。 </td></tr>
+    </table></td></tr>
+<tr><th> 発声したい音の線を描画する </th>
+    <td> 
+    録音時に発声したいキーに横線を引く(デフォルトはOFF)。
+    <table border=1>
+      <tr><th> ターゲット音 </th><td> 発声したい音のキーを指定する。 </td></tr>
+      <tr><th> 線の色 </th><td> 横線の色を指定する。 </td></tr>
+    </table></td></tr>
+</table>
+
+<br>
+<br>
+<br>
+<a href="menu.html">メニューの説明へ</a>
+&nbsp; 
+&nbsp; 
+&nbsp; 
+<a href="onsa.html">音叉窓の説明へ</a>
+&nbsp; 
+&nbsp; 
+&nbsp; 
+<a href="audioio.html">オーディオI/O設定の説明へ</a>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="settings.html">詳細設定の説明へ</a>
+&nbsp; 
+&nbsp; 
+&nbsp; 
+<a href="tutorial.html">マニュアルトップページへ</a>
+
+
+</body>
+</html>

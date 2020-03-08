@@ -1,0 +1,18 @@
+The following sentences are copy from tclkit official site: 
+https://code.google.com/archive/p/tclkit/
+
+                                         2016/01/31 nwp8861
+----------
+License
+
+The Tclkit-specific sources are license free, 
+they just have a copyright. Hold the author(s) 
+harmless and any lawful use is permitted.
+
+This does not apply to any of the sources of 
+the other major Open Source Software components 
+used in Tclkit, which each have very liberal 
+BSD/MIT-like licenses:
+
+IncrTcl, Metakit, Tcl/Tk, TclVFS, Zlib
+
