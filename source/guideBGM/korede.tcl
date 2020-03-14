@@ -1,16 +1,16 @@
-#!/bin/sh
-# w’è‚µ‚½ƒKƒCƒhBGM‚É‘Î‰‚µ‚½˜^‰¹İ’èƒtƒ@ƒCƒ‹‚ğì¬‚·‚éƒc[ƒ‹
+ï»¿#!/bin/sh
+# æŒ‡å®šã—ãŸã‚¬ã‚¤ãƒ‰BGMã«å¯¾å¿œã—ãŸéŒ²éŸ³è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹ãƒ„ãƒ¼ãƒ«
 #
 # the next line restarts using wish \
 exec wish "$0" "$@"
 
 package require -exact snack 2.2
-snack::createIcons    ;# ƒAƒCƒRƒ“‚ğg—p‚·‚é
+snack::createIcons    ;# ã‚¢ã‚¤ã‚³ãƒ³ã‚’ä½¿ç”¨ã™ã‚‹
 
 #---------------------------------------------------
 
 set v(appname) KOREDE
-set v(version) 1.0         ;# ƒ\ƒtƒg‚Ìƒo[ƒWƒ‡ƒ“”Ô†
+set v(version) 1.0         ;# ã‚½ãƒ•ãƒˆã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç•ªå·
 set v(bgmFile) ""
 set v(fg)      black
 set v(cWidth)  600
@@ -22,17 +22,17 @@ set v(playTime) 0
 set v(sndLen)   0
 set v(wavepps)  100
 
-set v(bgmStartMsg)   "BGMÄ¶"
+set v(bgmStartMsg)   "BGMå†ç”Ÿ"
 set v(bgmStart) 0
-set v(bgmEndMsg)     "˜^‰¹‚ğ•Û‘¶‚µŸ‚Ö"
+set v(bgmEndMsg)     "éŒ²éŸ³ã‚’ä¿å­˜ã—æ¬¡ã¸"
 set v(bgmEnd)   0
-set v(recStartMsg)   "˜^‰¹ŠJn"
+set v(recStartMsg)   "éŒ²éŸ³é–‹å§‹"
 set v(recStart) 0
-set v(recEndMsg)     "˜^‰¹’â~"
+set v(recEndMsg)     "éŒ²éŸ³åœæ­¢"
 set v(recEnd)   0
-set v(uttStartMsg)   "”­º‚Í‚¶‚ßI"
+set v(uttStartMsg)   "ç™ºå£°ã¯ã˜ã‚ï¼"
 set v(uttStart) 0
-set v(uttEndMsg)     "”­º‚¨‚í‚èI"
+set v(uttEndMsg)     "ç™ºå£°ãŠã‚ã‚Šï¼"
 set v(uttEnd)   0
 
 snack::sound snd
@@ -57,14 +57,14 @@ proc Redraw {} {
   $c delete all
   $c create waveform 0 0 -sound snd -height [expr $v(cHeight) - $v(timeh)] -width $v(cWidth) -fill #707070
 
-  # ŠÔ²
+  # æ™‚é–“è»¸
   set ytmp [expr $v(cHeight) - $v(timeh)]
   snack::timeAxis $c 0 $ytmp $v(cWidth) $v(timeh) $v(wavepps) \
     -starttime 0 -fill $v(fg)
   $c create line 0 $ytmp       $v(cWidth) $ytmp
   $c create line 0 $v(cHeight) $v(cWidth) $v(cHeight)
 
-  ;# Ä¶‹æŠÔ•\¦
+  ;# å†ç”ŸåŒºé–“è¡¨ç¤º
   set ylow [expr $v(cHeight) - $v(timeh)]
   set ytmp [expr $v(cHeight) - $v(timeh) - 20]
   set l    [expr $v(bgmStart) * $v(wavepps)]
@@ -72,7 +72,7 @@ proc Redraw {} {
   if {$l < $r} {
     $c create rectangle $l $ytmp $r $ylow -wi 2 -outline green -fill green -stipple gray25
   }
-  ;# ˜^‰¹‹æŠÔ•\¦
+  ;# éŒ²éŸ³åŒºé–“è¡¨ç¤º
   set ylow [expr $v(cHeight) - $v(timeh)]
   set ytmp [expr $v(cHeight) - $v(timeh) - 22]
   set l    [expr $v(recStart) * $v(wavepps)]
@@ -80,7 +80,7 @@ proc Redraw {} {
   if {$l < $r} {
     $c create rectangle $l $ytmp $r $ylow -wi 2 -outline red -fill red -stipple gray25
   }
-  ;# ”­º‹æŠÔ•\¦
+  ;# ç™ºå£°åŒºé–“è¡¨ç¤º
   set ylow [expr $v(cHeight) - $v(timeh)]
   set ytmp [expr $v(cHeight) - $v(timeh) - 24]
   set l    [expr $v(uttStart) * $v(wavepps)]
@@ -146,31 +146,31 @@ proc regionPlay {st en} {
 proc saveSettingFile {{_fn ""}} {
   global v
 
-  # ƒGƒ‰[ƒ`ƒFƒbƒN
+  # ã‚¨ãƒ©ãƒ¼ãƒã‚§ãƒƒã‚¯
   foreach key {bgmStart recStart uttStart uttEnd recEnd bgmEnd} {
     if {$v($key) < 0 || $v($key) > $v(sndLen)} {
-      tk_messageBox -message "‹K’è”ÍˆÍŠO‚Ì’l‚ª‚ ‚è‚Ü‚·B($key)" -title "ƒGƒ‰[" -icon warning
+      tk_messageBox -message "è¦å®šç¯„å›²å¤–ã®å€¤ãŒã‚ã‚Šã¾ã™ã€‚($key)" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
       return
     }
   }
   if {$v(bgmStart) >= $v(recStart)} {
-    tk_messageBox -message "(BGMÄ¶ŠJn < ˜^‰¹ŠJn)‚É‚µ‚Ä‰º‚³‚¢" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "(BGMå†ç”Ÿé–‹å§‹ < éŒ²éŸ³é–‹å§‹)ã«ã—ã¦ä¸‹ã•ã„" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
   if {$v(recStart) >= $v(uttStart)} {
-    tk_messageBox -message "(˜^‰¹ŠJn < ”­ºŠJn)‚É‚µ‚Ä‰º‚³‚¢" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "(éŒ²éŸ³é–‹å§‹ < ç™ºå£°é–‹å§‹)ã«ã—ã¦ä¸‹ã•ã„" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
   if {$v(uttStart) >= $v(uttEnd)} {
-    tk_messageBox -message "(”­ºŠJn < ”­º’â~)‚É‚µ‚Ä‰º‚³‚¢" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "(ç™ºå£°é–‹å§‹ < ç™ºå£°åœæ­¢)ã«ã—ã¦ä¸‹ã•ã„" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
   if {$v(uttEnd) >= $v(recEnd)} {
-    tk_messageBox -message "(”­º’â~ < ˜^‰¹’â~)‚É‚µ‚Ä‰º‚³‚¢" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "(ç™ºå£°åœæ­¢ < éŒ²éŸ³åœæ­¢)ã«ã—ã¦ä¸‹ã•ã„" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
   if {$v(recEnd) >= $v(bgmEnd)} {
-    tk_messageBox -message "(˜^‰¹’â~ < BGMÄ¶’â~)‚É‚µ‚Ä‰º‚³‚¢" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "(éŒ²éŸ³åœæ­¢ < BGMå†ç”Ÿåœæ­¢)ã«ã—ã¦ä¸‹ã•ã„" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
 
@@ -181,10 +181,10 @@ proc saveSettingFile {{_fn ""}} {
     set fn [file rootname $v(bgmFile)].txt
   }
   if {[file exists $fn]} {
-    set act [tk_dialog .confm "Šm”F" "$fn ‚Éã‘‚«•Û‘¶‚µ‚Ü‚·‚©H" question 2 "‚Í‚¢" "•Ê–¼‚Å•Û‘¶" "ƒLƒƒƒ“ƒZƒ‹"]
+    set act [tk_dialog .confm "ç¢ºèª" "$fn ã«ä¸Šæ›¸ãä¿å­˜ã—ã¾ã™ã‹ï¼Ÿ" question 2 "ã¯ã„" "åˆ¥åã§ä¿å­˜" "ã‚­ãƒ£ãƒ³ã‚»ãƒ«"]
     if {$act == 1} {
       set fn [tk_getSaveFile -initialfile $fn \
-        -title "İ’èƒtƒ@ƒCƒ‹‚Ì•Û‘¶" -defaultextension "txt" \
+        -title "è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜" -defaultextension "txt" \
         -filetypes { {{typelist file} {.txt}} {{All Files} {*}} }]
     }
     if {$act == 2} return
@@ -192,16 +192,16 @@ proc saveSettingFile {{_fn ""}} {
   if {$fn == ""} return
 
   if [catch {open $fn w} out] { 
-    tk_messageBox -message "İ’èƒtƒ@ƒCƒ‹($fn)‚É•Û‘¶‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½" -title "ƒGƒ‰[" -icon warning
+    tk_messageBox -message "è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«($fn)ã«ä¿å­˜ã§ãã¾ã›ã‚“ã§ã—ãŸ" -title "ã‚¨ãƒ©ãƒ¼" -icon warning
     return
   }
 
   set fnout [file tail $v(bgmFile)]
   puts $out "sec"
   puts $out "#"
-  puts $out "# $fnout—p‚Ìİ’èƒtƒ@ƒCƒ‹"
+  puts $out "# $fnoutç”¨ã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«"
   puts $out "#"
-  puts $out "# No, , rŠJn, r’â~, «ƒL[‰Ÿ, ƒŠƒs[ƒg, ƒRƒƒ“ƒg"
+  puts $out "# No, æ™‚åˆ», ré–‹å§‹, råœæ­¢, â†“ã‚­ãƒ¼æŠ¼, ãƒªãƒ”ãƒ¼ãƒˆ, ã‚³ãƒ¡ãƒ³ãƒˆ"
   puts $out "   1, $v(bgmStart),\t0, 0, 0, 0, $v(bgmStartMsg)"
   puts $out "   2, $v(recStart),\t1, 0, 0, 0, $v(recStartMsg)"
   puts $out "   3, $v(uttStart),\t0, 0, 0, 0, $v(uttStartMsg)"
@@ -210,7 +210,7 @@ proc saveSettingFile {{_fn ""}} {
   puts $out "   6, $v(bgmEnd),\t0, 0, 1, 1, $v(bgmEndMsg)"
 
   close $out
-  tk_messageBox -message "•Û‘¶‚µ‚Ü‚µ‚½($fn)" -title "•Û‘¶¬Œ÷" -icon info
+  tk_messageBox -message "ä¿å­˜ã—ã¾ã—ãŸ($fn)" -title "ä¿å­˜æˆåŠŸ" -icon info
 }
 
 #------------------------------------------------------------
@@ -218,10 +218,10 @@ proc saveSettingFile {{_fn ""}} {
 set row 0
 set f [frame .f$row]
 grid $f -row $row -column 0 -sticky nw
-label $f.lBgm -text "BGMƒtƒ@ƒCƒ‹F"
+label $f.lBgm -text "BGMãƒ•ã‚¡ã‚¤ãƒ«ï¼š"
 entry $f.eBgm -textvar v(bgmFile) -wi 60
-button $f.bBgm -image snackOpen -text "‘I‘ğ" -command {
-  set t(bgmGuide,bTitle) "BGMƒtƒ@ƒCƒ‹‚Ì‘I‘ğ"
+button $f.bBgm -image snackOpen -text "é¸æŠ" -command {
+  set t(bgmGuide,bTitle) "BGMãƒ•ã‚¡ã‚¤ãƒ«ã®é¸æŠ"
   set fn [tk_getOpenFile -initialfile $v(bgmFile) \
           -title $t(bgmGuide,bTitle) -defaultextension "wav" \
           -filetypes { {{wav file} {.wav}} {{All Files} {*}} }]
@@ -233,8 +233,8 @@ button $f.bBgm -image snackOpen -text "‘I‘ğ" -command {
     Redraw
   }
 }
-button $f.bPlay -text "Ä¶" -bitmap snackPlay -command playStart
-button $f.bStop -text "’â~" -bitmap snackStop -command {
+button $f.bPlay -text "å†ç”Ÿ" -bitmap snackPlay -command playStart
+button $f.bStop -text "åœæ­¢" -bitmap snackStop -command {
   snd stop
   set v(playNow) 0
 }
@@ -252,20 +252,20 @@ incr row
 set f [frame .f$row]
 grid $f -row $row -column 0 -sticky nwse
 button $f.lSeq   -relief groove -text "No."
-button $f.lStart -relief groove -text "ƒCƒxƒ“ƒg"
-button $f.lSval  -relief groove -text "(•b)"
-button $f.lSMsg  -relief groove -text "ƒKƒCƒh•¶"
+button $f.lStart -relief groove -text "ã‚¤ãƒ™ãƒ³ãƒˆ"
+button $f.lSval  -relief groove -text "æ™‚åˆ»(ç§’)"
+button $f.lSMsg  -relief groove -text "ã‚¬ã‚¤ãƒ‰æ–‡"
 button $f.lSeq2  -relief groove -text "No."
-button $f.lEnd   -relief groove -text "ƒCƒxƒ“ƒg"
-button $f.lEval  -relief groove -text "(•b)"
-button $f.lEMsg  -relief groove -text "ƒKƒCƒh•¶"
-button $f.lPlay  -relief groove -text "‹æŠÔÄ¶"
-label $f.lBgmStart -text "BGMÄ¶ŠJnF"
-label $f.lRecStart -text "˜^‰¹ŠJnF"
-label $f.lUttStart -text "”­ºŠJnF"
-label $f.lUttEnd   -text "”­º’â~F"
-label $f.lRecEnd   -text "˜^‰¹’â~F"
-label $f.lBgmEnd   -text "BGMÄ¶’â~F"
+button $f.lEnd   -relief groove -text "ã‚¤ãƒ™ãƒ³ãƒˆ"
+button $f.lEval  -relief groove -text "æ™‚åˆ»(ç§’)"
+button $f.lEMsg  -relief groove -text "ã‚¬ã‚¤ãƒ‰æ–‡"
+button $f.lPlay  -relief groove -text "åŒºé–“å†ç”Ÿ"
+label $f.lBgmStart -text "BGMå†ç”Ÿé–‹å§‹ï¼š"
+label $f.lRecStart -text "éŒ²éŸ³é–‹å§‹ï¼š"
+label $f.lUttStart -text "ç™ºå£°é–‹å§‹ï¼š"
+label $f.lUttEnd   -text "ç™ºå£°åœæ­¢ï¼š"
+label $f.lRecEnd   -text "éŒ²éŸ³åœæ­¢ï¼š"
+label $f.lBgmEnd   -text "BGMå†ç”Ÿåœæ­¢ï¼š"
 
 label $f.nBgmStart -text "1"
 label $f.nRecStart -text "2"
@@ -287,9 +287,9 @@ entry $f.eUttStartMsg -textvar v(uttStartMsg)
 entry $f.eUttEnd   -wi 5 -textvar v(uttEnd)   -validate all -validatecommand {checkVal %P %s}
 entry $f.eUttEndMsg   -textvar v(uttEndMsg)
 
-button $f.bBgm -bitmap snackPlay -text "‹æŠÔÄ¶" -bg green -command {regionPlay $v(bgmStart) $v(bgmEnd)}
-button $f.bRec -bitmap snackPlay -text "‹æŠÔÄ¶" -bg red   -command {regionPlay $v(recStart) $v(recEnd)}
-button $f.bUtt -bitmap snackPlay -text "‹æŠÔÄ¶" -bg blue  -command {regionPlay $v(uttStart) $v(uttEnd)}
+button $f.bBgm -bitmap snackPlay -text "åŒºé–“å†ç”Ÿ" -bg green -command {regionPlay $v(bgmStart) $v(bgmEnd)}
+button $f.bRec -bitmap snackPlay -text "åŒºé–“å†ç”Ÿ" -bg red   -command {regionPlay $v(recStart) $v(recEnd)}
+button $f.bUtt -bitmap snackPlay -text "åŒºé–“å†ç”Ÿ" -bg blue  -command {regionPlay $v(uttStart) $v(uttEnd)}
 
 grid $f.lSeq         -row 0 -column 0 -sticky nwse
 grid $f.lStart       -row 0 -column 1 -sticky nwse
@@ -334,8 +334,8 @@ grid $f.bUtt         -row 3 -column 8 -sticky n
 incr row
 set f [frame .f$row]
 grid $f -row $row -column 0 -sticky nwse
-button $f.bSave    -text "•Û‘¶" -command saveSettingFile
-label $f.lPre      -text "¦Å‰‚Ìæs”­º’l = ”­ºŠJn - ˜^‰¹ŠJn = "
+button $f.bSave    -text "ä¿å­˜" -command saveSettingFile
+label $f.lPre      -text "â€»æœ€åˆã®å…ˆè¡Œç™ºå£°å€¤ = ç™ºå£°é–‹å§‹ - éŒ²éŸ³é–‹å§‹ = "
 label $f.ePre      -textvar v(pre)
 
 grid $f.bSave        -row 0 -column 0 -sticky nw

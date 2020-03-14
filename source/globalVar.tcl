@@ -1,20 +1,20 @@
-#!/bin/sh
+ï»¿#!/bin/sh
 # the next line restarts using wish \
 exec wish "$0" "$@"
 
 # 2.0-b091104
-# - æs”­ºƒ`ƒFƒbƒN—p‚Ìİ’è”z—ñ‚ğ’Ç‰Á
+# - å…ˆè¡Œç™ºå£°ãƒã‚§ãƒƒã‚¯ç”¨ã®è¨­å®šé…åˆ—ã‚’è¿½åŠ 
 
 # 2.0-b090720
-# - Šeƒtƒ@ƒCƒ‹‚Ö‚ÌƒpƒX‚ğAexe(starkit)‚Ì‚Æ‚«‚Ætcl‚Ì‚Æ‚«‚Æ‚Ì—¼•û‚É‘Î‰
-# - ƒKƒCƒhBGMŠÖŒW‚Ìİ’è‚ğ’Ç‰Á
-# - ƒƒgƒƒm[ƒ€‰¹AƒKƒCƒhBGMŠÖŒWƒtƒ@ƒCƒ‹‚ğguideBGM/‚ÉˆÚ“®
+# - å„ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®ãƒ‘ã‚¹ã‚’ã€exe(starkit)ã®ã¨ãã¨tclã®ã¨ãã¨ã®ä¸¡æ–¹ã«å¯¾å¿œ
+# - ã‚¬ã‚¤ãƒ‰BGMé–¢ä¿‚ã®è¨­å®šã‚’è¿½åŠ 
+# - ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ éŸ³ã€ã‚¬ã‚¤ãƒ‰BGMé–¢ä¿‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚’guideBGM/ã«ç§»å‹•
 
 # 2.0-b090706
-# - oremo–{‘Ì‚É‚ ‚Á‚½‘åˆæ•Ï”‚ğ globalVar.tcl‚É‚Ü‚Æ‚ß‚½
+# - oremoæœ¬ä½“ã«ã‚ã£ãŸå¤§åŸŸå¤‰æ•°ã‚’ globalVar.tclã«ã¾ã¨ã‚ãŸ
 
 #---------------------------------------------------
-# •Ï”İ’è
+# å¤‰æ•°è¨­å®š
 #
 set debug 0
 set v(appname) ""
@@ -26,144 +26,142 @@ if {$::tcl_platform(os) == "Darwin"} {
 } else {
   set topdir [file dirname $argv0]
 }
-set v(recListFile) "$topdir/reclist.txt"   ;# û˜^‚·‚é‰¹–¼ƒŠƒXƒgƒtƒ@ƒCƒ‹
-set v(recListFileEncoding) "shiftjis"
-set v(typeListFile) "$topdir/typelist.txt" ;# û˜^‚·‚é”­˜bƒ^ƒCƒv‚ÌƒŠƒXƒgƒtƒ@ƒCƒ‹
-set v(typeListFileEncoding) "shiftjis"
-set v(saveDir) "$topdir/result"            ;# ˜^‰¹‚µ‚½‰¹‚ğ•Û‘¶‚·‚éƒfƒBƒŒƒNƒgƒŠ
-set v(paramFile) "$v(saveDir)/oto.ini"     ;# Œ´‰¹ƒpƒ‰ƒ[ƒ^ƒtƒ@ƒCƒ‹
-set v(yaxisw) 40         ;# c²•\¦‚Ì‰¡•
-set v(timeh)  20         ;# ‰¡²•\¦‚Ìc•
-set v(showWave) 1        ;# 1=”gŒ`•\¦, 0=”ñ•\¦
-set v(waveh)  100        ;# ”gŒ`ƒpƒlƒ‹‚Ìc•
-set v(wavehbackup) 100   ;# ”gŒ`•\¦‚ÌcƒTƒCƒY‚ÌƒoƒbƒNƒAƒbƒv‚ğ‚Æ‚é
-set v(wavehmin)  50             ;# k¬‚µ‚½Û‚ÌÅ¬c•
-set v(wavepps)  200             ;# pixel/secB
-set v(waveScale) 32768          ;# ”gŒ`•\¦c²‚ÌÅ‘å’lB0‚Åautoscale
-set v(sfont) {Helvetica 8 bold} ;# –Ú·‚è•\¦‚ÌƒtƒHƒ“ƒg
+set v(recListFile) "$topdir/reclist.txt"   ;# åéŒ²ã™ã‚‹éŸ³åãƒªã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+set v(typeListFile) "$topdir/typelist.txt" ;# åéŒ²ã™ã‚‹ç™ºè©±ã‚¿ã‚¤ãƒ—ã®ãƒªã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«
+set v(saveDir) "$topdir/result"            ;# éŒ²éŸ³ã—ãŸéŸ³ã‚’ä¿å­˜ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+set v(paramFile) "$v(saveDir)/oto.ini"     ;# åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«
+set v(yaxisw) 40         ;# ç¸¦è»¸è¡¨ç¤ºã®æ¨ªå¹…
+set v(timeh)  20         ;# æ¨ªè»¸è¡¨ç¤ºã®ç¸¦å¹…
+set v(showWave) 1        ;# 1=æ³¢å½¢è¡¨ç¤º, 0=éè¡¨ç¤º
+set v(waveh)  100        ;# æ³¢å½¢ãƒ‘ãƒãƒ«ã®ç¸¦å¹…
+set v(wavehbackup) 100   ;# æ³¢å½¢è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚ºã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ã¨ã‚‹
+set v(wavehmin)  50             ;# ç¸®å°ã—ãŸéš›ã®æœ€å°ç¸¦å¹…
+set v(wavepps)  200             ;# pixel/secã€‚
+set v(waveScale) 32768          ;# æ³¢å½¢è¡¨ç¤ºç¸¦è»¸ã®æœ€å¤§å€¤ã€‚0ã§autoscale
+set v(sfont) {Helvetica 8 bold} ;# ç›®ç››ã‚Šè¡¨ç¤ºã®ãƒ•ã‚©ãƒ³ãƒˆ
 set v(bg) [. cget -bg]
 set v(fg) black
 set v(wavColor) black
-set v(recStatus) 0       ;# 1=‚½‚Á‚½¡˜^‰¹‚µ‚½, 0=˜^‰¹‚µ‚Ä‚È‚¢
-set v(playStatus) 0      ;# 1=¡Ä¶’†, 0=¡Ä¶‚µ‚Ä‚È‚¢
-set v(playOnsaStatus) 0  ;# 1=Œ»İ‰¹³Ä¶’†, 0=Œ»İÄ¶‚µ‚Ä‚È‚¢
-set v(recList) {}        ;# û˜^‚·‚é‰¹–¼‚ğ“ü‚ê‚éƒŠƒXƒg
-set v(recSeq) 0          ;# Œ»İû˜^’†‚Ì‰¹”Ô†
-set v(recLab) ""         ;# Œ»İû˜^’†‚Ì‰¹–¼
-set v(typeList) {""}     ;# û˜^‚·‚é”­ºƒ^ƒCƒv‚ğ“ü‚ê‚éƒŠƒXƒg
-set v(typeLab) ""        ;# Œ»İû˜^’†‚Ì”­ºƒ^ƒCƒv
-set v(typeSeq) 0         ;# Œ»İû˜^’†‚Ì”­ºƒ^ƒCƒv”Ô†
-set v(bigFontSize) 24    ;# ƒtƒHƒ“ƒgƒTƒCƒY(û˜^‰¹–¼)
-set v(fontSize) 18       ;# ƒtƒHƒ“ƒgƒTƒCƒY(û˜^‰¹–¼ˆê——)
-set v(smallFontSize) 14  ;# ƒtƒHƒ“ƒgƒTƒCƒY(²‚Ì–Ú·)
-set v(commFontSize) 18   ;# ƒtƒHƒ“ƒgƒTƒCƒY(ƒRƒƒ“ƒg—“)
-set v(msg) ""            ;# ƒ\ƒtƒgÅ‰º’i‚É•\¦‚·‚éƒƒbƒZ[ƒW
-set v(rec) 1             ;# 1=˜^‰¹OKA0=˜^‰¹•s‰Â
-set v(recNow) 0          ;# 1=˜^‰¹’†(r‚ğ‰Ÿ‚µ‚Ä‚¢‚éŠÔ)A0=˜^‰¹’â~’†B
-set v(ext) wav           ;# ”gŒ`ƒtƒ@ƒCƒ‹‚ÌŠg’£q
-set v(autoSaveInitFile) 1 ;# 1=$topdir/oremo-init.tcl‚ğ©“®•Û‘¶‚·‚éA0=•Û‘¶‚µ‚È‚¢
-set v(skipChangeWindowBorder) 0   ;# ˆê“I‚ÉchangeWindowBorder ‚ÌƒCƒxƒ“ƒgÀs‚ğ–³Œø‰»‚·‚éƒtƒ‰ƒO
+set v(recStatus) 0       ;# 1=ãŸã£ãŸä»ŠéŒ²éŸ³ã—ãŸ, 0=éŒ²éŸ³ã—ã¦ãªã„
+set v(playStatus) 0      ;# 1=ä»Šå†ç”Ÿä¸­, 0=ä»Šå†ç”Ÿã—ã¦ãªã„
+set v(playOnsaStatus) 0  ;# 1=ç¾åœ¨éŸ³å‰å†ç”Ÿä¸­, 0=ç¾åœ¨å†ç”Ÿã—ã¦ãªã„
+set v(recList) {}        ;# åéŒ²ã™ã‚‹éŸ³åã‚’å…¥ã‚Œã‚‹ãƒªã‚¹ãƒˆ
+set v(recSeq) 0          ;# ç¾åœ¨åéŒ²ä¸­ã®éŸ³ç•ªå·
+set v(recLab) ""         ;# ç¾åœ¨åéŒ²ä¸­ã®éŸ³å
+set v(typeList) {""}     ;# åéŒ²ã™ã‚‹ç™ºå£°ã‚¿ã‚¤ãƒ—ã‚’å…¥ã‚Œã‚‹ãƒªã‚¹ãƒˆ
+set v(typeLab) ""        ;# ç¾åœ¨åéŒ²ä¸­ã®ç™ºå£°ã‚¿ã‚¤ãƒ—
+set v(typeSeq) 0         ;# ç¾åœ¨åéŒ²ä¸­ã®ç™ºå£°ã‚¿ã‚¤ãƒ—ç•ªå·
+set v(bigFontSize) 24    ;# ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º(åéŒ²éŸ³å)
+set v(fontSize) 18       ;# ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º(åéŒ²éŸ³åä¸€è¦§)
+set v(smallFontSize) 14  ;# ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º(è»¸ã®ç›®ç››)
+set v(commFontSize) 18   ;# ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º(ã‚³ãƒ¡ãƒ³ãƒˆæ¬„)
+set v(msg) ""            ;# ã‚½ãƒ•ãƒˆæœ€ä¸‹æ®µã«è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+set v(rec) 1             ;# 1=éŒ²éŸ³OKã€0=éŒ²éŸ³ä¸å¯
+set v(recNow) 0          ;# 1=éŒ²éŸ³ä¸­(rã‚’æŠ¼ã—ã¦ã„ã‚‹é–“)ã€0=éŒ²éŸ³åœæ­¢ä¸­ã€‚
+set v(ext) wav           ;# æ³¢å½¢ãƒ•ã‚¡ã‚¤ãƒ«ã®æ‹¡å¼µå­
+set v(autoSaveInitFile) 1 ;# 1=$topdir/oremo-init.tclã‚’è‡ªå‹•ä¿å­˜ã™ã‚‹ã€0=ä¿å­˜ã—ãªã„
+set v(skipChangeWindowBorder) 0   ;# ä¸€æ™‚çš„ã«changeWindowBorder ã®ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡Œã‚’ç„¡åŠ¹åŒ–ã™ã‚‹ãƒ•ãƒ©ã‚°
 
-set v(showSpec) 0        ;# 1=ƒXƒyƒNƒgƒ‹•\¦, 0=”ñ•\¦
-set v(spech)    0        ;# ƒXƒyƒNƒgƒ‹•\¦‚ÌcƒTƒCƒY
-set v(spechbackup) 140   ;# ƒXƒyƒNƒgƒ‹•\¦‚ÌcƒTƒCƒY‚ÌƒoƒbƒNƒAƒbƒv‚ğ‚Æ‚é
-set v(spechmin) 50      ;# ƒXƒyƒNƒgƒ‹•\¦‚ÌcƒTƒCƒY(k¬‚ÌÅ¬c•)
-set v(topfr)    8000     ;# ƒXƒyƒNƒgƒ‹•\¦‚ÌÅ‚ü”g”
-set v(cmap)     grey     ;# ƒXƒyƒNƒgƒ‹”zF
-set v(contrast) 0        ;# ƒXƒyƒNƒgƒ‹‚ÌƒRƒ“ƒgƒ‰ƒXƒg
-set v(brightness) 0      ;# ƒXƒyƒNƒgƒ‹‚Ì–¾‚é‚³
-set v(fftlen) 512        ;# FFT’·
-set v(winlen) 128        ;# ‘‹’·
-set v(window) Hamming    ;# ƒXƒyƒNƒgƒ‹’Šo‘‹
-set v(preemph) 0.97      ;# ƒXƒyƒNƒgƒ‹’Šo‚ÌƒvƒŠƒGƒ“ƒtƒ@ƒVƒX
+set v(showSpec) 0        ;# 1=ã‚¹ãƒšã‚¯ãƒˆãƒ«è¡¨ç¤º, 0=éè¡¨ç¤º
+set v(spech)    0        ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º
+set v(spechbackup) 140   ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚ºã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ã¨ã‚‹
+set v(spechmin) 50      ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º(ç¸®å°æ™‚ã®æœ€å°ç¸¦å¹…)
+set v(topfr)    8000     ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«è¡¨ç¤ºã®æœ€é«˜å‘¨æ³¢æ•°
+set v(cmap)     grey     ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«é…è‰²
+set v(contrast) 0        ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«ã®ã‚³ãƒ³ãƒˆãƒ©ã‚¹ãƒˆ
+set v(brightness) 0      ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«ã®æ˜ã‚‹ã•
+set v(fftlen) 512        ;# FFTé•·
+set v(winlen) 128        ;# çª“é•·
+set v(window) Hamming    ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«æŠ½å‡ºçª“
+set v(preemph) 0.97      ;# ã‚¹ãƒšã‚¯ãƒˆãƒ«æŠ½å‡ºã®ãƒ—ãƒªã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹
 
-set v(showpow) 0        ;# 1=ƒpƒ[•\¦, 0=”ñ•\¦
-set v(powh)    0        ;# ƒpƒ[•\¦‚ÌcƒTƒCƒY
-set v(powhmin) 50       ;# ƒpƒ[•\¦‚ÌcƒTƒCƒY(k¬‚ÌÅ¬c•)
-set v(powhbackup) 100   ;# ƒpƒ[•\¦‚ÌcƒTƒCƒY‚ÌƒoƒbƒNƒAƒbƒv‚ğ‚Æ‚é
-set power(frameLength) 0.02  ;# ƒpƒ[’Šo‚İ[sec]
-set power(window)  Hanning    ;# ƒpƒ[’Šo‚Ì‘‹
-set power(preemphasis)  0.97  ;# ƒpƒ[’Šo‚ÌƒvƒŠƒGƒ“ƒtƒ@ƒVƒX
-set power(windowLength)  0.01 ;# ƒpƒ[’Šo‘‹’·[sec]
-set power(power) {}           ;# ’Šo‚µ‚½ƒpƒ[’lŒn—ñ‚ğ•Û‘¶‚·‚é
-set power(powerMax) 0         ;# ’ŠoŒ‹‰Ê‚ÌÅ‘å’l
-set power(powerMin) 0         ;# ’ŠoŒ‹‰Ê‚ÌÅ¬’l
-set v(powcolor) blue          ;# ƒpƒ[‹Èü‚ÌF
+set v(showpow) 0        ;# 1=ãƒ‘ãƒ¯ãƒ¼è¡¨ç¤º, 0=éè¡¨ç¤º
+set v(powh)    0        ;# ãƒ‘ãƒ¯ãƒ¼è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º
+set v(powhmin) 50       ;# ãƒ‘ãƒ¯ãƒ¼è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º(ç¸®å°æ™‚ã®æœ€å°ç¸¦å¹…)
+set v(powhbackup) 100   ;# ãƒ‘ãƒ¯ãƒ¼è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚ºã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ã¨ã‚‹
+set power(frameLength) 0.02  ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºåˆ»ã¿[sec]
+set power(window)  Hanning    ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºæ™‚ã®çª“
+set power(preemphasis)  0.97  ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºæ™‚ã®ãƒ—ãƒªã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹
+set power(windowLength)  0.01 ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºçª“é•·[sec]
+set power(power) {}           ;# æŠ½å‡ºã—ãŸãƒ‘ãƒ¯ãƒ¼å€¤ç³»åˆ—ã‚’ä¿å­˜ã™ã‚‹
+set power(powerMax) 0         ;# æŠ½å‡ºçµæœã®æœ€å¤§å€¤
+set power(powerMin) 0         ;# æŠ½å‡ºçµæœã®æœ€å°å€¤
+set v(powcolor) blue          ;# ãƒ‘ãƒ¯ãƒ¼æ›²ç·šã®è‰²
 
-set power(uttLow)  28    ;# –³‰¹‚Æ‚İ‚È‚³‚ê‚éU•‚Ìè‡’l[dB]
-set power(uttHigh) 28    ;# ”­˜b‚Æ‚İ‚È‚³‚ê‚éU•‚Ìè‡’l[dB]
-set power(uttKeep) 5     ;# ”­˜b’†‚Ì‰¹—Ê‚Ì‚ä‚ç‚¬‚Æ‚İ‚È‚³‚ê‚é•‚Ìè‡’l[dB]
-set power(vLow)    40    ;# •ê‰¹‚Æ‚İ‚È‚³‚ê‚éU•‚Ìè‡’l[dB]
-set power(uttLengthSec) 0.1  ;# ”­˜b’†‚Æ‚İ‚È‚³‚ê‚éŠÔ’·[sec]
-set power(uttLength) [sec2samp $power(uttLengthSec) $power(frameLength)]  ;# ”­˜b’†‚Æ‚İ‚È‚³‚ê‚éŠÔ’·[sample]
-set power(silLengthSec) 0.0  ;# ƒ|[ƒY‚Æ‚İ‚È‚³‚ê‚éŠÔ’·[sec]
-set power(silLength) [sec2samp $power(silLengthSec) $power(frameLength)]  ;# ƒ|[ƒY‚Æ‚İ‚È‚³‚ê‚éŠÔ’·[sample]
-set power(fid) ""                           ;# ƒpƒ[’Šo‚µ‚½ƒtƒ@ƒCƒ‹‚ÌFID
+set power(uttLow)  28    ;# ç„¡éŸ³ã¨ã¿ãªã•ã‚Œã‚‹æŒ¯å¹…ã®é–¾å€¤[dB]
+set power(uttHigh) 28    ;# ç™ºè©±ã¨ã¿ãªã•ã‚Œã‚‹æŒ¯å¹…ã®é–¾å€¤[dB]
+set power(uttKeep) 5     ;# ç™ºè©±ä¸­ã®éŸ³é‡ã®ã‚†ã‚‰ãã¨ã¿ãªã•ã‚Œã‚‹å¹…ã®é–¾å€¤[dB]
+set power(vLow)    40    ;# æ¯éŸ³ã¨ã¿ãªã•ã‚Œã‚‹æŒ¯å¹…ã®é–¾å€¤[dB]
+set power(uttLengthSec) 0.1  ;# ç™ºè©±ä¸­ã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·[sec]
+set power(uttLength) [sec2samp $power(uttLengthSec) $power(frameLength)]  ;# ç™ºè©±ä¸­ã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·[sample]
+set power(silLengthSec) 0.0  ;# ãƒãƒ¼ã‚ºã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·[sec]
+set power(silLength) [sec2samp $power(silLengthSec) $power(frameLength)]  ;# ãƒãƒ¼ã‚ºã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·[sample]
+set power(fid) ""                           ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®FID
 
-set v(toneList) {C C# D D# E F F# G G# A A# B} ;# ƒKƒCƒh‰¹–¼ƒŠƒXƒg1oct•ª
-set v(sinScaleMin) 2     ;# ƒKƒCƒhsin‰¹‚ÌÅ’áƒIƒNƒ^[ƒu
-set v(sinScaleMax) 5     ;# ƒKƒCƒhsin‰¹‚ÌÅ‚ƒIƒNƒ^[ƒu
-set v(sinScale) {}       ;# ƒKƒCƒhsin‰¹‚Ìü”g”ƒŠƒXƒg
-set v(sinNote) {}   ;# ƒKƒCƒhsin‰¹‚Ìü”g”‚É‘Î‰‚·‚é‰¹–¼
-set f0(checkVol) 4000    ;# Ú×İ’è‘‹‚ÅÄ¶‚·‚ésin‰¹‚ÌU•‰Šú’l
-set f0(guideVol) 4000    ;# ƒKƒCƒhsin‰¹‚ÌU•‰Šú’l
-set f0(tgtTone) [lindex $v(toneList) 0]  ;# ƒ^[ƒQƒbƒg‰¹–¼
-set f0(tgtOctave) $v(sinScaleMin)        ;# ƒ^[ƒQƒbƒg‰¹‚ÌƒIƒNƒ^[ƒu
-set f0(tgtFreq) 0                        ;# ƒ^[ƒQƒbƒg‰¹‚Ìü”g”
-set f0(showToneLine) 1                   ;# 1=Še‰¹‚Ì‰¡ü‚ğF0ƒpƒlƒ‹‚É•\¦
-set f0(showTgtLine) 0                    ;# 1=ƒ^[ƒQƒbƒg‰¹‚ğF0ƒpƒlƒ‹‚É•\¦
-set f0(fid) ""                           ;# F0’Šo‚µ‚½ƒtƒ@ƒCƒ‹‚ÌFID
-set f0(extractedMin) 0                   ;# ’Šo‚µ‚½F0‚ÌÅ¬’l
-set f0(extractedMax) 0                   ;# ’Šo‚µ‚½F0‚ÌÅ‘å’l
+set v(toneList) {C C# D D# E F F# G G# A A# B} ;# ã‚¬ã‚¤ãƒ‰éŸ³åãƒªã‚¹ãƒˆ1octåˆ†
+set v(sinScaleMin) 2     ;# ã‚¬ã‚¤ãƒ‰sinéŸ³ã®æœ€ä½ã‚ªã‚¯ã‚¿ãƒ¼ãƒ–
+set v(sinScaleMax) 5     ;# ã‚¬ã‚¤ãƒ‰sinéŸ³ã®æœ€é«˜ã‚ªã‚¯ã‚¿ãƒ¼ãƒ–
+set v(sinScale) {}       ;# ã‚¬ã‚¤ãƒ‰sinéŸ³ã®å‘¨æ³¢æ•°ãƒªã‚¹ãƒˆ
+set v(sinNote) {}   ;# ã‚¬ã‚¤ãƒ‰sinéŸ³ã®å‘¨æ³¢æ•°ã«å¯¾å¿œã™ã‚‹éŸ³å
+set f0(checkVol) 4000    ;# è©³ç´°è¨­å®šçª“ã§å†ç”Ÿã™ã‚‹sinéŸ³ã®æŒ¯å¹…åˆæœŸå€¤
+set f0(guideVol) 4000    ;# ã‚¬ã‚¤ãƒ‰sinéŸ³ã®æŒ¯å¹…åˆæœŸå€¤
+set f0(tgtTone) [lindex $v(toneList) 0]  ;# ã‚¿ãƒ¼ã‚²ãƒƒãƒˆéŸ³å
+set f0(tgtOctave) $v(sinScaleMin)        ;# ã‚¿ãƒ¼ã‚²ãƒƒãƒˆéŸ³ã®ã‚ªã‚¯ã‚¿ãƒ¼ãƒ–
+set f0(tgtFreq) 0                        ;# ã‚¿ãƒ¼ã‚²ãƒƒãƒˆéŸ³ã®å‘¨æ³¢æ•°
+set f0(showToneLine) 1                   ;# 1=å„éŸ³ã®æ¨ªç·šã‚’F0ãƒ‘ãƒãƒ«ã«è¡¨ç¤º
+set f0(showTgtLine) 0                    ;# 1=ã‚¿ãƒ¼ã‚²ãƒƒãƒˆéŸ³ã‚’F0ãƒ‘ãƒãƒ«ã«è¡¨ç¤º
+set f0(fid) ""                           ;# F0æŠ½å‡ºã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã®FID
+set f0(extractedMin) 0                   ;# æŠ½å‡ºã—ãŸF0ã®æœ€å°å€¤
+set f0(extractedMax) 0                   ;# æŠ½å‡ºã—ãŸF0ã®æœ€å¤§å€¤
 
-set v(showf0) 0           ;# 1=F0•\¦, 0=”ñ•\¦
-set v(f0h)    0           ;# F0•\¦‚ÌcƒTƒCƒY
-set v(f0hmin) 50          ;# F0•\¦‚ÌcƒTƒCƒY(k¬‚ÌÅ¬c•)
-set v(f0hbackup) 100      ;# F0•\¦‚ÌcƒTƒCƒY‚ÌƒoƒbƒNƒAƒbƒv‚ğ‚Æ‚é
-set f0(method) ESPS       ;# F0’ŠoƒAƒ‹ƒSƒŠƒYƒ€
-set f0(frameLength) 0.01  ;# F0’ŠoŠÔŠu[sec]
-set f0(windowLength) 0.01 ;# F0’Šo‚Ì‘‹’·[sec]
-set f0(max) 800           ;# ‘z’è‚³‚ê‚éÅ‚F0
-set f0(min) 60            ;# ‘z’è‚³‚ê‚éÅ’áF0
-set f0(showMax) 400       ;# F0•\¦‚Ì”ÍˆÍ[Hz]
-set f0(showMin) 200       ;# F0•\¦‚Ì”ÍˆÍ[Hz]
-set f0(showMinTone)   [lindex $v(toneList) 0]    ;# F0•\¦‚Ì”ÍˆÍ
-set f0(showMinOctave) $v(sinScaleMin)            ;# F0•\¦‚Ì”ÍˆÍ
-set f0(showMaxTone)   [lindex $v(toneList) end]  ;# F0•\¦‚Ì”ÍˆÍ
-set f0(showMaxOctave) $v(sinScaleMax)            ;# F0•\¦‚Ì”ÍˆÍ
-set f0(guideTone)   C  ;# ‰¹³‰¹
-set f0(guideOctave) 3  ;# ‰¹³‰¹
+set v(showf0) 0           ;# 1=F0è¡¨ç¤º, 0=éè¡¨ç¤º
+set v(f0h)    0           ;# F0è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º
+set v(f0hmin) 50          ;# F0è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚º(ç¸®å°æ™‚ã®æœ€å°ç¸¦å¹…)
+set v(f0hbackup) 100      ;# F0è¡¨ç¤ºã®ç¸¦ã‚µã‚¤ã‚ºã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ã¨ã‚‹
+set f0(method) ESPS       ;# F0æŠ½å‡ºã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ 
+set f0(frameLength) 0.01  ;# F0æŠ½å‡ºé–“éš”[sec]
+set f0(windowLength) 0.01 ;# F0æŠ½å‡ºã®çª“é•·[sec]
+set f0(max) 800           ;# æƒ³å®šã•ã‚Œã‚‹æœ€é«˜F0
+set f0(min) 60            ;# æƒ³å®šã•ã‚Œã‚‹æœ€ä½F0
+set f0(showMax) 400       ;# F0è¡¨ç¤ºã®ç¯„å›²[Hz]
+set f0(showMin) 200       ;# F0è¡¨ç¤ºã®ç¯„å›²[Hz]
+set f0(showMinTone)   [lindex $v(toneList) 0]    ;# F0è¡¨ç¤ºã®ç¯„å›²
+set f0(showMinOctave) $v(sinScaleMin)            ;# F0è¡¨ç¤ºã®ç¯„å›²
+set f0(showMaxTone)   [lindex $v(toneList) end]  ;# F0è¡¨ç¤ºã®ç¯„å›²
+set f0(showMaxOctave) $v(sinScaleMax)            ;# F0è¡¨ç¤ºã®ç¯„å›²
+set f0(guideTone)   C  ;# éŸ³å‰éŸ³
+set f0(guideOctave) 3  ;# éŸ³å‰éŸ³
 set f0(guideFreqTmp) 131 
-set f0(f0) {}             ;# ’Šo‚µ‚½F0Œn—ñ
-set v(f0color) blue       ;# F0‹Èü‚ÌF
-set v(tgtf0color) red     ;# ƒ^[ƒQƒbƒgF0‚ÌF
-set f0(fixShowRange) 1    ;# 1=F0•\¦ƒXƒP[ƒ‹‚ğŒÅ’è‚É‚·‚é
-set f0(unit) semitone     ;# F0•\¦ƒXƒP[ƒ‹Bsemitone, Hz
+set f0(f0) {}             ;# æŠ½å‡ºã—ãŸF0ç³»åˆ—
+set v(f0color) blue       ;# F0æ›²ç·šã®è‰²
+set v(tgtf0color) red     ;# ã‚¿ãƒ¼ã‚²ãƒƒãƒˆF0ã®è‰²
+set f0(fixShowRange) 1    ;# 1=F0è¡¨ç¤ºã‚¹ã‚±ãƒ¼ãƒ«ã‚’å›ºå®šã«ã™ã‚‹
+set f0(unit) semitone     ;# F0è¡¨ç¤ºã‚¹ã‚±ãƒ¼ãƒ«ã€‚semitone, Hz
 
-set v(removeDC) 0         ;# 1=˜^‰¹ŒãDC¬•ª‚ğœ‹‚·‚é
-set v(showParam) 1        ;# 1=UTAU‚ÌŒ´‰¹ƒpƒ‰ƒ[ƒ^‚ğ•\¦, 0=”ñ•\¦
+set v(removeDC) 0         ;# 1=éŒ²éŸ³å¾ŒDCæˆåˆ†ã‚’é™¤å»ã™ã‚‹
+set v(showParam) 1        ;# 1=UTAUã®åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¡¨ç¤º, 0=éè¡¨ç¤º
 
-set v(cWidth) 500                          ;# ”gŒ`‰æ–ÊƒLƒƒƒ“ƒoƒX‚Ì‰¡•
-set v(cWidthMin) [expr $v(yaxisw) + 100]   ;# ”gŒ`‰æ–ÊƒLƒƒƒ“ƒoƒX‚Ì‰¡•Å¬’l
+set v(cWidth) 500                          ;# æ³¢å½¢ç”»é¢ã‚­ãƒ£ãƒ³ãƒã‚¹ã®æ¨ªå¹…
+set v(cWidthMin) [expr $v(yaxisw) + 100]   ;# æ³¢å½¢ç”»é¢ã‚­ãƒ£ãƒ³ãƒã‚¹ã®æ¨ªå¹…æœ€å°å€¤
 set v(cHeight) [expr $v(waveh) + $v(spech) + $v(powh) + $v(f0h) + $v(timeh)]
-                                           ;# ”gŒ`‰æ–ÊƒLƒƒƒ“ƒoƒX‚Ìc•
+                                           ;# æ³¢å½¢ç”»é¢ã‚­ãƒ£ãƒ³ãƒã‚¹ã®ç¸¦å¹…
 set v(winWidth) 640
 set v(winWidthMax) [lindex [wm maxsize .] 0]
 set v(winHeight) 0
 set v(winWidthMin) 400
 set v(winHeightMin) 100
 
-set conState 0  ;# console ‚ªshow‚È‚ç1Ahide‚È‚ç0‚Å‚ ‚é‚±‚Æ‚ğ‚ ‚ç‚í‚·
-set scrollWidget ""      ;# Œ»İƒ}ƒEƒX‚ªƒŠƒXƒgƒ{ƒbƒNƒX‚É‚ ‚ê‚Î‚»‚ÌƒpƒX‚ğ“ü‚ê‚é
+set conState 0  ;# console ãŒshowãªã‚‰1ã€hideãªã‚‰0ã§ã‚ã‚‹ã“ã¨ã‚’ã‚ã‚‰ã‚ã™
+set scrollWidget ""      ;# ç¾åœ¨ãƒã‚¦ã‚¹ãŒãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã«ã‚ã‚Œã°ãã®ãƒ‘ã‚¹ã‚’å…¥ã‚Œã‚‹
 
-set v(sampleRate) 44100  ;# ‰¹º‚ÌƒTƒ“ƒvƒŠƒ“ƒOü”g”[Hz]
-set v(paramChanged) 0    ;# 1=Œ´‰¹ƒpƒ‰ƒ[ƒ^‚ª–¢•Û‘¶,0=•Û‘¶Ï‚İ
-set v(sdirection) 1 ;# ŒŸõ‚·‚é•ûŒüB1=‰ºB0=ãB
-set v(sMatch)  full ;# ŒŸõ•û–@Bfull=Š®‘Sˆê’vAsub=•”•ªˆê’v
-set v(keyword) ""   ;# ŒŸõƒL[ƒ[ƒh
-set v(recComment) "" ;# ƒRƒƒ“ƒg•¶
+set v(sampleRate) 44100  ;# éŸ³å£°ã®ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°[Hz]
+set v(paramChanged) 0    ;# 1=åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒæœªä¿å­˜,0=ä¿å­˜æ¸ˆã¿
+set v(sdirection) 1 ;# æ¤œç´¢ã™ã‚‹æ–¹å‘ã€‚1=ä¸‹ã€‚0=ä¸Šã€‚
+set v(sMatch)  full ;# æ¤œç´¢æ–¹æ³•ã€‚full=å®Œå…¨ä¸€è‡´ã€sub=éƒ¨åˆ†ä¸€è‡´
+set v(keyword) ""   ;# æ¤œç´¢ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰
+set v(recComment) "" ;# ã‚³ãƒ¡ãƒ³ãƒˆæ–‡
 
-# ƒXƒyƒNƒgƒ‹”zF
+# ã‚¹ãƒšã‚¯ãƒˆãƒ«é…è‰²
 set v(grey) " "
 set v(color1) {#000 #004 #006 #00A #00F \
                #02F #04F #06F #08F #0AF #0CF #0FF #0FE \
@@ -173,9 +171,9 @@ set v(color1) {#000 #004 #006 #00A #00F \
 set v(color2) {#FFF #BBF #77F #33F #00F #07F #0BF #0FF #0FB #0F7 \
                #0F0 #3F0 #7F0 #BF0 #FF0 #FB0 #F70 #F30 #F00}
 
-;# oremo-init.tcl‚É•Û‘¶‚·‚é”z—ñ‚ÌƒŠƒXƒg
+;# oremo-init.tclã«ä¿å­˜ã™ã‚‹é…åˆ—ã®ãƒªã‚¹ãƒˆ
 set startup(arrayForInitFile) {bgmParam v f0 power startup dev uttTiming genParam estimate keys}
-;# oremo-init.tcl‚É•Û‘¶‚µ‚È‚¢ƒL[‚ÌƒŠƒXƒg
+;# oremo-init.tclã«ä¿å­˜ã—ãªã„ã‚­ãƒ¼ã®ãƒªã‚¹ãƒˆ
 set startup(exclusionKeysForInitFile,aName) { startup v power f0 estimate }
 set startup(exclusionKeysForInitFile,startup) { \
   arrayForInitFile choosesaveDir \
@@ -196,29 +194,31 @@ set startup(exclusionKeysForInitFile,power) { power fid }
 set startup(exclusionKeysForInitFile,f0) { f0 extractedMin extractedMax fid }
 set startup(exclusionKeysForInitFile,estimate) { }
 
-set startup(readRecList) 1    ;# 1=‹N“®‚Éreclist.txt‚ğ“Ç‚Ş
-set startup(readTypeList) 1   ;# 1=‹N“®‚Étypelist.txt‚ğ“Ç‚Ş
+set startup(readRecList) 1    ;# 1=èµ·å‹•æ™‚ã«reclist.txtã‚’èª­ã‚€
+set startup(readTypeList) 1   ;# 1=èµ·å‹•æ™‚ã«typelist.txtã‚’èª­ã‚€
 
-set v(tempo) 120     ;# ƒƒgƒƒm[ƒ€‚Ìƒeƒ“ƒ|(bpm)
-set v(tempoMSec) [expr 60000.0 / $v(tempo)]  ;# ƒƒgƒƒm[ƒ€‚Ì1”“–‚è‚Ì•b”
-set v(playMetroStatus) 0  ;# 1=Œ»İƒƒgƒƒm[ƒ€Ä¶’†, 0=Œ»İÄ¶‚µ‚Ä‚È‚¢
-set v(clickWav) "$topdir/guideBGM/click.wav" ;# ƒƒgƒƒm[ƒ€‚Ì‰¹
-set v(bgmFile) "$topdir/guideBGM/F4-100bpm.wav" ;# ©“®˜^‰¹—pBGM
-set v(bgmParamFile) "$topdir/guideBGM/F4-100bpm.txt" ;# ©“®˜^‰¹—pBGM
-set v(setE) 1   ;# 1=‰Eƒuƒ‰ƒ“ƒN’l‚ğƒtƒ@ƒCƒ‹––”ö‚©‚ç‚Ì‘Š‘Î’l‚É‚·‚éB-1=¶blank‚©‚ç‚Ì‘Š‘Î’l‚É‚·‚é
+set startup(textFiles)     [list $topdir/message/oremo-text.tcl $topdir/message/proc-text.tcl]
+
+set v(tempo) 120     ;# ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã®ãƒ†ãƒ³ãƒ(bpm)
+set v(tempoMSec) [expr 60000.0 / $v(tempo)]  ;# ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã®1æ‹å½“ã‚Šã®ç§’æ•°
+set v(playMetroStatus) 0  ;# 1=ç¾åœ¨ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ å†ç”Ÿä¸­, 0=ç¾åœ¨å†ç”Ÿã—ã¦ãªã„
+set v(clickWav) "$topdir/guideBGM/click.wav" ;# ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã®éŸ³
+set v(bgmFile) "$topdir/guideBGM/F4-100bpm.wav" ;# è‡ªå‹•éŒ²éŸ³ç”¨BGM
+set v(bgmParamFile) "$topdir/guideBGM/F4-100bpm.txt" ;# è‡ªå‹•éŒ²éŸ³ç”¨BGM
+set v(setE) 1   ;# 1=å³ãƒ–ãƒ©ãƒ³ã‚¯å€¤ã‚’ãƒ•ã‚¡ã‚¤ãƒ«æœ«å°¾ã‹ã‚‰ã®ç›¸å¯¾å€¤ã«ã™ã‚‹ã€‚-1=å·¦blankã‹ã‚‰ã®ç›¸å¯¾å€¤ã«ã™ã‚‹
 
 array unset bgmParam
 set bgmParam(autoRecStatus) 0
 
-# æs”­ºƒ`ƒFƒbƒN—p‚Ìİ’è
+# å…ˆè¡Œç™ºå£°ãƒã‚§ãƒƒã‚¯ç”¨ã®è¨­å®š
 array unset uttTiming
-set uttTiming(clickWav) "$topdir/guideBGM/click.wav"        ;# ƒƒgƒƒm[ƒ€‚Ì‰¹
-set uttTiming(tempo) 100                                    ;# ƒ`ƒFƒbƒN‘¬“x[BPM]
-set uttTimingMSec(tempo) [expr 60000.0 / $uttTiming(tempo)] ;# ƒ`ƒFƒbƒN‘¬“x[msec]
-set uttTiming(preCount) 3                 ;# ‰¹ºÄ¶‘O‚Éƒƒgƒƒm[ƒ€‚ğ–Â‚ç‚·‰ñ”
-set uttTiming(mix) 0.5                    ;# ƒƒgƒƒm[ƒ€‚Æ‰¹º‚Ì¬‡”ä—¦B
+set uttTiming(clickWav) "$topdir/guideBGM/click.wav"        ;# ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã®éŸ³
+set uttTiming(tempo) 100                                    ;# ãƒã‚§ãƒƒã‚¯é€Ÿåº¦[BPM]
+set uttTimingMSec(tempo) [expr 60000.0 / $uttTiming(tempo)] ;# ãƒã‚§ãƒƒã‚¯é€Ÿåº¦[msec]
+set uttTiming(preCount) 3                 ;# éŸ³å£°å†ç”Ÿå‰ã«ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã‚’é³´ã‚‰ã™å›æ•°
+set uttTiming(mix) 0.5                    ;# ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã¨éŸ³å£°ã®æ··åˆæ¯”ç‡ã€‚
 
-# ˜A‘±”­º‚Ìƒpƒ‰ƒ[ƒ^©“®¶¬—p‚Ìİ’è
+# é€£ç¶šç™ºå£°ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•ç”Ÿæˆç”¨ã®è¨­å®š
 array unset genParam
 set genParam(bpm)  100
 set genParam(bpmU) bpm
@@ -235,40 +235,40 @@ set genParam(EU)   msec
 set genParam(autoAdjustRen) 1
 set genParam(vLow)      5
 set genParam(sRange) 300
-set genParam(avePPrev) 0   ;# ˆê‚Â‘O‚Ì•½‹Ïƒpƒ[‚ğ•Û‘¶‚·‚é
+set genParam(avePPrev) 0   ;# ä¸€ã¤å‰ã®å¹³å‡ãƒ‘ãƒ¯ãƒ¼ã‚’ä¿å­˜ã™ã‚‹
 set genParam(autoAdjustRen2)    1
 set genParam(autoAdjustRen2Opt) "-s1 200 -s2 10 -l 2048 -p 128 -m 30 -t 1.0 -d tools"
-set genParam(autoAdjustRen2Pattern) "‚  ‚¢ ‚¤ ‚¦ ‚¨ ‚ñ"
+set genParam(autoAdjustRen2Pattern) "ã‚ ã„ ã† ãˆ ãŠ ã‚“"
 
-# ’P“Æ‰¹‚Ìƒpƒ‰ƒ[ƒ^©“®„’è—p‚Ìİ’è
+# å˜ç‹¬éŸ³ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šç”¨ã®è¨­å®š
 array unset estimate
-set estimate(S)    1  ;# 1=ƒpƒ‰ƒ[ƒ^©“®„’è‚ğs‚¤
-set estimate(E)    1  ;# 1=ƒpƒ‰ƒ[ƒ^©“®„’è‚ğs‚¤
-set estimate(C)    1  ;# 1=ƒpƒ‰ƒ[ƒ^©“®„’è‚ğs‚¤
-set estimate(P)    1  ;# 1=ƒpƒ‰ƒ[ƒ^©“®„’è‚ğs‚¤
-set estimate(O)    1  ;# 1=ƒpƒ‰ƒ[ƒ^©“®„’è‚ğs‚¤
-set estimate(minC) 0.001  ;# q‰¹•”’·‚ÌÅ¬’l(q‰¹•”=0‚ÅUTAU‚ªƒGƒ‰[‚É‚È‚é‚Ì‚ğ–h‚®)
+set estimate(S)    1  ;# 1=ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šã‚’è¡Œã†
+set estimate(E)    1  ;# 1=ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šã‚’è¡Œã†
+set estimate(C)    1  ;# 1=ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šã‚’è¡Œã†
+set estimate(P)    1  ;# 1=ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šã‚’è¡Œã†
+set estimate(O)    1  ;# 1=ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è‡ªå‹•æ¨å®šã‚’è¡Œã†
+set estimate(minC) 0.001  ;# å­éŸ³éƒ¨é•·ã®æœ€å°å€¤(å­éŸ³éƒ¨=0ã§UTAUãŒã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã®ã‚’é˜²ã)
 
 array unset paDev
-set paDev(devList) {none}     ;# PortAudio‚Å‚Ì˜^‰¹ƒfƒoƒCƒX‘I‘ğƒŠƒXƒg
-set paDev(devListMenu) ""     ;# PortAudio‚Å‚Ì˜^‰¹ƒfƒoƒCƒX‘I‘ğƒƒjƒ…[ƒEƒBƒWƒFƒbƒg
-set paDev(outdevList) {none}  ;# PortAudio‚Å‚ÌÄ¶ƒfƒoƒCƒX‘I‘ğƒŠƒXƒg
-set paDev(outdevListMenu) ""  ;# PortAudio‚Å‚ÌÄ¶ƒfƒoƒCƒX‘I‘ğƒƒjƒ…[ƒEƒBƒWƒFƒbƒg
-set paDev(recWav) "$topdir/tools/tmp.wav"    ;# oremo-recorder‚ªo—Í‚·‚éwavƒtƒ@ƒCƒ‹
-set paDev(useRequestRec)  0   ;# ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Åg‚¤B1=PortAudio˜^‰¹‚ğg‚¢‚½‚¢(‚Ü‚¾g‚¦‚é‚Æ‚ÍŒÀ‚ç‚È‚¢)B
-set paDev(useRequestPlay) 0   ;# ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Åg‚¤B1=PortAudioÄ¶‚ğg‚¢‚½‚¢(‚Ü‚¾g‚¦‚é‚Æ‚ÍŒÀ‚ç‚È‚¢)B
-set paDev(useRec)         0     ;# 1=PortAudio˜^‰¹‚ğg‚¤BpaDev(useRequestRec)=1‚Åg—p‰Â”\‚Ì‚Æ‚«‚É‚Ì‚İ1‚É‚·‚é
-set paDev(usePlay)        0     ;# 1=PortAudioÄ¶‚ğg‚¤BpaDev(useRequestRec)=1‚Åg—p‰Â”\‚Ì‚Æ‚«‚É‚Ì‚İ1‚É‚·‚é
-set paDev(sampleRate)   44100 ;# ƒTƒ“ƒvƒŠƒ“ƒOü”g”(Hz)
-set paDev(sampleFormat) Int16 ;# Œ`®BInt16 Int24 Int32 Float32
-set paDev(channel)      1     ;# ƒ`ƒƒƒ“ƒlƒ‹”
-set paDev(bufferSize)   2048  ;# ƒoƒbƒtƒ@ƒTƒCƒY
+set paDev(devList) {none}     ;# PortAudioã§ã®éŒ²éŸ³ãƒ‡ãƒã‚¤ã‚¹é¸æŠãƒªã‚¹ãƒˆ
+set paDev(devListMenu) ""     ;# PortAudioã§ã®éŒ²éŸ³ãƒ‡ãƒã‚¤ã‚¹é¸æŠãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
+set paDev(outdevList) {none}  ;# PortAudioã§ã®å†ç”Ÿãƒ‡ãƒã‚¤ã‚¹é¸æŠãƒªã‚¹ãƒˆ
+set paDev(outdevListMenu) ""  ;# PortAudioã§ã®å†ç”Ÿãƒ‡ãƒã‚¤ã‚¹é¸æŠãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆ
+set paDev(recWav) "$topdir/tools/tmp.wav"    ;# oremo-recorderãŒå‡ºåŠ›ã™ã‚‹wavãƒ•ã‚¡ã‚¤ãƒ«
+set paDev(useRequestRec)  0   ;# ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã§ä½¿ã†ã€‚1=PortAudioéŒ²éŸ³ã‚’ä½¿ã„ãŸã„(ã¾ã ä½¿ãˆã‚‹ã¨ã¯é™ã‚‰ãªã„)ã€‚
+set paDev(useRequestPlay) 0   ;# ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã§ä½¿ã†ã€‚1=PortAudioå†ç”Ÿã‚’ä½¿ã„ãŸã„(ã¾ã ä½¿ãˆã‚‹ã¨ã¯é™ã‚‰ãªã„)ã€‚
+set paDev(useRec)         0     ;# 1=PortAudioéŒ²éŸ³ã‚’ä½¿ã†ã€‚paDev(useRequestRec)=1ã§ä½¿ç”¨å¯èƒ½ã®ã¨ãã«ã®ã¿1ã«ã™ã‚‹
+set paDev(usePlay)        0     ;# 1=PortAudioå†ç”Ÿã‚’ä½¿ã†ã€‚paDev(useRequestRec)=1ã§ä½¿ç”¨å¯èƒ½ã®ã¨ãã«ã®ã¿1ã«ã™ã‚‹
+set paDev(sampleRate)   44100 ;# ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°(Hz)
+set paDev(sampleFormat) Int16 ;# å½¢å¼ã€‚Int16 Int24 Int32 Float32
+set paDev(channel)      1     ;# ãƒãƒ£ãƒ³ãƒãƒ«æ•°
+set paDev(bufferSize)   2048  ;# ãƒãƒƒãƒ•ã‚¡ã‚µã‚¤ã‚º
 array unset paDevFp
-set paDevFp(rec)  ""   ;# ˜^‰¹ƒc[ƒ‹‚Æ‰ï˜b‚·‚é‚½‚ß‚ÌfidB""=‹N“®‚µ‚Ä‚¢‚È‚¢B‚±‚ê‚ğpaDev()‚Ì’†‚É“ü‚ê‚Ä‚Í‚¢‚¯‚È‚¢(ioSettings‚Ìƒpƒ‰ƒ[ƒ^ƒoƒbƒNƒAƒbƒv‚Å•s‹ï‡‚ª¶‚¶‚é‚½‚ß)
-set paDevFp(play) ""   ;# Ä¶ƒc[ƒ‹‚Æ‰ï˜b‚·‚é‚½‚ß‚ÌfidB""=‹N“®‚µ‚Ä‚¢‚È‚¢B‚±‚ê‚ğpaDev()‚Ì’†‚É“ü‚ê‚Ä‚Í‚¢‚¯‚È‚¢(ioSettings‚Ìƒpƒ‰ƒ[ƒ^ƒoƒbƒNƒAƒbƒv‚Å•s‹ï‡‚ª¶‚¶‚é‚½‚ß)
-set paDevFp(bgm)  ""   ;# Ä¶ƒc[ƒ‹‚Æ‰ï˜b‚·‚é‚½‚ß‚ÌfidB""=‹N“®‚µ‚Ä‚¢‚È‚¢B‚±‚ê‚ğpaDev()‚Ì’†‚É“ü‚ê‚Ä‚Í‚¢‚¯‚È‚¢(ioSettings‚Ìƒpƒ‰ƒ[ƒ^ƒoƒbƒNƒAƒbƒv‚Å•s‹ï‡‚ª¶‚¶‚é‚½‚ß)
+set paDevFp(rec)  ""   ;# éŒ²éŸ³ãƒ„ãƒ¼ãƒ«ã¨ä¼šè©±ã™ã‚‹ãŸã‚ã®fidã€‚""=èµ·å‹•ã—ã¦ã„ãªã„ã€‚ã“ã‚Œã‚’paDev()ã®ä¸­ã«å…¥ã‚Œã¦ã¯ã„ã‘ãªã„(ioSettingsã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã§ä¸å…·åˆãŒç”Ÿã˜ã‚‹ãŸã‚)
+set paDevFp(play) ""   ;# å†ç”Ÿãƒ„ãƒ¼ãƒ«ã¨ä¼šè©±ã™ã‚‹ãŸã‚ã®fidã€‚""=èµ·å‹•ã—ã¦ã„ãªã„ã€‚ã“ã‚Œã‚’paDev()ã®ä¸­ã«å…¥ã‚Œã¦ã¯ã„ã‘ãªã„(ioSettingsã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã§ä¸å…·åˆãŒç”Ÿã˜ã‚‹ãŸã‚)
+set paDevFp(bgm)  ""   ;# å†ç”Ÿãƒ„ãƒ¼ãƒ«ã¨ä¼šè©±ã™ã‚‹ãŸã‚ã®fidã€‚""=èµ·å‹•ã—ã¦ã„ãªã„ã€‚ã“ã‚Œã‚’paDev()ã®ä¸­ã«å…¥ã‚Œã¦ã¯ã„ã‘ãªã„(ioSettingsã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã§ä¸å…·åˆãŒç”Ÿã˜ã‚‹ãŸã‚)
 
-# ƒVƒ‡[ƒgƒJƒbƒgƒL[
+# ã‚·ãƒ§ãƒ¼ãƒˆã‚«ãƒƒãƒˆã‚­ãƒ¼
 array unset keys
 array unset keys_bk
 

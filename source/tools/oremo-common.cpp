@@ -1,12 +1,12 @@
-
+ï»¿
 #include "oremo-common.h"
 
 //----------------------------------------------------------------
-// ‰Šú‰»B¬Œ÷=0A¸”s=else
+// åˆæœŸåŒ–ã€‚æˆåŠŸ=0ã€å¤±æ•—=else
 int init(SND *s, int mode){
 	PaError err;
 
-	if (s->status) stop(s);	// ‚à‚µ˜^‰¹’†‚Å‚ ‚ê‚Î’â~‚³‚¹‚é
+	if (s->status) stop(s);	// ã‚‚ã—éŒ²éŸ³ä¸­ã§ã‚ã‚Œã°åœæ­¢ã•ã›ã‚‹
 	Pa_Terminate();
 	err = Pa_Initialize();
 	if (err != paNoError){
@@ -37,14 +37,14 @@ int init(SND *s, int mode){
 }
 
 //----------------------------------------------------------------
-// ƒfƒtƒHƒ‹ƒg‚ÌƒI[ƒfƒBƒIƒfƒoƒCƒX”Ô†‚ğ•Ô‚·
-// Œ©‚Â‚©‚ç‚È‚¢ê‡‚Í-1‚ğ•Ô‚·
+// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒ‡ãƒã‚¤ã‚¹ç•ªå·ã‚’è¿”ã™
+// è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯-1ã‚’è¿”ã™
 int getDefaultDevice(int mode){
-	PaDeviceIndex deviceNum;	// ƒfƒoƒCƒX”
+	PaDeviceIndex deviceNum;	// ãƒ‡ãƒã‚¤ã‚¹æ•°
 	const PaDeviceInfo *pDeviceInfo;
 	PaDeviceIndex dID;
 
-	deviceNum = Pa_GetDeviceCount();  // “o˜^‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX”‚ğ“¾‚é
+	deviceNum = Pa_GetDeviceCount();  // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹æ•°ã‚’å¾—ã‚‹
 	for (dID = 0; dID < deviceNum; dID++){
 		pDeviceInfo = Pa_GetDeviceInfo(dID);
 		if (mode == STATUS_REC){
@@ -57,16 +57,16 @@ int getDefaultDevice(int mode){
 }
 
 //----------------------------------------------------------------
-// ƒI[ƒfƒBƒIƒfƒoƒCƒXˆê——‚ğstdout‚Éo—Í‚·‚éBˆêsˆêƒfƒoƒCƒXB
+// ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒ‡ãƒã‚¤ã‚¹ä¸€è¦§ã‚’stdoutã«å‡ºåŠ›ã™ã‚‹ã€‚ä¸€è¡Œä¸€ãƒ‡ãƒã‚¤ã‚¹ã€‚
 void getDevList(int mode){
-	PaDeviceIndex deviceNum;	// ƒfƒoƒCƒX”
+	PaDeviceIndex deviceNum;	// ãƒ‡ãƒã‚¤ã‚¹æ•°
 	const PaDeviceInfo  *pDeviceInfo;
 	const PaHostApiInfo *pHostApiInfo;
 	PaDeviceIndex dID;
 
 	Pa_Terminate();
 	Pa_Initialize();
-	deviceNum = Pa_GetDeviceCount();  // “o˜^‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX”‚ğ“¾‚é
+	deviceNum = Pa_GetDeviceCount();  // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹æ•°ã‚’å¾—ã‚‹
 	printf("resultBegin\n");
 	for (dID = 0; dID < deviceNum; dID++){
 		pDeviceInfo = Pa_GetDeviceInfo(dID);
@@ -87,14 +87,14 @@ void getDevList(int mode){
 }
 
 //----------------------------------------------------------------
-// w’è‚µ‚½‰¹ºŒ`®‚ğ—˜—p‚Å‚«‚é‚©ƒeƒXƒg‚·‚éB—˜—p‰Â”\=0A•s‰Â”\=else
-// show=1‚È‚ç—˜—p‰Â”\‚É"Success"A•s‰Â”\–‚ÉƒGƒ‰[•¶‚ğstdout‚É‘—‚é
+// æŒ‡å®šã—ãŸéŸ³å£°å½¢å¼ã‚’åˆ©ç”¨ã§ãã‚‹ã‹ãƒ†ã‚¹ãƒˆã™ã‚‹ã€‚åˆ©ç”¨å¯èƒ½=0ã€ä¸å¯èƒ½=else
+// show=1ãªã‚‰åˆ©ç”¨å¯èƒ½æ™‚ã«"Success"ã€ä¸å¯èƒ½äº‹ã«ã‚¨ãƒ©ãƒ¼æ–‡ã‚’stdoutã«é€ã‚‹
 int testDevice(SND *s, char *command, int show, int mode){
 	PaError err;
 	SND _s;
 
 	copySND(&_s, s);
-	// test [ƒfƒoƒCƒX”Ô† [Œ`®(bit“™) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOü”g” [ƒtƒŒ[ƒ€ƒTƒCƒY]]]]]
+	// test [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•° [ãƒ•ãƒ¬ãƒ¼ãƒ ã‚µã‚¤ã‚º]]]]]
 	sscanf_s (command, "%*s %d%*d%d%d%d",
 		&_s.param.device, &_s.param.channelCount, &_s.sampleRate, &_s.frameSize);
 
@@ -110,7 +110,7 @@ int testDevice(SND *s, char *command, int show, int mode){
 }
 
 //----------------------------------------------------------------
-// libsndfile‚Ìƒtƒ@ƒCƒ‹Œ`®”Ô†‚ğPortAudio‚Ì”Ô†‚É•ÏŠ·‚·‚é
+// libsndfileã®ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ç•ªå·ã‚’PortAudioã®ç•ªå·ã«å¤‰æ›ã™ã‚‹
 int sfFormat2pa(int format){
 	switch (format & 0xff){
 		case SF_FORMAT_PCM_16: return paInt16;
@@ -121,7 +121,7 @@ int sfFormat2pa(int format){
 }
 
 //----------------------------------------------------------------
-// PortAudio‚Ì”Ô†‚ğlibsndfile‚Ìƒtƒ@ƒCƒ‹Œ`®”Ô†‚É•ÏŠ·‚·‚é
+// PortAudioã®ç•ªå·ã‚’libsndfileã®ãƒ•ã‚¡ã‚¤ãƒ«å½¢å¼ç•ªå·ã«å¤‰æ›ã™ã‚‹
 int paFormat2sf(int format){
 	switch (format){
 		case paInt16: return SF_FORMAT_PCM_16;
@@ -132,24 +132,24 @@ int paFormat2sf(int format){
 }
 
 //----------------------------------------------------------------
-// \‘¢‘ÌSND‚Ìˆê•”‚ğƒRƒs[‚·‚é
+// æ§‹é€ ä½“SNDã®ä¸€éƒ¨ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 void copySND(SND *dst, SND *src){
 	*dst = *src;
 }
 
 //----------------------------------------------------------------
-// status‚Ì“à—e‚ğo—Í‚·‚é
+// statusã®å†…å®¹ã‚’å‡ºåŠ›ã™ã‚‹
 void status(SND *s){
 	printf("resultBegin\n%d\nresultEnd\n", s->status);
 	fflush(stdout);
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹/Ä¶I—¹B¬Œ÷=0A¸”s=1Bstdout‚É‚Í¬Œ÷‚µ‚½‚çSuccess‚Æ•Ô‚·B¸”s‚È‚çƒGƒ‰[‚ğo—ÍB
+// éŒ²éŸ³/å†ç”Ÿçµ‚äº†ã€‚æˆåŠŸ=0ã€å¤±æ•—=1ã€‚stdoutã«ã¯æˆåŠŸã—ãŸã‚‰Successã¨è¿”ã™ã€‚å¤±æ•—ãªã‚‰ã‚¨ãƒ©ãƒ¼ã‚’å‡ºåŠ›ã€‚
 int stop(SND *s){
 	PaError err;
 
-	if (s->status == STATUS_STOP){						// ’â~Ï‚È‚çI—¹
+	if (s->status == STATUS_STOP){						// åœæ­¢æ¸ˆãªã‚‰çµ‚äº†
 		printf("resultBegin\nerror: already stopped\nresultEnd\n");
 		fflush(stdout);
 		return 0;
@@ -176,20 +176,20 @@ int stop(SND *s){
 
 	printf("resultBegin\nSuccess\nresultEnd\n");
 	fflush(stdout);
-	s->status = STATUS_STOP;	// ƒtƒ‰ƒO‚ğ’â~’†‚É‚·‚é
+	s->status = STATUS_STOP;	// ãƒ•ãƒ©ã‚°ã‚’åœæ­¢ä¸­ã«ã™ã‚‹
 	return 0;
 }
 
 //----------------------------------------------------------------
-// I—¹
+// çµ‚äº†
 void myExit(SND *s){
-	if (s->status) stop(s);	// ‚à‚µ˜^‰¹/Ä¶’†‚Å‚ ‚ê‚Î’â~‚³‚¹‚é
+	if (s->status) stop(s);	// ã‚‚ã—éŒ²éŸ³/å†ç”Ÿä¸­ã§ã‚ã‚Œã°åœæ­¢ã•ã›ã‚‹
 	Pa_Terminate();
 	exit(0);
 }
 
 //----------------------------------------------------------------
-// ƒo[ƒWƒ‡ƒ“•\¦
+// ãƒãƒ¼ã‚¸ãƒ§ãƒ³è¡¨ç¤º
 void version(char *appname, char *version){
 	printf("resultBegin\n%s ver. %s\nresultEnd\n", appname, version);
 	fflush(stdout);

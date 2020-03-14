@@ -1,29 +1,29 @@
-// •W€“ü—Í‚©‚çƒRƒ}ƒ“ƒh‚ð“Ç‚ÝA˜^‰¹‚µ‚Ä outWavName(tmp.wav)‚É•Û‘¶‚·‚é
-// ƒRƒ}ƒ“ƒh‚ÍˆÈ‰º‚Ì‚à‚Ì‚ðŽÀs‚Å‚«‚é
-// list ... “ü—ÍƒfƒoƒCƒXˆê——‚ð•\Ž¦‚·‚é
-// set  [ƒfƒoƒCƒX”Ô† [Œ`Ž®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOŽü”g”]]]] ... Žg—pƒfƒoƒCƒX‚ðŽw’è‚·‚é
-// test [ƒfƒoƒCƒX”Ô† [Œ`Ž®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOŽü”g”]]]] ... ƒfƒoƒCƒX‚ðƒeƒXƒg‚·‚é
-// rec   ... ˜^‰¹ŠJŽn
-// stop  ... ˜^‰¹’âŽ~
-// reset ... PortAudio‚ðƒŠƒZƒbƒg‚·‚é
-// ver   ... ƒo[ƒWƒ‡ƒ“‚ð•\Ž¦‚·‚é
-// exit  ... I—¹
+ï»¿// æ¨™æº–å…¥åŠ›ã‹ã‚‰ã‚³ãƒžãƒ³ãƒ‰ã‚’èª­ã¿ã€éŒ²éŸ³ã—ã¦ outWavName(tmp.wav)ã«ä¿å­˜ã™ã‚‹
+// ã‚³ãƒžãƒ³ãƒ‰ã¯ä»¥ä¸‹ã®ã‚‚ã®ã‚’å®Ÿè¡Œã§ãã‚‹
+// list ... å…¥åŠ›ãƒ‡ãƒã‚¤ã‚¹ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹
+// set  [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]] ... ä½¿ç”¨ãƒ‡ãƒã‚¤ã‚¹ã‚’æŒ‡å®šã™ã‚‹
+// test [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]] ... ãƒ‡ãƒã‚¤ã‚¹ã‚’ãƒ†ã‚¹ãƒˆã™ã‚‹
+// rec   ... éŒ²éŸ³é–‹å§‹
+// stop  ... éŒ²éŸ³åœæ­¢
+// reset ... PortAudioã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹
+// ver   ... ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹
+// exit  ... çµ‚äº†
 
-// stdout‚ÉŒ‹‰Ê•¶‚ð‘—‚é‚Æ‚«‚Í•K‚¸æ“ªs‚ðresultBeginAÅIs‚ðresultEnd‚É‚µAfflush(stdout)‚·‚é‚±‚Æ
-// ‚±‚ê‚ÍPortAudio“™‚Ìƒ‰ƒCƒuƒ‰ƒŠ‚ªˆÓ}‚µ‚È‚¢•¶Žš—ñ‚ðstdout‚Éo—Í‚µ‚½‚Æ‚«‚ÉƒXƒ‹[‚Å‚«‚é‚æ‚¤‚É‚·‚é‚½‚ß
+// stdoutã«çµæžœæ–‡ã‚’é€ã‚‹ã¨ãã¯å¿…ãšå…ˆé ­è¡Œã‚’resultBeginã€æœ€çµ‚è¡Œã‚’resultEndã«ã—ã€fflush(stdout)ã™ã‚‹ã“ã¨
+// ã“ã‚Œã¯PortAudioç­‰ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªãŒæ„å›³ã—ãªã„æ–‡å­—åˆ—ã‚’stdoutã«å‡ºåŠ›ã—ãŸã¨ãã«ã‚¹ãƒ«ãƒ¼ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹ãŸã‚
 
-// ˜^‰¹‚ÍpaFloat32‚Ås‚í‚êA•Û‘¶Žž‚É16,24,32bit,float‚Ì‚¢‚¸‚ê‚©‚É•ÏŠ·‚·‚éB
+// éŒ²éŸ³ã¯paFloat32ã§è¡Œã‚ã‚Œã€ä¿å­˜æ™‚ã«16,24,32bit,floatã®ã„ãšã‚Œã‹ã«å¤‰æ›ã™ã‚‹ã€‚
 
-// win32—pƒvƒƒWƒFƒNƒg‚Å‹óƒvƒƒWƒFƒNƒg‚ðì¬‚µAƒvƒƒpƒeƒB‚ÅˆÈ‰º‚Ì‚æ‚¤‚ÉÝ’è‚µ‚½B
-// ’Ç‰Á‚ÌƒCƒ“ƒNƒ‹[ƒhdir‚ÉVisual Studio 2010‚ÌProjects\portaudio\include‚ð’Ç‰Á
-// ’Ç‰Á‚ÌƒCƒ“ƒNƒ‹[ƒhdir‚Éc:\Program Files (x86)\libsndfile\include‚ð’Ç‰Á
-// ’Ç‰Á‚Ìƒ‰ƒCƒuƒ‰ƒŠdir‚ÉVisual Studio 2010‚ÌProjects\portaudio\build\msvc\Win32\Release‚ð’Ç‰Á
-// ’Ç‰Á‚Ìƒ‰ƒCƒuƒ‰ƒŠdir‚ÉC:\Program Files (x86)\libsndfile\lib‚ð’Ç‰Á
-// ƒŠƒ“ƒJA“ü—ÍA’Ç‰Á‚ÌˆË‘¶ƒtƒ@ƒCƒ‹‚Éportaudio_x86.lib;libsndfile-1.lib;‚ð’Ç‰Á
-// Release‚ÆDebug‰º‚Éportaudio/build/msvc/Win32/Release/portaudio_x86.dll‚ðƒRƒs[
-// Release‚ÆDebug‰º‚ÉProgram Files (x86)/libsndfile/bin/libsndfile-1.dll‚ðƒRƒs[
-// ‘S”ÊA•¶ŽšƒZƒbƒg‚ðuƒ}ƒ‹ƒ`ƒoƒCƒg•¶ŽšƒZƒbƒg‚ðŽg—p‚·‚év‚É‚·‚é
-// C/C++AƒR[ƒh¶¬Aƒ‰ƒ“ƒ^ƒCƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚ð /MT‚É‚·‚é
+// win32ç”¨ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ç©ºãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã—ã€ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã§ä»¥ä¸‹ã®ã‚ˆã†ã«è¨­å®šã—ãŸã€‚
+// è¿½åŠ ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰dirã«Visual Studio 2010ã®Projects\portaudio\includeã‚’è¿½åŠ 
+// è¿½åŠ ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰dirã«c:\Program Files (x86)\libsndfile\includeã‚’è¿½åŠ 
+// è¿½åŠ ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªdirã«Visual Studio 2010ã®Projects\portaudio\build\msvc\Win32\Releaseã‚’è¿½åŠ 
+// è¿½åŠ ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªdirã«C:\Program Files (x86)\libsndfile\libã‚’è¿½åŠ 
+// ãƒªãƒ³ã‚«ã€å…¥åŠ›ã€è¿½åŠ ã®ä¾å­˜ãƒ•ã‚¡ã‚¤ãƒ«ã«portaudio_x86.lib;libsndfile-1.lib;ã‚’è¿½åŠ 
+// Releaseã¨Debugä¸‹ã«portaudio/build/msvc/Win32/Release/portaudio_x86.dllã‚’ã‚³ãƒ”ãƒ¼
+// Releaseã¨Debugä¸‹ã«Program Files (x86)/libsndfile/bin/libsndfile-1.dllã‚’ã‚³ãƒ”ãƒ¼
+// å…¨èˆ¬ã€æ–‡å­—ã‚»ãƒƒãƒˆã‚’ã€Œãƒžãƒ«ãƒãƒã‚¤ãƒˆæ–‡å­—ã‚»ãƒƒãƒˆã‚’ä½¿ç”¨ã™ã‚‹ã€ã«ã™ã‚‹
+// C/C++ã€ã‚³ãƒ¼ãƒ‰ç”Ÿæˆã€ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚’ /MTã«ã™ã‚‹
 
 #define  APPNAME  "oremo-recorder"
 #define  VERSION  "1.0"
@@ -32,7 +32,7 @@
 #include "../oremo-player/oremo-common.h"
 
 //----------------------------------------------------------------
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int recStart(SND *, char *);
 int setInDevice(SND *, char *, int);
 int recCallback(const void *, void *, unsigned long,
@@ -42,7 +42,7 @@ int sfFormat2pa(int);
 int paFormat2sf(int);
 
 //----------------------------------------------------------------
-// –{•¶
+// æœ¬æ–‡
 int _tmain(int argc, _TCHAR* argv[])
 {
 	char command[_MAX_PATH];
@@ -61,13 +61,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (command[strlen(command)-1] != '\n')
 			while (getchar() != '\n');
 
-		// ƒRƒ}ƒ“ƒhŽÀs
+		// ã‚³ãƒžãƒ³ãƒ‰å®Ÿè¡Œ
 		if (strcmp(command, "rec\n" ) == 0)       recStart(&rec, outWav);
 		else if (strcmp(command, "stop\n" ) == 0) stop (&rec);
 		else if (strcmp(command, "list\n") == 0)  getDevList(STATUS_REC);
-		// set  [ƒfƒoƒCƒX”Ô† [Œ`Ž®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOŽü”g” [ƒtƒŒ[ƒ€ƒTƒCƒY]]]]]
+		// set  [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•° [ãƒ•ãƒ¬ãƒ¼ãƒ ã‚µã‚¤ã‚º]]]]]
 		else if (command[0] == 's' && command[1] == 'e') setInDevice(&rec, command, 1);
-		// test [ƒfƒoƒCƒX”Ô† [Œ`Ž®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOŽü”g” [ƒtƒŒ[ƒ€ƒTƒCƒY]]]]]
+		// test [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•° [ãƒ•ãƒ¬ãƒ¼ãƒ ã‚µã‚¤ã‚º]]]]]
 		else if (command[0] == 't')               testDevice(&rec, command, 1, STATUS_REC);
 		else if (strcmp(command, "stat\n" ) == 0) status(&rec);
 		else if (strcmp(command, "ver\n")  == 0)  version(APPNAME, VERSION);
@@ -77,7 +77,7 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ƒR[ƒ‹ƒoƒbƒN
+// éŒ²éŸ³ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
 int recCallback(const void *inputBuffer, void *outputBuffer,
 	unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo,
 	PaStreamCallbackFlags statusFlags, void *userData){
@@ -90,17 +90,17 @@ int recCallback(const void *inputBuffer, void *outputBuffer,
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ŠJŽnB¬Œ÷=0AŽ¸”s=1Bstdout‚É‚Í¬Œ÷‚µ‚½‚çSuccess‚Æ•Ô‚·BŽ¸”s‚È‚çƒGƒ‰[‚ðo—ÍB
+// éŒ²éŸ³é–‹å§‹ã€‚æˆåŠŸ=0ã€å¤±æ•—=1ã€‚stdoutã«ã¯æˆåŠŸã—ãŸã‚‰Successã¨è¿”ã™ã€‚å¤±æ•—ãªã‚‰ã‚¨ãƒ©ãƒ¼ã‚’å‡ºåŠ›ã€‚
 int recStart(SND *rec, char *outWav){
 	PaError err;
 
-	if (rec->status){	// Šù‚É˜^‰¹’†‚È‚çI—¹
+	if (rec->status){	// æ—¢ã«éŒ²éŸ³ä¸­ãªã‚‰çµ‚äº†
 		printf("resultBegin\nerror: already recording now\nresultEnd\n");
 		fflush(stdout);
 		return 0;
 	}
 
-	// •Û‘¶wavƒtƒ@ƒCƒ‹‚ðŠJ‚­
+	// ä¿å­˜wavãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	rec->fp = sf_open(outWav, SFM_WRITE, &(rec->info));
 	if (rec->fp == NULL){
 		printf("resultBegin\nerror: can not start recording\nresultEnd\n");
@@ -108,7 +108,7 @@ int recStart(SND *rec, char *outWav){
 		return 1;
 	}
 
-	// ‰¹ºƒfƒoƒCƒX‚ðŠJ‚¢‚Ä˜^‰¹ŠJŽn
+	// éŸ³å£°ãƒ‡ãƒã‚¤ã‚¹ã‚’é–‹ã„ã¦éŒ²éŸ³é–‹å§‹
 	err = Pa_OpenStream(&(rec->st), &(rec->param), NULL, rec->sampleRate, 
 		rec->frameSize, paNoFlag, recCallback, rec);
 	if (err != paNoError){
@@ -124,27 +124,27 @@ int recStart(SND *rec, char *outWav){
 	}
 	printf("resultBegin\nSuccess\nresultEnd\n");
 	fflush(stdout);
-	rec->status = STATUS_REC;		// ó‘Ô‚ð˜^‰¹’†‚É‚·‚é
+	rec->status = STATUS_REC;		// çŠ¶æ…‹ã‚’éŒ²éŸ³ä¸­ã«ã™ã‚‹
 	return 0;
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ƒfƒoƒCƒX‚âŒ`Ž®‚È‚Ç‚ðŽw’è‚·‚éB¬Œ÷=0AŽ¸”s=1
-// show=1‚È‚ç—˜—p‰Â”\Žž‚É"Success"A•s‰Â”\Ž–‚ÉƒGƒ‰[•¶‚ðstdout‚É‘—‚é
+// éŒ²éŸ³ãƒ‡ãƒã‚¤ã‚¹ã‚„å½¢å¼ãªã©ã‚’æŒ‡å®šã™ã‚‹ã€‚æˆåŠŸ=0ã€å¤±æ•—=1
+// show=1ãªã‚‰åˆ©ç”¨å¯èƒ½æ™‚ã«"Success"ã€ä¸å¯èƒ½äº‹ã«ã‚¨ãƒ©ãƒ¼æ–‡ã‚’stdoutã«é€ã‚‹
 int setInDevice(SND *rec, char *command, int show){
 	PaError err;
 	SND _rec;
 	int intErr;
-	int format;		// wavƒtƒ@ƒCƒ‹‚Ì•Û‘¶ƒtƒH[ƒ}ƒbƒgB”Ô†‚ÍPortAudio‚Ì‚à‚Ì‚ðŽg‚¤B(‚â‚â‚±‚µ‚¢)
+	int format;		// wavãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã€‚ç•ªå·ã¯PortAudioã®ã‚‚ã®ã‚’ä½¿ã†ã€‚(ã‚„ã‚„ã“ã—ã„)
 
-	// set [ƒfƒoƒCƒX”Ô† [Œ`Ž®(bit“™) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOŽü”g” [ƒtƒŒ[ƒ€ƒTƒCƒY]]]]]
-	// Žw’è‚³‚ê‚È‚©‚Á‚½ˆø”•”•ª‚É‚ÍŒ»ó‚ÌÝ’è‚ð—p‚¢‚éBˆø”‚ª–³‚¢ê‡‚ÍŒ»Ý‚ÌÝ’è‚ð•\Ž¦‚·‚é
+	// set [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•° [ãƒ•ãƒ¬ãƒ¼ãƒ ã‚µã‚¤ã‚º]]]]]
+	// æŒ‡å®šã•ã‚Œãªã‹ã£ãŸå¼•æ•°éƒ¨åˆ†ã«ã¯ç¾çŠ¶ã®è¨­å®šã‚’ç”¨ã„ã‚‹ã€‚å¼•æ•°ãŒç„¡ã„å ´åˆã¯ç¾åœ¨ã®è¨­å®šã‚’è¡¨ç¤ºã™ã‚‹
 	copySND(&_rec, rec);
-	_rec.param.sampleFormat = paFloat32;		// ˜^‰¹Œ`Ž®‚ÍFloat32‚ÉŒÅ’è
+	_rec.param.sampleFormat = paFloat32;		// éŒ²éŸ³å½¢å¼ã¯Float32ã«å›ºå®š
 	intErr = sscanf_s (command, "%*s %d%d%d%d%d",
 		&_rec.param.device, &format, 
 		&_rec.param.channelCount, &_rec.sampleRate, &_rec.frameSize);
-	// ƒRƒ}ƒ“ƒh‚ª"set"‚Ì‚Ý‚Ì‚Æ‚«‚ÍŒ»ó‚ÌÝ’è‚ð•Ô‚·
+	// ã‚³ãƒžãƒ³ãƒ‰ãŒ"set"ã®ã¿ã®ã¨ãã¯ç¾çŠ¶ã®è¨­å®šã‚’è¿”ã™
 	if (intErr == 0){
 		printf("resultBegin\n");
 		printf("dID=%d, format=%d, channel=%d, sampleRate=%d\n",
@@ -175,16 +175,16 @@ int setInDevice(SND *rec, char *command, int show){
 }
 
 //----------------------------------------------------------------
-// o—Íwavƒtƒ@ƒCƒ‹–¼iƒtƒ‹ƒpƒXj‚ð‹‚ß‚é
+// å‡ºåŠ›wavãƒ•ã‚¡ã‚¤ãƒ«åï¼ˆãƒ•ãƒ«ãƒ‘ã‚¹ï¼‰ã‚’æ±‚ã‚ã‚‹
 void makeResultFilename(char *result, _TCHAR *str){
-	TCHAR szFull[_MAX_PATH];    // exe‚Ìƒtƒ‹ƒpƒX(exe–¼ŠÜ‚Þ)
-	TCHAR szDrive[_MAX_DRIVE];  // exe‚Ìƒhƒ‰ƒCƒu
-	TCHAR szDir[_MAX_DIR];      // exe‚ÌƒfƒBƒŒƒNƒgƒŠ
+	TCHAR szFull[_MAX_PATH];    // exeã®ãƒ•ãƒ«ãƒ‘ã‚¹(exeåå«ã‚€)
+	TCHAR szDrive[_MAX_DRIVE];  // exeã®ãƒ‰ãƒ©ã‚¤ãƒ–
+	TCHAR szDir[_MAX_DIR];      // exeã®ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
 	TCHAR fpath[_MAX_PATH];
 
-	GetModuleFileName(NULL, szFull, sizeof(szFull) / sizeof(TCHAR));	// exe‚Ìƒtƒ‹ƒpƒX‚ð“¾‚é
-	_tsplitpath_s(szFull, szDrive, _MAX_DRIVE, szDir, _MAX_DIR, NULL, NULL, NULL, NULL);	// ƒtƒ‹ƒpƒX‚ðƒhƒ‰ƒCƒu–¼“™‚É•ª‰ð
-	_tmakepath_s(fpath, _MAX_PATH, szDrive, szDir, NULL, NULL);		// ƒtƒ‹ƒpƒX(exe–¼ŠÜ‚Ü‚¸)‚ð“¾‚é
+	GetModuleFileName(NULL, szFull, sizeof(szFull) / sizeof(TCHAR));	// exeã®ãƒ•ãƒ«ãƒ‘ã‚¹ã‚’å¾—ã‚‹
+	_tsplitpath_s(szFull, szDrive, _MAX_DRIVE, szDir, _MAX_DIR, NULL, NULL, NULL, NULL);	// ãƒ•ãƒ«ãƒ‘ã‚¹ã‚’ãƒ‰ãƒ©ã‚¤ãƒ–åç­‰ã«åˆ†è§£
+	_tmakepath_s(fpath, _MAX_PATH, szDrive, szDir, NULL, NULL);		// ãƒ•ãƒ«ãƒ‘ã‚¹(exeåå«ã¾ãš)ã‚’å¾—ã‚‹
 	strcpy_s(result, _MAX_PATH, fpath);
 	strcat_s(result, _MAX_PATH, outWavName);
 }

@@ -1,6 +1,6 @@
-#!/bin/sh
+ï»¿#!/bin/sh
 #
-# –{ƒtƒ@ƒCƒ‹‚Í message/ ‚É’u‚¢‚ÄÀs‚·‚é‚±‚Æ
+# æœ¬ãƒ•ã‚¡ã‚¤ãƒ«ã¯ message/ ã«ç½®ã„ã¦å®Ÿè¡Œã™ã‚‹ã“ã¨
 #
 # the next line restarts using wish \
 exec wish "$0" "$@"
@@ -109,10 +109,10 @@ proc install {} {
   pack .inst.t -fill both
 
   foreach srcFile [glob -nocomplain [format "%s/*-text.tcl" $srcDir]] {
-    set transDone 1   ;# 1=‚»‚Ìƒtƒ@ƒCƒ‹‚Ì‘Sƒf[ƒ^‚ª–|–óÏ‚İ
+    set transDone 1   ;# 1=ãã®ãƒ•ã‚¡ã‚¤ãƒ«ã®å…¨ãƒ‡ãƒ¼ã‚¿ãŒç¿»è¨³æ¸ˆã¿
     set tgtFile [format "%s/%s" $tgtDir [file tail $srcFile]]
     if [file exists $tgtFile] {
-      ;# tgtFile‚ÌƒoƒbƒNƒAƒbƒvƒtƒ@ƒCƒ‹ì¬
+      ;# tgtFileã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ä½œæˆ
       set tgtBakFile [format "%s.bak" $tgtFile]
       set bakNum 1
       while {[file exists $tgtBakFile] == 1} {
@@ -126,11 +126,11 @@ proc install {} {
 
 "
 
-      ;# ƒ\[ƒX‚Ìt‚ğ“Ç‚İ‚Ş
+      ;# ã‚½ãƒ¼ã‚¹ã®tã‚’èª­ã¿è¾¼ã‚€
       array unset t
-      source $srcFile
+      source -encoding utf-8 $srcFile
 
-      ;# ƒ^[ƒQƒbƒg(ã‘‚«‘ÎÛ)‚ğˆês‚¸‚Â“Ç‚İAV‚µ‚¢“à—e‚ğnewTgt‚Éì‚é
+      ;# ã‚¿ãƒ¼ã‚²ãƒƒãƒˆ(ä¸Šæ›¸ãå¯¾è±¡)ã‚’ä¸€è¡Œãšã¤èª­ã¿ã€æ–°ã—ã„å†…å®¹ã‚’newTgtã«ä½œã‚‹
       array unset newTgt
       set seq 0
       if [catch {open $tgtFile r} in] {
@@ -140,26 +140,26 @@ proc install {} {
         while {![eof $in]} {
           set l [gets $in]
           if {[regexp {^[[:blank:]]*set[[:blank:]]+} $l]} {
-            ;# set t(` ‚Ìs‚Ìê‡
+            ;# set t(ï½ ã®è¡Œã®å ´åˆ
             set tgtKey [regsub {^[[:blank:]]*set[[:blank:]]+t\((.+)\)[[:blank:]].+$} $l {\1}]
             if {[array names t $tgtKey] != ""} {
-              ;# ƒ\[ƒX‚É“¯‚¶ƒGƒ“ƒgƒŠ‚ª‚ ‚é‚Ì‚Åã‘‚«‚·‚é
+              ;# ã‚½ãƒ¼ã‚¹ã«åŒã˜ã‚¨ãƒ³ãƒˆãƒªãŒã‚ã‚‹ã®ã§ä¸Šæ›¸ãã™ã‚‹
               set zenhan [regsub {^([[:blank:]]*set[[:blank:]]+t\(.+\)[[:blank:]]+).+$} $l {\1}]
               set kouhan [string map {\$ \\\$ \[ \\\[ \] \\\] \n \\n \t \\t} $t($tgtKey)]
               set newTgt($seq) [format "%s\"%s\"" $zenhan $kouhan]
             } else {
-              ;# ƒ\[ƒX‚É“¯‚¶ƒGƒ“ƒgƒŠ‚ª‚È‚¢‚Ì‚Å‚»‚Ì‚Ü‚ÜA‚Ü‚½‚Í–Úˆó‚ğ•t‚¯‚é
+              ;# ã‚½ãƒ¼ã‚¹ã«åŒã˜ã‚¨ãƒ³ãƒˆãƒªãŒãªã„ã®ã§ãã®ã¾ã¾ã€ã¾ãŸã¯ç›®å°ã‚’ä»˜ã‘ã‚‹
               set transDone 0
               if {$purpose != "translator"} {
-                ;# –Úˆó‚ğ•t‚¯‚¸‚»‚Ì‚Ü‚Ü
+                ;# ç›®å°ã‚’ä»˜ã‘ãšãã®ã¾ã¾
                 set newTgt($seq) $l
               } else {
-                ;# –Úˆó‚ğ•t‚¯‚é
+                ;# ç›®å°ã‚’ä»˜ã‘ã‚‹
                 set newTgt($seq) [format "%s %s" $transMark $l]
               }
             }
           } else {
-            ;# ƒRƒƒ“ƒgs‚È‚Ç‚Ìê‡‚Í‚»‚Ì‚Ü‚Ü
+            ;# ã‚³ãƒ¡ãƒ³ãƒˆè¡Œãªã©ã®å ´åˆã¯ãã®ã¾ã¾
             set newTgt($seq) $l
           }
           incr seq
@@ -167,7 +167,7 @@ proc install {} {
         close $in
       }
 
-      ;# V‚µ‚¢“à—e‚ğƒ^[ƒQƒbƒg‚É‘‚«‚Ş
+      ;# æ–°ã—ã„å†…å®¹ã‚’ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã«æ›¸ãè¾¼ã‚€
       if [catch {open $tgtFile w} out] {
         tk_messageBox -message "error: can not write to $tgtFile" \
           -title error -icon error

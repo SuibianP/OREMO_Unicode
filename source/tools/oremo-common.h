@@ -1,27 +1,27 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <tchar.h>
 #include <string.h>
-#include <direct.h>		// _getcwd()—pB
-#include <Windows.h>	// Sleep()—pB
+#include <direct.h>		// _getcwd()ç”¨ã€‚
+#include <Windows.h>	// Sleep()ç”¨ã€‚
 #include <portaudio.h>
 #include <sndfile.h>
 
-#define STATUS_STOP 0	// ’â~’†
-#define STATUS_REC  1	// ˜^‰¹’†
-#define STATUS_PLAY 2	// Ä¶’†
+#define STATUS_STOP 0	// åœæ­¢ä¸­
+#define STATUS_REC  1	// éŒ²éŸ³ä¸­
+#define STATUS_PLAY 2	// å†ç”Ÿä¸­
 #define sec2frame(sec, snd)  (int)(sec * snd->sampleRate)
 
 //----------------------------------------------------------------
 typedef struct {
-	// å‚Élibsndfile—p
+	// ä¸»ã«libsndfileç”¨
 	SNDFILE *fp;
 	SF_INFO info;
-	int status;				// 0=’â~A1=˜^‰¹’†A2=Ä¶’†
-	unsigned long playFrame;	// Ä¶Ï‚İ‚ÌƒtƒŒ[ƒ€”
-	unsigned long endFrame;		// Ä¶I—¹‚³‚¹‚éƒtƒŒ[ƒ€”B0‚È‚çƒtƒ@ƒCƒ‹––”ö‚Ü‚ÅB
+	int status;				// 0=åœæ­¢ã€1=éŒ²éŸ³ä¸­ã€2=å†ç”Ÿä¸­
+	unsigned long playFrame;	// å†ç”Ÿæ¸ˆã¿ã®ãƒ•ãƒ¬ãƒ¼ãƒ æ•°
+	unsigned long endFrame;		// å†ç”Ÿçµ‚äº†ã•ã›ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã€‚0ãªã‚‰ãƒ•ã‚¡ã‚¤ãƒ«æœ«å°¾ã¾ã§ã€‚
 
-	// å‚ÉPortAudio—p
+	// ä¸»ã«PortAudioç”¨
 	PaStream *st;
 	PaStreamParameters param;
 	int sampleRate;
@@ -29,7 +29,7 @@ typedef struct {
 } SND;
 
 //----------------------------------------------------------------
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int init(SND *, int);
 int getDefaultDevice(int);
 void getDevList(int);

@@ -1,17 +1,17 @@
-// win32—pƒvƒƒWƒFƒNƒg‚Å‚Ì‰Šúİ’è
-// ’Ç‰Á‚ÌƒCƒ“ƒNƒ‹[ƒhdir‚ÉVisual Studio 2010‚ÌProjects\portaudio\include‚ğ’Ç‰Á
-// ’Ç‰Á‚ÌƒCƒ“ƒNƒ‹[ƒhdir‚Éc:\Program Files (x86)\libsndfile\include‚ğ’Ç‰Á
-// ’Ç‰Á‚Ìƒ‰ƒCƒuƒ‰ƒŠdir‚ÉVisual Studio 2010‚ÌProjects\portaudio\build\msvc\Win32\Release‚ğ’Ç‰Á
-// ƒŠƒ“ƒJA“ü—ÍA’Ç‰Á‚ÌˆË‘¶ƒtƒ@ƒCƒ‹‚ÉAportaudio_x86.lib‚ğ’Ç‰Á
-// Release‚ÆDebug‰º‚Éportaudio/build/msvc/Win32/Release/portaudio_x86.dll‚ğƒRƒs[
-// Release‚ÆDebug‰º‚ÉProgram Files (x86)/libsndfile/bin/libsndfile-1.dll‚ğƒRƒs[
+ï»¿// win32ç”¨ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã§ã®åˆæœŸè¨­å®š
+// è¿½åŠ ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰dirã«Visual Studio 2010ã®Projects\portaudio\includeã‚’è¿½åŠ 
+// è¿½åŠ ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰dirã«c:\Program Files (x86)\libsndfile\includeã‚’è¿½åŠ 
+// è¿½åŠ ã®ãƒ©ã‚¤ãƒ–ãƒ©ãƒªdirã«Visual Studio 2010ã®Projects\portaudio\build\msvc\Win32\Releaseã‚’è¿½åŠ 
+// ãƒªãƒ³ã‚«ã€å…¥åŠ›ã€è¿½åŠ ã®ä¾å­˜ãƒ•ã‚¡ã‚¤ãƒ«ã«ã€portaudio_x86.libã‚’è¿½åŠ 
+// Releaseã¨Debugä¸‹ã«portaudio/build/msvc/Win32/Release/portaudio_x86.dllã‚’ã‚³ãƒ”ãƒ¼
+// Releaseã¨Debugä¸‹ã«Program Files (x86)/libsndfile/bin/libsndfile-1.dllã‚’ã‚³ãƒ”ãƒ¼
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <tchar.h>
 #include <string.h>
-#include <direct.h>		// _getcwd()—pB
-#include <Windows.h>	// Sleep()—pB
+#include <direct.h>		// _getcwd()ç”¨ã€‚
+#include <Windows.h>	// Sleep()ç”¨ã€‚
 #include <portaudio.h>
 #include <sndfile.h>
 #define  commandN 255
@@ -30,7 +30,7 @@ typedef struct {
 } PA;
 
 //----------------------------------------------------------------
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€
 int init(SND *, PA *, char *);
 void getInDevList();
 int getDefaultInDevice();
@@ -44,7 +44,7 @@ int recCallback(const void *, void *, unsigned long,
 void copyPA(PA *, PA*);
 
 //----------------------------------------------------------------
-// ‰Šú‰»B¬Œ÷=0A¸”s=else
+// åˆæœŸåŒ–ã€‚æˆåŠŸ=0ã€å¤±æ•—=else
 int init(SND *rec, PA *paRec, char *outWav){
 	PaError err;
 
@@ -81,7 +81,7 @@ int init(SND *rec, PA *paRec, char *outWav){
 }
 
 //----------------------------------------------------------------
-// –{•¶
+// æœ¬æ–‡
 int _tmain(int argc, _TCHAR* argv[])
 {
 	char command[commandN];
@@ -96,13 +96,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (command[strlen(command)-1] != '\n')
 			while (getchar() != '\n');
 
-		// ƒRƒ}ƒ“ƒhÀs
+		// ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œ
 		if (strcmp(command, "rec\n" ) == 0)       recStart(&rec, &paRec, outWav);
 		else if (strcmp(command, "end\n" ) == 0)  recStop(&rec, &paRec);
 		else if (strcmp(command, "list\n") == 0)  getInDevList();
-		// set  [ƒfƒoƒCƒX”Ô† [Œ`®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOü”g”]]]]
+		// set  [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]]
 		else if (command[0] == 's')               setInDevice(&rec, &paRec, command);
-		// test [ƒfƒoƒCƒX”Ô† [Œ`®(bit“™(1,2,4,8)) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOü”g”]]]]
+		// test [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰(1,2,4,8)) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]]
 		else if (command[0] == 't')               testInDevice(&rec, &paRec, command, 1);
 		else if (strcmp(command, "reset\n") == 0) init(&rec, &paRec, outWav);
 		else if (strcmp(command, "exit\n")  == 0) myExit(paRec);
@@ -110,32 +110,32 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ƒR[ƒ‹ƒoƒbƒN
+// éŒ²éŸ³ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯
 int recCallback(const void *inputBuffer, void *outputBuffer,
 	unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo,
 	PaStreamCallbackFlags statusFlags, void *userData){
 	SND *rec;
 	rec = (SND *)userData;
 
-	//koko«pa‚ªfloat‚Ìê‡‚¾‚Æv‚¤B
+	//kokoâ†“paãŒfloatã®å ´åˆã ã¨æ€ã†ã€‚
 	sf_write_float(rec->fp, (float *)inputBuffer, framesPerBuffer * rec->info.channels);
 	//memset((void *)inputBuffer, 0, framesPerBuffer * rec->info.channels * sizeof(float));
 	return 0;
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ŠJnB¬Œ÷=0A¸”s=1
+// éŒ²éŸ³é–‹å§‹ã€‚æˆåŠŸ=0ã€å¤±æ•—=1
 int recStart(SND *rec, PA *paRec, char *outWav){
 	PaError err;
 
-	// •Û‘¶wavƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ä¿å­˜wavãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	rec->fp = sf_open(outWav, SFM_WRITE, &(rec->info));
 	if (rec->fp == NULL){
 		fprintf(stderr, "error: can not start recording\n");
 		return 1;
 	}
 
-	// ‰¹ºƒfƒoƒCƒX‚ğŠJ‚¢‚Ä˜^‰¹ŠJn
+	// éŸ³å£°ãƒ‡ãƒã‚¤ã‚¹ã‚’é–‹ã„ã¦éŒ²éŸ³é–‹å§‹
 	err = Pa_OpenStream(&(paRec->st), &(paRec->param), NULL, paRec->sampleRate, 
 		paRec->frameSize, paNoFlag, recCallback, rec);
 	if (err != paNoError){
@@ -153,7 +153,7 @@ int recStart(SND *rec, PA *paRec, char *outWav){
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹I—¹B¬Œ÷=0A¸”s=1
+// éŒ²éŸ³çµ‚äº†ã€‚æˆåŠŸ=0ã€å¤±æ•—=1
 int recStop(SND *rec, PA *paRec){
 	PaError err;
 
@@ -169,16 +169,16 @@ int recStop(SND *rec, PA *paRec){
 }
 
 //----------------------------------------------------------------
-// ƒI[ƒfƒBƒIƒfƒoƒCƒX‚Ìî•ñ‚ğ“¾‚é
+// ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒ‡ãƒã‚¤ã‚¹ã®æƒ…å ±ã‚’å¾—ã‚‹
 void getInDevList(){
-	PaDeviceIndex deviceNum;	// ƒfƒoƒCƒX”
+	PaDeviceIndex deviceNum;	// ãƒ‡ãƒã‚¤ã‚¹æ•°
 	const PaDeviceInfo  *pDeviceInfo;
 	const PaHostApiInfo *pHostApiInfo;
 	PaDeviceIndex dID;
 
 	Pa_Terminate();
 	Pa_Initialize();
-	deviceNum = Pa_GetDeviceCount();  // “o˜^‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX”‚ğ“¾‚é
+	deviceNum = Pa_GetDeviceCount();  // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹æ•°ã‚’å¾—ã‚‹
 	for (dID = 0; dID < deviceNum; dID++){
 		pDeviceInfo = Pa_GetDeviceInfo(dID);
 		pHostApiInfo = Pa_GetHostApiInfo(pDeviceInfo->hostApi);
@@ -193,19 +193,19 @@ void getInDevList(){
 }
 
 //----------------------------------------------------------------
-// ˜^‰¹ƒfƒoƒCƒX‚âŒ`®‚È‚Ç‚ğw’è‚·‚éB¬Œ÷=0A¸”s=1
+// éŒ²éŸ³ãƒ‡ãƒã‚¤ã‚¹ã‚„å½¢å¼ãªã©ã‚’æŒ‡å®šã™ã‚‹ã€‚æˆåŠŸ=0ã€å¤±æ•—=1
 int setInDevice(SND *rec, PA *paRec, char *command){
 	PaError err;
 	PA _paRec;
 	int intErr;
 
-	// set [ƒfƒoƒCƒX”Ô† [Œ`®(bit“™) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOü”g”]]]]
-	// w’è‚³‚ê‚È‚©‚Á‚½ˆø”•”•ª‚É‚ÍŒ»ó‚Ìİ’è‚ğ—p‚¢‚éBˆø”‚ª–³‚¢ê‡‚ÍŒ»İ‚Ìİ’è‚ğ•\¦‚·‚é
+	// set [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]]
+	// æŒ‡å®šã•ã‚Œãªã‹ã£ãŸå¼•æ•°éƒ¨åˆ†ã«ã¯ç¾çŠ¶ã®è¨­å®šã‚’ç”¨ã„ã‚‹ã€‚å¼•æ•°ãŒç„¡ã„å ´åˆã¯ç¾åœ¨ã®è¨­å®šã‚’è¡¨ç¤ºã™ã‚‹
 	copyPA(&_paRec, paRec);
 	intErr = sscanf_s (command, "%*s %d %d %d %d",
 		&_paRec.param.device, &_paRec.param.sampleFormat, 
 		&_paRec.param.channelCount, &_paRec.sampleRate);
-	if (intErr == 0){					// Œ»ó‚Ìİ’è‚ğ•Ô‚·
+	if (intErr == 0){					// ç¾çŠ¶ã®è¨­å®šã‚’è¿”ã™
 		printf("dID=%d, format=%d, channel=%d, sampleRate=%d\n",
 			paRec->param.device, paRec->param.sampleFormat,
 			paRec->param.channelCount, paRec->sampleRate);
@@ -236,15 +236,15 @@ int setInDevice(SND *rec, PA *paRec, char *command){
 }
 
 //----------------------------------------------------------------
-// w’è‚µ‚½‰¹ºŒ`®‚ğ—˜—p‚Å‚«‚é‚©ƒeƒXƒg‚·‚éB—˜—p‰Â”\=0A•s‰Â”\=else
-// show=1‚È‚ç—˜—p‰Â”\‚É"Success"A•s‰Â”\–‚ÉƒGƒ‰[•¶‚ğstdout‚É‘—‚é
+// æŒ‡å®šã—ãŸéŸ³å£°å½¢å¼ã‚’åˆ©ç”¨ã§ãã‚‹ã‹ãƒ†ã‚¹ãƒˆã™ã‚‹ã€‚åˆ©ç”¨å¯èƒ½=0ã€ä¸å¯èƒ½=else
+// show=1ãªã‚‰åˆ©ç”¨å¯èƒ½æ™‚ã«"Success"ã€ä¸å¯èƒ½äº‹ã«ã‚¨ãƒ©ãƒ¼æ–‡ã‚’stdoutã«é€ã‚‹
 int testInDevice(SND *rec, PA *paRec, char *command, int show){
 	PaError err;
 	PA _paRec;
 	int intErr;
 
 	copyPA(&_paRec, paRec);
-	// test [ƒfƒoƒCƒX”Ô† [Œ`®(bit“™) [ƒ`ƒƒƒ“ƒlƒ‹” [ƒTƒ“ƒvƒŠƒ“ƒOü”g”]]]]
+	// test [ãƒ‡ãƒã‚¤ã‚¹ç•ªå· [å½¢å¼(bitç­‰) [ãƒãƒ£ãƒ³ãƒãƒ«æ•° [ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°]]]]
 	intErr = sscanf_s (command, "%*s %d %d %d %d",
 		&_paRec.param.device, &_paRec.param.sampleFormat, &_paRec.param.channelCount, &_paRec.sampleRate);
 
@@ -257,7 +257,7 @@ int testInDevice(SND *rec, PA *paRec, char *command, int show){
 }
 
 //----------------------------------------------------------------
-// \‘¢‘ÌPA“à—e‚Ìˆê•”‚ğƒRƒs[‚·‚é
+// æ§‹é€ ä½“PAå†…å®¹ã®ä¸€éƒ¨ã‚’ã‚³ãƒ”ãƒ¼ã™ã‚‹
 void copyPA(PA *dst, PA*src){
 	memset(&(dst->param), 0, sizeof(PaStreamParameters));
 	dst->st                 = src->st;
@@ -269,14 +269,14 @@ void copyPA(PA *dst, PA*src){
 }
 
 //----------------------------------------------------------------
-// ƒfƒtƒHƒ‹ƒg‚Ì˜^‰¹ƒI[ƒfƒBƒIƒfƒoƒCƒX”Ô†‚ğ•Ô‚·
-// Œ©‚Â‚©‚ç‚È‚¢ê‡‚Í-1‚ğ•Ô‚·
+// ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®éŒ²éŸ³ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒ‡ãƒã‚¤ã‚¹ç•ªå·ã‚’è¿”ã™
+// è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã¯-1ã‚’è¿”ã™
 int getDefaultInDevice(){
-	PaDeviceIndex deviceNum;	// ƒfƒoƒCƒX”
+	PaDeviceIndex deviceNum;	// ãƒ‡ãƒã‚¤ã‚¹æ•°
 	const PaDeviceInfo  *pDeviceInfo;
 	PaDeviceIndex dID;
 
-	deviceNum = Pa_GetDeviceCount();  // “o˜^‚³‚ê‚Ä‚¢‚éƒfƒoƒCƒX”‚ğ“¾‚é
+	deviceNum = Pa_GetDeviceCount();  // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ãƒ‡ãƒã‚¤ã‚¹æ•°ã‚’å¾—ã‚‹
 	for (dID = 0; dID < deviceNum; dID++){
 		pDeviceInfo = Pa_GetDeviceInfo(dID);
 		if (pDeviceInfo->maxInputChannels > 0) return dID;
@@ -285,7 +285,7 @@ int getDefaultInDevice(){
 }
 
 //----------------------------------------------------------------
-// I—¹
+// çµ‚äº†
 void myExit(PA paRec){
 //	Pa_CloseStream(paRec.st);
 	PaError err = Pa_Terminate();

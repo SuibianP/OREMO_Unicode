@@ -1,8 +1,8 @@
-// wavƒtƒ@ƒCƒ‹‚ğƒ_ƒ“ƒv‚·‚éB
-// PCMƒtƒH[ƒ}ƒbƒgA—Êq‰»ƒrƒbƒgF16 bitˆÈŠO‚Ìwavƒtƒ@ƒCƒ‹‚É‚Í”ñ‘Î‰B
+ï»¿// wavãƒ•ã‚¡ã‚¤ãƒ«ã‚’ãƒ€ãƒ³ãƒ—ã™ã‚‹ã€‚
+// PCMãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã€é‡å­åŒ–ãƒ“ãƒƒãƒˆï¼š16 bitä»¥å¤–ã®wavãƒ•ã‚¡ã‚¤ãƒ«ã«ã¯éå¯¾å¿œã€‚
 //
-// http://www.kk.iij4u.or.jp/~kondo/wave/separate.c ‚¨‚æ‚Ñ 
-// SPTK-3.5 (http://sp-tk.sourceforge.net/) ‚ğQl‚É‚µ‚Ü‚µ‚½B
+// http://www.kk.iij4u.or.jp/~kondo/wave/separate.c ãŠã‚ˆã³ 
+// SPTK-3.5 (http://sp-tk.sourceforge.net/) ã‚’å‚è€ƒã«ã—ã¾ã—ãŸã€‚
 //
 // (how to compile on Windows)
 //   install MinGW and MSYS
@@ -30,8 +30,8 @@ typedef struct {
 } WAVHEADER;
 
 char *cmnd;
-int verbose = 0;   // 1=ƒwƒbƒ_‚ğ•\¦‚·‚é
-int convertToMono = 0; // 1=ƒ‚ƒmƒ‰ƒ‹‚É‚µ‚Äo—Í‚·‚é
+int verbose = 0;   // 1=ãƒ˜ãƒƒãƒ€ã‚’è¡¨ç¤ºã™ã‚‹
+int convertToMono = 0; // 1=ãƒ¢ãƒãƒ©ãƒ«ã«ã—ã¦å‡ºåŠ›ã™ã‚‹
 
 void usage(void)
 {
@@ -65,7 +65,7 @@ void readError(FILE *fp)
 }
 
 /*-----------------------------*/
-/* 4Byte “Ç‚İ‚İ 10i”‚É•ÏŠ· */
+/* 4Byte èª­ã¿è¾¼ã¿ 10é€²æ•°ã«å¤‰æ› */
 /*-----------------------------*/
 unsigned long get_ulong(FILE *fp)
 {
@@ -79,7 +79,7 @@ unsigned long get_ulong(FILE *fp)
 }
 
 /*-----------------------------*/
-/* 2Byte “Ç‚İ‚İ 10i”‚É•ÏŠ· */
+/* 2Byte èª­ã¿è¾¼ã¿ 10é€²æ•°ã«å¤‰æ› */
 /*-----------------------------*/
 unsigned short get_ushort(FILE *fp)
 {
@@ -93,29 +93,29 @@ unsigned short get_ushort(FILE *fp)
 }
 
 /*------------------------*/
-/* fmt ƒ`ƒƒƒ“ƒN‚Ìƒ`ƒFƒbƒN */
+/* fmt ãƒãƒ£ãƒ³ã‚¯ã®ãƒã‚§ãƒƒã‚¯ */
 /*------------------------*/
 void fmt_chunkRead(FILE *fp, WAVHEADER *w)
 {
   short tag, len2;
   long len;
 
-  // 2Byte ƒf[ƒ^Œ`® PCM ‚È‚ç‚Î 01 00
+  // 2Byte ãƒ‡ãƒ¼ã‚¿å½¢å¼ PCM ãªã‚‰ã° 01 00
   tag = get_ushort(fp);
   if (verbose) fprintf(stderr, "    format tag     = %u (1 = PCM)\n", tag);
-  // 2Byte ƒ`ƒƒƒ“ƒlƒ‹” ƒ‚ƒmƒ‰ƒ‹‚È‚ç‚Î 01 00 ƒXƒeƒŒƒI‚È‚ç‚Î 02 00
+  // 2Byte ãƒãƒ£ãƒ³ãƒãƒ«æ•° ãƒ¢ãƒãƒ©ãƒ«ãªã‚‰ã° 01 00 ã‚¹ãƒ†ãƒ¬ã‚ªãªã‚‰ã° 02 00
   w->channels = get_ushort(fp);
   if (verbose) fprintf(stderr, "    channels       = %u\n", w->channels);
-  // 4Byte ƒTƒ“ƒvƒŠƒ“ƒOü”g”(Hz)
+  // 4Byte ã‚µãƒ³ãƒ—ãƒªãƒ³ã‚°å‘¨æ³¢æ•°(Hz)
   w->sf = get_ulong(fp);
   if (verbose) fprintf(stderr, "    samples/sec    = %lu\n", w->sf);
-  // 4Byte 1•b‚ ‚½‚è‚ÌƒoƒCƒg”
+  // 4Byte 1ç§’ã‚ãŸã‚Šã®ãƒã‚¤ãƒˆæ•°
   len = get_ulong(fp);
   if (verbose) fprintf(stderr, "    avg. bytes/sec = %lu\n", len);
-  // 2Byte ƒoƒCƒg”~ƒ`ƒƒƒ“ƒlƒ‹”
+  // 2Byte ãƒã‚¤ãƒˆæ•°Ã—ãƒãƒ£ãƒ³ãƒãƒ«æ•°
   len2 = get_ushort(fp);
   if (verbose) fprintf(stderr, "    block align    = %u\n", len2);
-  // 2Byte 1ƒTƒ“ƒvƒ‹‚ ‚½‚è‚ÌƒoƒCƒg”
+  // 2Byte 1ã‚µãƒ³ãƒ—ãƒ«ã‚ãŸã‚Šã®ãƒã‚¤ãƒˆæ•°
   w->byte = get_ushort(fp) / 8;
   if (verbose) fprintf(stderr, "    byte/sample    = %u\n", w->byte);
 
@@ -132,7 +132,7 @@ void fmt_chunkRead(FILE *fp, WAVHEADER *w)
 }
 
 /*----------------------*/
-/* ƒtƒ@ƒCƒ‹“à—e“Ç‚İo‚µ */
+/* ãƒ•ã‚¡ã‚¤ãƒ«å†…å®¹èª­ã¿å‡ºã— */
 /*----------------------*/
 void wavHeaderRead(FILE *fp, WAVHEADER *w)
 {
@@ -141,17 +141,17 @@ void wavHeaderRead(FILE *fp, WAVHEADER *w)
   short tmp;
   int i;
 
-  // RIFF ƒwƒbƒ_î•ñ  // 4Byte 'R''I''F''F'
+  // RIFF ãƒ˜ãƒƒãƒ€æƒ…å ±  // 4Byte 'R''I''F''F'
   if (fread(s, 4, 1, fp) != 1) readError(fp);
   if (memcmp(s, "RIFF", 4) != 0) {
     fprintf(stderr, "Not a 'RIFF' format\n");
     fclose(fp);
     exit(EXIT_FAILURE);
   }
-  // 4Byte ‚±‚êˆÈ~‚ÌƒoƒCƒg” = (ƒtƒ@ƒCƒ‹ƒTƒCƒY - 8)(Byte)
+  // 4Byte ã“ã‚Œä»¥é™ã®ãƒã‚¤ãƒˆæ•° = (ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚º - 8)(Byte)
   len = get_ulong(fp);
 
-  // WAVE ƒwƒbƒ_î•ñ  // 4Byte 'W''A''V''E'
+  // WAVE ãƒ˜ãƒƒãƒ€æƒ…å ±  // 4Byte 'W''A''V''E'
   if (fread(s, 4, 1, fp) != 1) readError(fp);
   if (memcmp(s, "WAVE", 4) != 0) {
     fprintf(stderr, "Not a 'WAVE' format\n");
@@ -159,7 +159,7 @@ void wavHeaderRead(FILE *fp, WAVHEADER *w)
     exit(EXIT_FAILURE);
   }
 
-  // ƒ`ƒƒƒ“ƒNî•ñ
+  // ãƒãƒ£ãƒ³ã‚¯æƒ…å ±
   while (fread(s, 4, 1, fp) == 1) {
     if (memcmp(s, "fmt ", 4) == 0) {
       len = get_ulong(fp);
@@ -205,11 +205,11 @@ void out(double xd, char outMode, FILE *fp)
 }
 
 /**************/
-/* ƒƒCƒ“ŠÖ” */
+/* ãƒ¡ã‚¤ãƒ³é–¢æ•° */
 /**************/
 #if defined(WIN32)
-// tcl/tk‚©‚çexe‚ğŒÄ‚Ño‚·Û‚ÉƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ğ•\¦‚³‚¹‚È‚¢‚æ‚¤
-// GUIƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Æ‚µ‚ÄƒRƒ“ƒpƒCƒ‹‚³‚¹‚é
+// tcl/tkã‹ã‚‰exeã‚’å‘¼ã³å‡ºã™éš›ã«ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã•ã›ãªã„ã‚ˆã†
+// GUIã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¨ã—ã¦ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã›ã‚‹
 int WINAPI WinMain(HINSTANCE hCurInst, HINSTANCE hPrevInst, LPSTR lpsCmdLine, int nCmdShow)
 #else
 int main(int argc, char *argv[])
@@ -224,27 +224,27 @@ int main(int argc, char *argv[])
   short xs;
   char outMode = 'a';
 
-  // MessageBox(NULL, "wavdump", "debug", MB_OK); //ƒfƒoƒbƒO—p
+  // MessageBox(NULL, "wavdump", "debug", MB_OK); //ãƒ‡ãƒãƒƒã‚°ç”¨
   cmnd = argv[0];
   while (--argc){
     if (*(s = *++argv) == '-') {
       switch (*++s) {
-        case 'v':             // ƒwƒbƒ_‚ğ•\¦‚·‚é
+        case 'v':             // ãƒ˜ãƒƒãƒ€ã‚’è¡¨ç¤ºã™ã‚‹
           verbose = 1;
           break;
-        case 'd':             // ƒoƒCƒiƒŠdoubleŒ^‚Åo—Í‚·‚é
+        case 'd':             // ãƒã‚¤ãƒŠãƒªdoubleå‹ã§å‡ºåŠ›ã™ã‚‹
           outMode = 'd';
           break;
-        case 'f':             // ƒoƒCƒiƒŠfloatŒ^‚Åo—Í‚·‚é
+        case 'f':             // ãƒã‚¤ãƒŠãƒªfloatå‹ã§å‡ºåŠ›ã™ã‚‹
           outMode = 'f';
           break;
-        case 's':             // ƒoƒCƒiƒŠshortŒ^‚Åo—Í‚·‚é
+        case 's':             // ãƒã‚¤ãƒŠãƒªshortå‹ã§å‡ºåŠ›ã™ã‚‹
           outMode = 's';
           break;
-        case 'a':             // ƒAƒXƒL[Œ^‚Åo—Í‚·‚é
+        case 'a':             // ã‚¢ã‚¹ã‚­ãƒ¼å‹ã§å‡ºåŠ›ã™ã‚‹
           outMode = 'a';
           break;
-        case '1':             // ƒ‚ƒmƒ‰ƒ‹•ÏŠ·‚µ‚Äo—Í
+        case '1':             // ãƒ¢ãƒãƒ©ãƒ«å¤‰æ›ã—ã¦å‡ºåŠ›
           convertToMono = 1;
           break;
         case 'h':

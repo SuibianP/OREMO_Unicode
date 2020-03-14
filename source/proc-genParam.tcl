@@ -1,18 +1,18 @@
-#!/bin/sh
+ï»¿#!/bin/sh
 # the next line restarts using wish \
 exec wish "$0" "$@"
 
 #---------------------------------------------------
-# ƒTƒuƒ‹[ƒ`ƒ“
+# ã‚µãƒ–ãƒ«ãƒ¼ãƒãƒ³
 
 
 #---------------------------------------------------
-# oto.ini¶¬‘O‚É–¢•Û‘¶wav‚ª–³‚¢‚©’²‚×‚é
+# oto.iniç”Ÿæˆå‰ã«æœªä¿å­˜wavãŒç„¡ã„ã‹èª¿ã¹ã‚‹
 #
 proc checkWavForOREMO {} {
   global v t
 
-  ;# Œ»İ•\¦’†‚Ìwavƒtƒ@ƒCƒ‹‚ª•Û‘¶Ï‚İ‚©ƒ`ƒFƒbƒN
+  ;# ç¾åœ¨è¡¨ç¤ºä¸­ã®wavãƒ•ã‚¡ã‚¤ãƒ«ãŒä¿å­˜æ¸ˆã¿ã‹ãƒã‚§ãƒƒã‚¯
   if $v(recStatus) {
     set act [tk_dialog .confm $t(.confm) $t(checkWavForOREMO,saveQ) \
       question 2 $t(checkWavForOREMO,saveA1) \
@@ -26,19 +26,19 @@ proc checkWavForOREMO {} {
 }
 
 #---------------------------------------------------
-# ©“®û˜^‚µ‚½˜A‘±”­º‚©‚çoto.ini‚ğ¶¬
+# è‡ªå‹•åéŒ²ã—ãŸé€£ç¶šç™ºå£°ã‹ã‚‰oto.iniã‚’ç”Ÿæˆ
 #
 proc genParam {} {
   global v genWindow genParam t
 
-  if [isExist $genWindow] return ;# “ñd‹N“®‚ğ–h~
+  if [isExist $genWindow] return ;# äºŒé‡èµ·å‹•ã‚’é˜²æ­¢
   toplevel $genWindow
   wm title $genWindow $t(genParam,title)
   bind $genWindow <Escape> "destroy $genWindow"
 
   set r 0
 
-  # ‰Šúİ’è
+  # åˆæœŸè¨­å®š
   set f($r) [labelframe $genWindow.f($r) -relief groove -padx 5 -pady 5]
 
   label $f($r).lB  -text $t(genParam,tempo)
@@ -59,7 +59,7 @@ proc genParam {} {
   grid  $f($r).mSU -row 1 -column 3 -sticky nsw
   incr r
 
-  # ƒ{ƒ^ƒ“
+  # ãƒœã‚¿ãƒ³
   set f($r) [frame $genWindow.f($r) -padx 5 -pady 0]
   label  $f($r).arrow1 -text $t(genParam,darrow)
   button $f($r).bInit  -text $t(genParam,bInit)  -command initGenParam
@@ -70,7 +70,7 @@ proc genParam {} {
   grid  $f($r).arrow2 -row 2 -column 0 -sticky nsew
   incr r
 
-  # msec’PˆÊ‚Å‚ÌŠeİ’è
+  # msecå˜ä½ã§ã®å„è¨­å®š
   set f($r) [labelframe $genWindow.f($r) -relief groove -padx 5 -pady 5]
   label $f($r).lO  -text $t(genParam,O)
   entry $f($r).eO  -textvar genParam(O) -wi 10
@@ -102,7 +102,7 @@ proc genParam {} {
   grid  $f($r).lEU   -row 3 -column 2 -sticky nse
   incr r
 
-  # ƒpƒ[‚ÉŠî‚Ã‚­æs”­ºˆÊ’u‚Ì©“®„’è—p‚Ìİ’è‘‹
+  # ãƒ‘ãƒ¯ãƒ¼ã«åŸºã¥ãå…ˆè¡Œç™ºå£°ä½ç½®ã®è‡ªå‹•æ¨å®šç”¨ã®è¨­å®šçª“
   set f($r) [labelframe $genWindow.f($r) -relief groove -padx 5 -pady 5]
   checkbutton $f($r).cb -variable genParam(autoAdjustRen) -text $t(genParam,autoAdjustRen)
   label $f($r).lv  -text $t(genParam,vLow)
@@ -123,7 +123,7 @@ proc genParam {} {
   grid  $f($r).lb  -row 3 -column 0 -sticky nsw -columnspan 3
   incr r
 
-  # MFCC‚ÉŠî‚Ã‚­æs”­ºˆÊ’u‚Ì©“®„’è‚Ìİ’è‘‹
+  # MFCCã«åŸºã¥ãå…ˆè¡Œç™ºå£°ä½ç½®ã®è‡ªå‹•æ¨å®šã®è¨­å®šçª“
   set f($r) [labelframe $genWindow.f($r) -relief groove -padx 5 -pady 5]
   checkbutton $f($r).cb -variable genParam(autoAdjustRen2) -text $t(genParam,autoAdjustRen2)
   label $f($r).lv  -text $t(genParam,autoAdjustRen2Opt)
@@ -138,11 +138,11 @@ proc genParam {} {
   grid  $f($r).em  -row 2 -column 1 -sticky nsew -columnspan 2
   incr r
 
-  # ƒGƒCƒŠƒAƒXd•¡‚ÉŠÖ‚·‚éİ’è—“
+  # ã‚¨ã‚¤ãƒªã‚¢ã‚¹é‡è¤‡ã«é–¢ã™ã‚‹è¨­å®šæ¬„
   set f($r) [labelframe $genWindow.f($r) -relief groove -padx 5 -pady 5]
 
-  set genParam(useAliasMax) 0  ;# 0=d•¡‚ğ‚»‚Ì‚Ü‚Ü‚É‚·‚é,1=’Ê‚µ”Ô†‚ğ•t‚¯‚é
-  set genParam(aliasMax) 0     ;# d•¡”Ô†‚ÌÅ‘å’l
+  set genParam(useAliasMax) 0  ;# 0=é‡è¤‡ã‚’ãã®ã¾ã¾ã«ã™ã‚‹,1=é€šã—ç•ªå·ã‚’ä»˜ã‘ã‚‹
+  set genParam(aliasMax) 0     ;# é‡è¤‡ç•ªå·ã®æœ€å¤§å€¤
   label $f($r).lt -text $t(genParam,aliasMax)
   radiobutton $f($r).rm1 -variable genParam(useAliasMax) -value  0 -text $t(genParam,aliasMaxNo)
   radiobutton $f($r).rm2 -variable genParam(useAliasMax) -value  1 -text $t(genParam,aliasMaxYes)
@@ -156,7 +156,7 @@ proc genParam {} {
   grid $f($r).e     -row 2 -column 1 -sticky nse
   incr r
 
-  # Àsƒ{ƒ^ƒ“
+  # å®Ÿè¡Œãƒœã‚¿ãƒ³
   set f($r) [frame $genWindow.f($r) -padx 5 -pady 0]
 
   label  $f($r).arrow2 -text $t(genParam,darrow)
@@ -186,12 +186,12 @@ proc genParam {} {
 }
 
 #---------------------------------------------------
-# BPMA–`“ªS‚©‚çƒpƒ‰ƒ[ƒ^‚Ì‰Šú’l‚ğ‹‚ß‚é
+# BPMã€å†’é ­Sã‹ã‚‰ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åˆæœŸå€¤ã‚’æ±‚ã‚ã‚‹
 #
 proc initGenParam {} {
   global genParam t
 
-  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1”‚Ì’·‚³[msec]‚ğ‹‚ß‚é
+  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1æ‹ã®é•·ã•[msec]ã‚’æ±‚ã‚ã‚‹
 
   set genParam(O) [cut3 [expr $mspb / 6.0]]
   set genParam(P) [cut3 [expr $mspb / 2.0]]
@@ -202,9 +202,9 @@ proc initGenParam {} {
 }
 
 #---------------------------------------------------
-# ˜A‘±”­º‚Ìæ“ªƒ‚[ƒ‰‚Ìæs”­ºˆÊ’u‚ğ„’è‚µA
-# æs”­º‚ª‚»‚ÌêŠ‚É‚È‚é‚½‚ß‚Ì•â³—Ê(sec)‚ğ•Ô‚·
-# Porg, range‚Ì’PˆÊFsecBPorg-range`Porg+range‚Ì”ÍˆÍ‚ğ’Tõ‚·‚é
+# é€£ç¶šç™ºå£°ã®å…ˆé ­ãƒ¢ãƒ¼ãƒ©ã®å…ˆè¡Œç™ºå£°ä½ç½®ã‚’æ¨å®šã—ã€
+# å…ˆè¡Œç™ºå£°ãŒãã®å ´æ‰€ã«ãªã‚‹ãŸã‚ã®è£œæ­£é‡(sec)ã‚’è¿”ã™
+# Porg, rangeã®å˜ä½ï¼šsecã€‚Porg-rangeï½Porg+rangeã®ç¯„å›²ã‚’æ¢ç´¢ã™ã‚‹
 #
 proc autoAdjustRen {fid Porg range} {
   global v t f0 power genParam
@@ -226,7 +226,7 @@ proc autoAdjustRen {fid Porg range} {
     set Lsec 0
   }
 
-  ;# —LºŠJnˆÊ’u‚ğ‹‚ß‚é
+  ;# æœ‰å£°é–‹å§‹ä½ç½®ã‚’æ±‚ã‚ã‚‹
   set seriestmp {}
   set start [expr int($Lsec * $v(sampleRate))]
   set end   [expr int(($Porg + $range) * $v(sampleRate))]
@@ -243,21 +243,21 @@ proc autoAdjustRen {fid Porg range} {
   set f0old 1
   for {set i 0} {$i < [llength $seriestmp]} {incr i} {
     set f0now [lindex [split [lindex $seriestmp $i] " "] 0]
-    if {$f0old <= 0 && $f0now > 0} break  ;# ’¼‘O‚ª–³ºA“–ŠY‚ª—Lº‚È‚çbreak
+    if {$f0old <= 0 && $f0now > 0} break  ;# ç›´å‰ãŒç„¡å£°ã€å½“è©²ãŒæœ‰å£°ãªã‚‰break
     set f0old $f0now
   }
   if {$i < [llength $seriestmp]} {
-    ;# —LºŠJn“_‚Å‚ ‚ê‚Î‚»‚±‚ğæs”­ºŒó•â‚Æ‚µAX‚ÉŸ‚Ìƒpƒ[‚ÉŠî‚Ã‚­
-    ;# ’TõŠJn“_‚É‚·‚é
+    ;# æœ‰å£°é–‹å§‹ç‚¹ã§ã‚ã‚Œã°ãã“ã‚’å…ˆè¡Œç™ºå£°å€™è£œã¨ã—ã€æ›´ã«æ¬¡ã®ãƒ‘ãƒ¯ãƒ¼ã«åŸºã¥ã
+    ;# æ¢ç´¢é–‹å§‹ç‚¹ã«ã™ã‚‹
     set Pnew [expr $i * $f0(frameLength) + $Lsec]
     set Lsec $Pnew
-    set start [expr int($Lsec * $v(sampleRate))]   ;# end ‚ÍF0‚Æ“¯‚¶
+    set start [expr int($Lsec * $v(sampleRate))]   ;# end ã¯F0ã¨åŒã˜
   } else {
     set Pnew $Porg
   }
 
-  ;# ŒÅ’è”ÍˆÍ`‰Eƒuƒ‰ƒ“ƒNŠÔ‚Ì•½‹Ïƒpƒ[aveP‚ğ‹‚ß‚éB‚½‚¾‚µ’l‚ª30ŒÂˆÈã‚È‚ç
-  ;# 30ŒÂ‚Å•½‹Ï‚ğ‹‚ß‚é
+  ;# å›ºå®šç¯„å›²ï½å³ãƒ–ãƒ©ãƒ³ã‚¯é–“ã®å¹³å‡ãƒ‘ãƒ¯ãƒ¼avePã‚’æ±‚ã‚ã‚‹ã€‚ãŸã ã—å€¤ãŒ30å€‹ä»¥ä¸Šãªã‚‰
+  ;# 30å€‹ã§å¹³å‡ã‚’æ±‚ã‚ã‚‹
   set Nmax 30
   set N 0
   set aveP 0
@@ -275,36 +275,36 @@ proc autoAdjustRen {fid Porg range} {
     set aveP [expr $aveP / $N]
   }
 
-  ;# ’Tõ‹æŠÔ‚Ìƒpƒ[‚ğ‹‚ß‚é
+  ;# æ¢ç´¢åŒºé–“ã®ãƒ‘ãƒ¯ãƒ¼ã‚’æ±‚ã‚ã‚‹
   set pw [sWork power -framelength $power(frameLength) \
     -windowtype $power(window) -preemphasisfactor $power(preemphasis) \
     -windowlength [expr int($power(windowLength) * $v(sampleRate))] \
     -start $start -end $end]
 
-  ;# è‡’l‚É‘Î‚µ‚Äƒpƒ[‹Èü‚ª‰Eã‚ª‚è‚ÉƒNƒƒX‚·‚é“_‚ğ’T‚·
-  ;# vot‚©‚ç‰E‚És‚«Aƒpƒ[‚ª‰Eã‚ª‚è‚Éè‡’l‚ğ’´‚¦‚éŠ‚Ü‚ÅˆÚ“®‚·‚é
-  ;# ‚»‚Ì‚æ‚¤‚ÈêŠ‚ª•¡”‚ ‚éê‡‚Í‰š‚İ‚ª‚æ‚è[‚¢‚à‚Ì‚É‚·‚é
+  ;# é–¾å€¤ã«å¯¾ã—ã¦ãƒ‘ãƒ¯ãƒ¼æ›²ç·šãŒå³ä¸ŠãŒã‚Šã«ã‚¯ãƒ­ã‚¹ã™ã‚‹ç‚¹ã‚’æ¢ã™
+  ;# votã‹ã‚‰å³ã«è¡Œãã€ãƒ‘ãƒ¯ãƒ¼ãŒå³ä¸ŠãŒã‚Šã«é–¾å€¤ã‚’è¶…ãˆã‚‹æ‰€ã¾ã§ç§»å‹•ã™ã‚‹
+  ;# ãã®ã‚ˆã†ãªå ´æ‰€ãŒè¤‡æ•°ã‚ã‚‹å ´åˆã¯å‡¹ã¿ãŒã‚ˆã‚Šæ·±ã„ã‚‚ã®ã«ã™ã‚‹
   set vLow [expr $aveP - $genParam(vLow)]
   set powOld $vLow
-  set pn -1                         ;# æs”­ºˆÊ’u‚ğ“ü‚ê‚é•Ï”
-  set pnMin     10001               ;# æs”­º‘O‚Ì‰š‚İ‚Ì[‚³
+  set pn -1                         ;# å…ˆè¡Œç™ºå£°ä½ç½®ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
+  set pnMin     10001               ;# å…ˆè¡Œç™ºå£°å‰ã®å‡¹ã¿ã®æ·±ã•
   set powNowMin 10000
   for {set i 0} {$i < [llength $pw]} {incr i} {
     set powNow [lindex $pw $i]
     if {$powNow < $powNowMin} {
-      set powNowMin $powNow         ;# ‰š‚İ‚Ì’l‚ğ‹‚ß‚Ä‚¢‚­
+      set powNowMin $powNow         ;# å‡¹ã¿ã®å€¤ã‚’æ±‚ã‚ã¦ã„ã
     }
     if {$powOld < $vLow && $powNow >= $vLow && $powNowMin < $pnMin} {
       set pn $i
-      set pnMin $powNowMin       ;# ‰š‚İ‚Ì’l‚ğ•Û‘¶
-      set powNowMin 10000        ;# Ä‰Šú‰»
+      set pnMin $powNowMin       ;# å‡¹ã¿ã®å€¤ã‚’ä¿å­˜
+      set powNowMin 10000        ;# å†åˆæœŸåŒ–
     }
     set powOld $powNow
   }
 
   #if {$pn < 0 && [expr $genParam(avePPrev) - $genParam(vLow) - $aveP] > 0} {
-  #  ;# ƒpƒ[‰š‚İ‚ğŒ©‚Â‚¯‚ç‚ê‚¸A‚©‚Âæsƒ‚[ƒ‰‚æ‚è“–ŠYƒ‚[ƒ‰‚Ì•½‹Ïƒpƒ[‚ª‚ ‚é’ö“x¬‚³‚¢ê‡A
-  #  ;# vot‚©‚ç‰E‚És‚«Aƒpƒ[‹Èü‚ª“–ŠYƒ‚[ƒ‰‚Ì•½‹Ïƒpƒ[‚ÉƒNƒƒX‚·‚é“_‚ğ’T‚·
+  #  ;# ãƒ‘ãƒ¯ãƒ¼å‡¹ã¿ã‚’è¦‹ã¤ã‘ã‚‰ã‚Œãšã€ã‹ã¤å…ˆè¡Œãƒ¢ãƒ¼ãƒ©ã‚ˆã‚Šå½“è©²ãƒ¢ãƒ¼ãƒ©ã®å¹³å‡ãƒ‘ãƒ¯ãƒ¼ãŒã‚ã‚‹ç¨‹åº¦å°ã•ã„å ´åˆã€
+  #  ;# votã‹ã‚‰å³ã«è¡Œãã€ãƒ‘ãƒ¯ãƒ¼æ›²ç·šãŒå½“è©²ãƒ¢ãƒ¼ãƒ©ã®å¹³å‡ãƒ‘ãƒ¯ãƒ¼ã«ã‚¯ãƒ­ã‚¹ã™ã‚‹ç‚¹ã‚’æ¢ã™
   #  for {set i 0} {$i < [llength $pw]} {incr i} {
   #    set powNow [lindex $pw $i]
   #    if {$powNow <= $aveP} {
@@ -318,44 +318,44 @@ proc autoAdjustRen {fid Porg range} {
     set Pnew [expr $pn * $power(frameLength) + $Lsec]
   }
 
-#koko,‚à‚¤ˆê‚Â‹K‘¥‚ğì‚é‚È‚çAã‹Lƒpƒ[‚Ì‰š‚İ‚ªŒŸo‚Å‚«‚È‚¢ê‡‚É
-#Œ»İ‚ÌPnew‚Ì’¼‹ß‚Ì‰š‚İ(x(i-1) >= x(i) < x(i+1) ‚Èi)‚ğ’T‚·‚Æ‚©B
+#koko,ã‚‚ã†ä¸€ã¤è¦å‰‡ã‚’ä½œã‚‹ãªã‚‰ã€ä¸Šè¨˜ãƒ‘ãƒ¯ãƒ¼ã®å‡¹ã¿ãŒæ¤œå‡ºã§ããªã„å ´åˆã«
+#ç¾åœ¨ã®Pnewã®ç›´è¿‘ã®å‡¹ã¿(x(i-1) >= x(i) < x(i+1) ãªi)ã‚’æ¢ã™ã¨ã‹ã€‚
 
-#koko,•½‹Ïƒpƒ[‚ªæsƒ‚[ƒ‰‚æ‚è‘å‚«‚¢ê‡‚Ì‹K‘¥B
+#koko,å¹³å‡ãƒ‘ãƒ¯ãƒ¼ãŒå…ˆè¡Œãƒ¢ãƒ¼ãƒ©ã‚ˆã‚Šå¤§ãã„å ´åˆã®è¦å‰‡ã€‚
 
-  set genParam(avePPrev) $aveP    ;# Ÿ‰ñ‚Ì„’è‚Ì‚½‚ß‚É•½‹Ïƒpƒ[‚ğ•Û‘¶
+  set genParam(avePPrev) $aveP    ;# æ¬¡å›ã®æ¨å®šã®ãŸã‚ã«å¹³å‡ãƒ‘ãƒ¯ãƒ¼ã‚’ä¿å­˜
  
-  ;# Œ»İˆÊ’u‚ªæs”­º‚É‚È‚é‚½‚ß‚Ì•â³—Ê(sec)‚ğ•Ô‚·
+  ;# ç¾åœ¨ä½ç½®ãŒå…ˆè¡Œç™ºå£°ã«ãªã‚‹ãŸã‚ã®è£œæ­£é‡(sec)ã‚’è¿”ã™
   return [expr $Pnew - $Porg]
 }
 
 #---------------------------------------------------
-# ‚à‚µS‚ª•‰‚È‚ç‘¼‚Ìƒpƒ‰ƒ[ƒ^ˆÊ’u‚ª•Ï‚í‚ç‚È‚¢‚æ‚¤‚ÉS=0‚É‚·‚é
-# ¦–{ƒ‹[ƒ`ƒ“‚Í˜A‘±‰¹—p(genParam—p)
-# ¦–{ƒ‹[ƒ`ƒ“‚Å‚ÍparamU‚Ì‚İ’ù³‚µAparamS‚É‚Í”½‰f‚³‚¹‚È‚¢‚±‚Æ‚É’ˆÓ
+# ã‚‚ã—SãŒè² ãªã‚‰ä»–ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä½ç½®ãŒå¤‰ã‚ã‚‰ãªã„ã‚ˆã†ã«S=0ã«ã™ã‚‹
+# â€»æœ¬ãƒ«ãƒ¼ãƒãƒ³ã¯é€£ç¶šéŸ³ç”¨(genParamç”¨)
+# â€»æœ¬ãƒ«ãƒ¼ãƒãƒ³ã§ã¯paramUã®ã¿è¨‚æ­£ã—ã€paramSã«ã¯åæ˜ ã•ã›ãªã„ã“ã¨ã«æ³¨æ„
 #
 proc setSto0 {r} {
   global paramU
 
-  if {$paramU($r,1) < 0} {     ;# S < 0 ‚È‚ç
-    ;# E(•‰) ‚Ì’l‚ğC³
+  if {$paramU($r,1) < 0} {     ;# S < 0 ãªã‚‰
+    ;# E(è² ) ã®å€¤ã‚’ä¿®æ­£
     set paramU($r,5) [cut3 [expr $paramU($r,5) - $paramU($r,1)]]
-    ;# C ‚Ì’l‚ğC³
+    ;# C ã®å€¤ã‚’ä¿®æ­£
     set paramU($r,4) [cut3 [expr $paramU($r,4) + $paramU($r,1)]]
-    ;# P ‚Ì’l‚ğC³
+    ;# P ã®å€¤ã‚’ä¿®æ­£
     set paramU($r,3) [cut3 [expr $paramU($r,3) + $paramU($r,1)]]
-    ;# O ‚Ì’l‚ğC³
+    ;# O ã®å€¤ã‚’ä¿®æ­£
     set paramU($r,2) [cut3 [expr $paramU($r,2) + $paramU($r,1)]]
     if {$paramU($r,2) < 0} {
       set paramU($r,2) 0
     }
-    ;# S ‚ğ0‚É‚·‚é
+    ;# S ã‚’0ã«ã™ã‚‹
     set paramU($r,1) 0
   }
 }
 
 #---------------------------------------------------
-# ˜A‘±”­º‚Ìƒpƒ‰ƒ[ƒ^‚ğ©“®¶¬‚·‚é(OREMO—p)
+# é€£ç¶šç™ºå£°ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è‡ªå‹•ç”Ÿæˆã™ã‚‹(OREMOç”¨)
 #
 proc doGenParamForOREMO {} {
   global genParam v paramS paramU paramUsize t
@@ -370,51 +370,51 @@ proc doGenParamForOREMO {} {
   initParamU 1
   snack::sound sWork
 
-  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1”‚Ì’·‚³[msec]‚ğ‹‚ß‚é
+  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1æ‹ã®é•·ã•[msec]ã‚’æ±‚ã‚ã‚‹
 
-  # 1ƒ‚[ƒ‰–Ú‚ÌŠJnˆÊ’u[ms]‚ğ‹‚ß‚é
+  # 1ãƒ¢ãƒ¼ãƒ©ç›®ã®é–‹å§‹ä½ç½®[ms]ã‚’æ±‚ã‚ã‚‹
   if {$genParam(SU) == "msec"} {
     set Sstart $genParam(S)
   } else {
-    set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1”‚Ì’·‚³[msec]‚ğ‹‚ß‚é
+    set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1æ‹ã®é•·ã•[msec]ã‚’æ±‚ã‚ã‚‹
     set Sstart [expr $genParam(S) * $mspb]
   }
 
   initProgressWindow
   set procStart [clock seconds]
 
-  array unset aliasChoufuku   ;# ƒGƒCƒŠƒAƒXd•¡”‚ğ“ü‚ê‚é
+  array unset aliasChoufuku   ;# ã‚¨ã‚¤ãƒªã‚¢ã‚¹é‡è¤‡æ•°ã‚’å…¥ã‚Œã‚‹
   set recListMax [llength $recList]
   for {set recListSeq 0} {$recListSeq < $recListMax} {incr recListSeq} {
     set fid [lindex $recList $recListSeq]
     set S $Sstart
     set morae [getMorae [string trimleft $fid "_"]]
-    set genParam(avePPrev) 0    ;# •½‹Ïƒpƒ[‚ğ‰Šú‰»
+    set genParam(avePPrev) 0    ;# å¹³å‡ãƒ‘ãƒ¯ãƒ¼ã‚’åˆæœŸåŒ–
     set fname ""
     set fnameOld ""
     for {set i 0} {$i < [llength $morae]} {incr i} {
-      ;# “–ŠYƒ‚[ƒ‰‚ª‹x•„(_)‚Å‚ ‚ê‚ÎS‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®‚µ‚ÄŸ‚Ìƒ‚[ƒ‰‚Ö
+      ;# å½“è©²ãƒ¢ãƒ¼ãƒ©ãŒä¼‘ç¬¦(_)ã§ã‚ã‚Œã°Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•ã—ã¦æ¬¡ã®ãƒ¢ãƒ¼ãƒ©ã¸
       set mora [lindex $morae $i]
       if {$mora == "_"} {
-        set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
-        continue                  ;# “o˜^‚¹‚¸Ÿ‚Ìƒ‚[ƒ‰‚Ö
+        set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
+        continue                  ;# ç™»éŒ²ã›ãšæ¬¡ã®ãƒ¢ãƒ¼ãƒ©ã¸
       }
-      ;# ƒGƒCƒŠƒAƒX‚ÌŒˆ’è
+      ;# ã‚¨ã‚¤ãƒªã‚¢ã‚¹ã®æ±ºå®š
       set alias [getRenAlias $morae $i]
       if {$genParam(useAliasMax) && [array names aliasChoufuku $alias] != ""} {
         incr aliasChoufuku($alias)
         if {$genParam(aliasMax) <= 0 || $aliasChoufuku($alias) <= $genParam(aliasMax)} {
           set alias "$alias$aliasChoufuku($alias)"
         } else {
-          set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
-          continue  ;# d•¡‚ªãŒÀ‚ğ’´‚¦‚½‚Ì‚Å“o˜^‚¹‚¸Ÿ‚ÖB
+          set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
+          continue  ;# é‡è¤‡ãŒä¸Šé™ã‚’è¶…ãˆãŸã®ã§ç™»éŒ²ã›ãšæ¬¡ã¸ã€‚
         }
       } else {
         set aliasChoufuku($alias) 1
       }
-      # S‚ÌˆÊ’u•â³
+      # Sã®ä½ç½®è£œæ­£
       if $genParam(autoAdjustRen) {
-        ;# æs”­ºˆÊ’u‚ğ©“®„’è‚µA‚»‚Ì·•ª‚ğS‚É‰Á‚¦‚é
+        ;# å…ˆè¡Œç™ºå£°ä½ç½®ã‚’è‡ªå‹•æ¨å®šã—ã€ãã®å·®åˆ†ã‚’Sã«åŠ ãˆã‚‹
         set Psec [expr ($S + $genParam(P)) / 1000.0]
         set range [expr $genParam(sRange) / 1000.0]
         set S [cut3 [expr $S + 1000.0 * [autoAdjustRen $fid $Psec $range]]]
@@ -426,13 +426,13 @@ proc doGenParamForOREMO {} {
       set paramU($paramUsize,5) $genParam(E)   ;# E
       set paramU($paramUsize,3) $genParam(P)   ;# P
       set paramU($paramUsize,2) $genParam(O)   ;# O
-      set paramU($paramUsize,R) $recListSeq    ;# recList‚Ì”z—ñ”Ô†
+      set paramU($paramUsize,R) $recListSeq    ;# recListã®é…åˆ—ç•ªå·
 
-      setSto0 $paramUsize    ;# S‚ª•‰‚Ìê‡‚Í‘¼‚Ìƒpƒ‰ƒ[ƒ^ˆÊ’u‚ğ“®‚©‚³‚¸0‚ÉC³
+      setSto0 $paramUsize    ;# SãŒè² ã®å ´åˆã¯ä»–ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä½ç½®ã‚’å‹•ã‹ã•ãš0ã«ä¿®æ­£
 
-      set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
+      set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
 
-      ;# paramS‚ğ‹‚ß‚é
+      ;# paramSã‚’æ±‚ã‚ã‚‹
       set fname "$v(saveDir)/$fid.$v(ext)"
       if [file exists "$fname"] {
         if {$fname != $fnameOld} {
@@ -448,8 +448,8 @@ proc doGenParamForOREMO {} {
 
       incr paramUsize
     }
-    # ‚à‚µwavƒtƒ@ƒCƒ‹–¼‚ªu‘§.wavv‚È‚Ç•½‰¼–¼‚ÌˆêØ‚È‚¢–¼‘O‚¾‚Á‚½ê‡Aã‚Ìfor•¶‚ªÀs‚³‚ê‚¸
-    # oto.ini‚Éwav‚ÌƒGƒ“ƒgƒŠ©‘Ì‚ª–³‚­‚È‚Á‚Ä‚µ‚Ü‚¤B‚»‚±‚ÅˆÈ‰º‚ÅƒGƒ“ƒgƒŠ‚ğˆê‚Â’Ç‰Á‚·‚éB
+    # ã‚‚ã—wavãƒ•ã‚¡ã‚¤ãƒ«åãŒã€Œæ¯.wavã€ãªã©å¹³ä»®åã®ä¸€åˆ‡ãªã„åå‰ã ã£ãŸå ´åˆã€ä¸Šã®foræ–‡ãŒå®Ÿè¡Œã•ã‚Œãš
+    # oto.iniã«wavã®ã‚¨ãƒ³ãƒˆãƒªè‡ªä½“ãŒç„¡ããªã£ã¦ã—ã¾ã†ã€‚ãã“ã§ä»¥ä¸‹ã§ã‚¨ãƒ³ãƒˆãƒªã‚’ä¸€ã¤è¿½åŠ ã™ã‚‹ã€‚
     if {[llength $morae] <= 0} {
       set paramU($paramUsize,0) $fid           ;# fid
       set paramU($paramUsize,6) ""             ;# A
@@ -458,11 +458,11 @@ proc doGenParamForOREMO {} {
       set paramU($paramUsize,5) 0              ;# E
       set paramU($paramUsize,3) 0              ;# P
       set paramU($paramUsize,2) 0              ;# O
-      set paramU($paramUsize,R) $recListSeq    ;# recList‚Ì”z—ñ”Ô†
+      set paramU($paramUsize,R) $recListSeq    ;# recListã®é…åˆ—ç•ªå·
       incr paramUsize
     }
 
-    # MFCC‚ÉŠî‚Ã‚­S‚ÌˆÊ’u•â³
+    # MFCCã«åŸºã¥ãSã®ä½ç½®è£œæ­£
     if {$genParam(autoAdjustRen2) && [llength $morae] > 0} {
       autoAdjustRen2 [expr $paramUsize - [llength $morae]]  [expr $paramUsize - 1]
     }
@@ -476,7 +476,7 @@ proc doGenParamForOREMO {} {
 }
 
 #---------------------------------------------------
-# ˜A‘±”­º‚Ìƒpƒ‰ƒ[ƒ^‚ğ©“®¶¬‚·‚é
+# é€£ç¶šç™ºå£°ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è‡ªå‹•ç”Ÿæˆã™ã‚‹
 #
 proc doGenParam {} {
   global genParam v paramS paramU paramUsize t
@@ -490,53 +490,53 @@ proc doGenParam {} {
   initParamU 1
   snack::sound sWork
 
-  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1”‚Ì’·‚³[msec]‚ğ‹‚ß‚é
+  set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1æ‹ã®é•·ã•[msec]ã‚’æ±‚ã‚ã‚‹
 
-  # 1ƒ‚[ƒ‰–Ú‚ÌŠJnˆÊ’u[ms]‚ğ‹‚ß‚é
+  # 1ãƒ¢ãƒ¼ãƒ©ç›®ã®é–‹å§‹ä½ç½®[ms]ã‚’æ±‚ã‚ã‚‹
   if {$genParam(SU) == "msec"} {
     set Sstart $genParam(S)
   } else {
-    set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1”‚Ì’·‚³[msec]‚ğ‹‚ß‚é
+    set mspb [expr 60000.0 / $genParam(bpm)]  ;# 1æ‹ã®é•·ã•[msec]ã‚’æ±‚ã‚ã‚‹
     set Sstart [expr $genParam(S) * $mspb]
   }
 
   initProgressWindow
   set procStart [clock seconds]
 
-  array unset aliasChoufuku   ;# ƒGƒCƒŠƒAƒXd•¡”‚ğ“ü‚ê‚é
+  array unset aliasChoufuku   ;# ã‚¨ã‚¤ãƒªã‚¢ã‚¹é‡è¤‡æ•°ã‚’å…¥ã‚Œã‚‹
   set recListMax [llength $recList]
   for {set recListSeq 0} {$recListSeq < $recListMax} {incr recListSeq} {
     set fid [lindex $recList $recListSeq]
-#koko,•”•ª„’è‰Â”\‚É‚·‚×‚«B
+#koko,éƒ¨åˆ†æ¨å®šå¯èƒ½ã«ã™ã¹ãã€‚
     set S $Sstart
     set morae [getMorae [string trimleft $fid "_"]]
-    set genParam(avePPrev) 0    ;# •½‹Ïƒpƒ[‚ğ‰Šú‰»
+    set genParam(avePPrev) 0    ;# å¹³å‡ãƒ‘ãƒ¯ãƒ¼ã‚’åˆæœŸåŒ–
     set fname ""
     set fnameOld ""
     for {set i 0} {$i < [llength $morae]} {incr i} {
-      ;# “–ŠYƒ‚[ƒ‰‚ª‹x•„(_)‚Å‚ ‚ê‚ÎS‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®‚µ‚ÄŸ‚Ìƒ‚[ƒ‰‚Ö
+      ;# å½“è©²ãƒ¢ãƒ¼ãƒ©ãŒä¼‘ç¬¦(_)ã§ã‚ã‚Œã°Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•ã—ã¦æ¬¡ã®ãƒ¢ãƒ¼ãƒ©ã¸
       set mora [lindex $morae $i]
       if {$mora == "_"} {
-        set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
-        continue                  ;# “o˜^‚¹‚¸Ÿ‚Ìƒ‚[ƒ‰‚Ö
+        set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
+        continue                  ;# ç™»éŒ²ã›ãšæ¬¡ã®ãƒ¢ãƒ¼ãƒ©ã¸
       }
-      ;# ƒGƒCƒŠƒAƒX‚ÌŒˆ’è
+      ;# ã‚¨ã‚¤ãƒªã‚¢ã‚¹ã®æ±ºå®š
       set alias [getRenAlias $morae $i]
-      ;# ƒGƒCƒŠƒAƒXd•¡”‚ğƒ`ƒFƒbƒN
+      ;# ã‚¨ã‚¤ãƒªã‚¢ã‚¹é‡è¤‡æ•°ã‚’ãƒã‚§ãƒƒã‚¯
       if {$genParam(useAliasMax) && [array names aliasChoufuku $alias] != ""} {
         incr aliasChoufuku($alias)
         if {$genParam(aliasMax) <= 0 || $aliasChoufuku($alias) <= $genParam(aliasMax)} {
           set alias "$alias$aliasChoufuku($alias)"
         } else {
-          set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
-          continue                  ;# d•¡‚ªãŒÀ‚ğ’´‚¦‚½‚Ì‚Å“o˜^‚¹‚¸Ÿ‚ÖB
+          set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
+          continue                  ;# é‡è¤‡ãŒä¸Šé™ã‚’è¶…ãˆãŸã®ã§ç™»éŒ²ã›ãšæ¬¡ã¸ã€‚
         }
       } else {
         set aliasChoufuku($alias) 1
       }
-      # S‚ÌˆÊ’u•â³
+      # Sã®ä½ç½®è£œæ­£
       if $genParam(autoAdjustRen) {
-        ;# æs”­ºˆÊ’u‚ğ©“®„’è‚µA‚»‚Ì·•ª‚ğS‚É‰Á‚¦‚é
+        ;# å…ˆè¡Œç™ºå£°ä½ç½®ã‚’è‡ªå‹•æ¨å®šã—ã€ãã®å·®åˆ†ã‚’Sã«åŠ ãˆã‚‹
         set Psec [expr ($S + $genParam(P)) / 1000.0]
         set range [expr $genParam(sRange) / 1000.0]
         set S [cut3 [expr $S + 1000.0 * [autoAdjustRen $fid $Psec $range]]]
@@ -548,13 +548,13 @@ proc doGenParam {} {
       set paramU($paramUsize,5) $genParam(E)   ;# E
       set paramU($paramUsize,3) $genParam(P)   ;# P
       set paramU($paramUsize,2) $genParam(O)   ;# O
-      set paramU($paramUsize,R) $recListSeq    ;# recList‚Ì”z—ñ”Ô†
+      set paramU($paramUsize,R) $recListSeq    ;# recListã®é…åˆ—ç•ªå·
 
-      setSto0 $paramUsize    ;# S‚ª•‰‚Ìê‡‚Í‘¼‚Ìƒpƒ‰ƒ[ƒ^ˆÊ’u‚ğ“®‚©‚³‚¸0‚ÉC³
+      setSto0 $paramUsize    ;# SãŒè² ã®å ´åˆã¯ä»–ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä½ç½®ã‚’å‹•ã‹ã•ãš0ã«ä¿®æ­£
 
-      set S [expr $S + $mspb]   ;# S‚ğŸ‚ÌˆÊ’u‚ÉˆÚ“®
+      set S [expr $S + $mspb]   ;# Sã‚’æ¬¡ã®ä½ç½®ã«ç§»å‹•
 
-      ;# paramS‚ğ‹‚ß‚é
+      ;# paramSã‚’æ±‚ã‚ã‚‹
       set fname "$v(saveDir)/$fid.$v(ext)"
       if [file exists "$fname"] {
         if {$fname != $fnameOld} {
@@ -570,8 +570,8 @@ proc doGenParam {} {
 
       incr paramUsize
     }
-    # ‚à‚µwavƒtƒ@ƒCƒ‹–¼‚ªu‘§.wavv‚È‚Ç•½‰¼–¼‚ÌˆêØ‚È‚¢–¼‘O‚¾‚Á‚½ê‡Aã‚Ìfor•¶‚ªÀs‚³‚ê‚¸
-    # oto.ini‚Éwav‚ÌƒGƒ“ƒgƒŠ©‘Ì‚ª–³‚­‚È‚Á‚Ä‚µ‚Ü‚¤B‚»‚±‚ÅˆÈ‰º‚ÅƒGƒ“ƒgƒŠ‚ğˆê‚Â’Ç‰Á‚·‚éB
+    # ã‚‚ã—wavãƒ•ã‚¡ã‚¤ãƒ«åãŒã€Œæ¯.wavã€ãªã©å¹³ä»®åã®ä¸€åˆ‡ãªã„åå‰ã ã£ãŸå ´åˆã€ä¸Šã®foræ–‡ãŒå®Ÿè¡Œã•ã‚Œãš
+    # oto.iniã«wavã®ã‚¨ãƒ³ãƒˆãƒªè‡ªä½“ãŒç„¡ããªã£ã¦ã—ã¾ã†ã€‚ãã“ã§ä»¥ä¸‹ã§ã‚¨ãƒ³ãƒˆãƒªã‚’ä¸€ã¤è¿½åŠ ã™ã‚‹ã€‚
     if {[llength $morae] <= 0} {
       set paramU($paramUsize,0) $fid           ;# fid
       set paramU($paramUsize,6) ""             ;# A
@@ -580,11 +580,11 @@ proc doGenParam {} {
       set paramU($paramUsize,5) 0              ;# E
       set paramU($paramUsize,3) 0              ;# P
       set paramU($paramUsize,2) 0              ;# O
-      set paramU($paramUsize,R) $recListSeq    ;# recList‚Ì”z—ñ”Ô†
+      set paramU($paramUsize,R) $recListSeq    ;# recListã®é…åˆ—ç•ªå·
       incr paramUsize
     }
 
-    # MFCC‚ÉŠî‚Ã‚­S‚ÌˆÊ’u•â³
+    # MFCCã«åŸºã¥ãSã®ä½ç½®è£œæ­£
     if {$genParam(autoAdjustRen2) && [llength $morae] > 0} {
       autoAdjustRen2 [expr $paramUsize - [llength $morae]]  [expr $paramUsize - 1]
     }
@@ -595,26 +595,26 @@ proc doGenParam {} {
 
   deleteProgressWindow
   resetDisplay
-  ;# ˆê——•\‚ÌƒTƒCƒY‚ğXV‚·‚é
+  ;# ä¸€è¦§è¡¨ã®ã‚µã‚¤ã‚ºã‚’æ›´æ–°ã™ã‚‹
   if [winfo exists .entpwindow] {
     .entpwindow.t configure -rows $paramUsize
     setCellSelection
   }
   set v(paramChanged) 1
   setEPWTitle
-  set paramU(size_1) [expr $paramUsize - 1]   ;# •\¦—p‚És”-1‚µ‚½’l‚ğ•Û‘¶
+  set paramU(size_1) [expr $paramUsize - 1]   ;# è¡¨ç¤ºç”¨ã«è¡Œæ•°-1ã—ãŸå€¤ã‚’ä¿å­˜
   set v(msg) [eval format $t(doGenParam,doneMsg)]
 }
 
 #---------------------------------------------------
-# MFCC‚ÉŠî‚Ã‚­S‚ÌˆÊ’u•â³
+# MFCCã«åŸºã¥ãSã®ä½ç½®è£œæ­£
 #
-proc autoAdjustRen2 {start end} {   ;# start”Ô–Ú‚©‚çend”Ô–Ú(end-1‚Ü‚Å‚Å‚Í‚È‚¢)‚Ìƒf[ƒ^‚ğˆ—‚·‚é
+proc autoAdjustRen2 {start end} {   ;# startç•ªç›®ã‹ã‚‰endç•ªç›®(end-1ã¾ã§ã§ã¯ãªã„)ã®ãƒ‡ãƒ¼ã‚¿ã‚’å‡¦ç†ã™ã‚‹
   global genParam v paramS paramU paramUsize t topdir
 
   set pattern [split $genParam(autoAdjustRen2Pattern) " "]
 
-  ;# “K—p‚·‚×‚«ƒ‚[ƒ‰‚ªˆê‚Â‚à‚È‚¯‚ê‚Îreturn
+  ;# é©ç”¨ã™ã¹ããƒ¢ãƒ¼ãƒ©ãŒä¸€ã¤ã‚‚ãªã‘ã‚Œã°return
   if {$genParam(autoAdjustRen2Pattern) != ""} {
     for {set f $start} {$f <= $end} {incr f} {
       set mora [lindex [getMorae [lindex [split $paramU($f,6) " "] 1]] 0]
@@ -639,7 +639,7 @@ proc autoAdjustRen2 {start end} {   ;# start”Ô–Ú‚©‚çend”Ô–Ú(end-1‚Ü‚Å‚Å‚Í‚È‚¢)‚Ì
       set newP [split $ret "\n"]
       set r $f
       for {set i 0} {$i < [llength $newP]} {incr i} {
-        ;# “K—p‚·‚×‚«ƒ‚[ƒ‰‚Å‚È‚¯‚ê‚Îskip
+        ;# é©ç”¨ã™ã¹ããƒ¢ãƒ¼ãƒ©ã§ãªã‘ã‚Œã°skip
         set ftmp [expr $f + $i]
         set pre  [lindex [split $paramU($ftmp,6) " "] 0]
         set mora [lindex [getMorae [lindex [split $paramU($ftmp,6) " "] 1]] 0]
@@ -667,7 +667,7 @@ proc autoAdjustRen2 {start end} {   ;# start”Ô–Ú‚©‚çend”Ô–Ú(end-1‚Ü‚Å‚Å‚Í‚È‚¢)‚Ì
 }
 
 #---------------------------------------------------
-# ƒ‚[ƒ‰—ñmorae‚Ìw’è‚µ‚½ˆÊ’ui‚©‚ç˜A‘±‰¹—p‚ÌƒGƒCƒŠƒAƒX(ua ‚¢v‚È‚Ç)‚ğ‹‚ß‚Ä•Ô‚·
+# ãƒ¢ãƒ¼ãƒ©åˆ—moraeã®æŒ‡å®šã—ãŸä½ç½®iã‹ã‚‰é€£ç¶šéŸ³ç”¨ã®ã‚¨ã‚¤ãƒªã‚¢ã‚¹(ã€Œa ã„ã€ãªã©)ã‚’æ±‚ã‚ã¦è¿”ã™
 #
 proc getRenAlias {morae i} {
   global genParam v paramS paramU paramUsize t
@@ -682,7 +682,7 @@ proc getRenAlias {morae i} {
 }
 
 #---------------------------------------------------
-# •¶š—ñ‚ğ1ƒ‚[ƒ‰‚É•ª‰ğ‚µ‚Ä•Ô‚·
+# æ–‡å­—åˆ—ã‚’1ãƒ¢ãƒ¼ãƒ©ã«åˆ†è§£ã—ã¦è¿”ã™
 #
 proc getMorae {inMorae} {
   set morae {}
@@ -690,7 +690,7 @@ proc getMorae {inMorae} {
     set char [string range $inMorae $i $i]
     if [isKana $char] {
       if [isMora $char] {
-        ;# Œ»İ‚Ì$char‚Íˆêƒ‚[ƒ‰‚È‚Ì‚ÅƒŠƒXƒg‚É’Ç‰Á
+        ;# ç¾åœ¨ã®$charã¯ä¸€ãƒ¢ãƒ¼ãƒ©ãªã®ã§ãƒªã‚¹ãƒˆã«è¿½åŠ 
         lappend morae $char
       } else {
         set last [expr [llength $morae] -1]
@@ -703,23 +703,23 @@ proc getMorae {inMorae} {
 }
 
 #---------------------------------------------------
-# ˆêƒ‚[ƒ‰‚Ì•ê‰¹•”‚Ì‰¹‘f‚ğ•Ô‚·
+# ä¸€ãƒ¢ãƒ¼ãƒ©ã®æ¯éŸ³éƒ¨ã®éŸ³ç´ ã‚’è¿”ã™
 #
 proc getVowel {mora} {
   set last [expr [string length $mora] -1]
   set char [string range $mora $last $last]
 
-  set vA {‚  ‚© ‚³ ‚½ ‚È ‚Í ‚Ü ‚â ‚ç ‚í ‚ª ‚´ ‚¾ ‚Î ‚Ï ‚á ‚Ÿ ‚ì \
-          ƒA ƒJ ƒT ƒ^ ƒi ƒn ƒ} ƒ„ ƒ‰ ƒ ƒK ƒU ƒ_ ƒo ƒp ƒƒ ƒ@ ƒ }
-  set vI {‚¢ ‚« ‚µ ‚¿ ‚É ‚Ğ ‚İ    ‚è    ‚¬ ‚¶ ‚À ‚Ñ ‚Ò    ‚¡ ‚î \
-          ƒC ƒL ƒV ƒ` ƒj ƒq ƒ~    ƒŠ    ƒM ƒW ƒa ƒr ƒs    ƒB ƒ }
-  set vU {‚¤ ‚­ ‚· ‚Â ‚Ê ‚Ó ‚Ş ‚ä ‚é    ƒ” ‚® ‚¸ ‚Ã ‚Ô ‚Õ ‚£ ‚ã ‚Á \
-          ƒE ƒN ƒX ƒc ƒk ƒt ƒ€ ƒ† ƒ‹       ƒO ƒY ƒd ƒu ƒv ƒD ƒ… ƒb }
-  set vE {‚¦ ‚¯ ‚¹ ‚Ä ‚Ë ‚Ö ‚ß    ‚ê    ‚° ‚º ‚Å ‚× ‚Ø    ‚¥ ‚ï \
-          ƒG ƒP ƒZ ƒe ƒl ƒw ƒ    ƒŒ    ƒQ ƒ[ ƒf ƒx ƒy    ƒF ƒ‘ }
-  set vO {‚¨ ‚± ‚» ‚Æ ‚Ì ‚Ù ‚à ‚æ ‚ë ‚ğ ‚² ‚¼ ‚Ç ‚Ú ‚Û ‚å ‚§    \
-          ƒI ƒR ƒ\ ƒg ƒm ƒz ƒ‚ ƒˆ ƒ ƒ’ ƒS ƒ] ƒh ƒ{ ƒ| ƒ‡ ƒH    }
-  set vN {‚ñ ƒ“}
+  set vA {ã‚ ã‹ ã• ãŸ ãª ã¯ ã¾ ã‚„ ã‚‰ ã‚ ãŒ ã– ã  ã° ã± ã‚ƒ ã ã‚ \
+          ã‚¢ ã‚« ã‚µ ã‚¿ ãƒŠ ãƒ ãƒ ãƒ¤ ãƒ© ãƒ¯ ã‚¬ ã‚¶ ãƒ€ ãƒ ãƒ‘ ãƒ£ ã‚¡ ãƒ® }
+  set vI {ã„ ã ã— ã¡ ã« ã² ã¿    ã‚Š    ã ã˜ ã¢ ã³ ã´    ãƒ ã‚ \
+          ã‚¤ ã‚­ ã‚· ãƒ ãƒ‹ ãƒ’ ãƒŸ    ãƒª    ã‚® ã‚¸ ãƒ‚ ãƒ“ ãƒ”    ã‚£ ãƒ° }
+  set vU {ã† ã ã™ ã¤ ã¬ ãµ ã‚€ ã‚† ã‚‹    ãƒ´ ã ãš ã¥ ã¶ ã· ã… ã‚… ã£ \
+          ã‚¦ ã‚¯ ã‚¹ ãƒ„ ãƒŒ ãƒ• ãƒ  ãƒ¦ ãƒ«       ã‚° ã‚º ãƒ… ãƒ– ãƒ— ã‚¥ ãƒ¥ ãƒƒ }
+  set vE {ãˆ ã‘ ã› ã¦ ã­ ã¸ ã‚    ã‚Œ    ã’ ãœ ã§ ã¹ ãº    ã‡ ã‚‘ \
+          ã‚¨ ã‚± ã‚» ãƒ† ãƒ ãƒ˜ ãƒ¡    ãƒ¬    ã‚² ã‚¼ ãƒ‡ ãƒ™ ãƒš    ã‚§ ãƒ± }
+  set vO {ãŠ ã“ ã ã¨ ã® ã» ã‚‚ ã‚ˆ ã‚ ã‚’ ã” ã ã© ã¼ ã½ ã‚‡ ã‰    \
+          ã‚ª ã‚³ ã‚½ ãƒˆ ãƒ ãƒ› ãƒ¢ ãƒ¨ ãƒ­ ãƒ² ã‚´ ã‚¾ ãƒ‰ ãƒœ ãƒ ãƒ§ ã‚©    }
+  set vN {ã‚“ ãƒ³}
   set vR {_}
 
   if {[lsearch $vA $char] >= 0} { return "a" }
@@ -728,24 +728,24 @@ proc getVowel {mora} {
   if {[lsearch $vE $char] >= 0} { return "e" }
   if {[lsearch $vO $char] >= 0} { return "o" }
   if {[lsearch $vN $char] >= 0} { return "n" }
-  if {[lsearch $vR $char] >= 0} { return "-" }   ;# ‹x•„‚¾‚Á‚½ê‡
+  if {[lsearch $vR $char] >= 0} { return "-" }   ;# ä¼‘ç¬¦ã ã£ãŸå ´åˆ
 }
 
 #---------------------------------------------------
-# char‚ª•½‰¼–¼‚Ü‚½‚Í•Ğ‰¼–¼‚È‚ç1‚ğA‚»‚êˆÈŠO‚È‚ç0‚ğ•Ô‚·
+# charãŒå¹³ä»®åã¾ãŸã¯ç‰‡ä»®åãªã‚‰1ã‚’ã€ãã‚Œä»¥å¤–ãªã‚‰0ã‚’è¿”ã™
 #
 proc isKana {char} {
-  set kanaList {‚  ‚© ‚³ ‚½ ‚È ‚Í ‚Ü ‚â ‚ç ‚í    ‚ª ‚´ ‚¾ ‚Î ‚Ï ‚á ‚Ÿ ‚ì \
-                ƒA ƒJ ƒT ƒ^ ƒi ƒn ƒ} ƒ„ ƒ‰ ƒ    ƒK ƒU ƒ_ ƒo ƒp ƒƒ ƒ@ ƒ \
-                ‚¢ ‚« ‚µ ‚¿ ‚É ‚Ğ ‚İ    ‚è       ‚¬ ‚¶ ‚À ‚Ñ ‚Ò    ‚¡ ‚î \
-                ƒC ƒL ƒV ƒ` ƒj ƒq ƒ~    ƒŠ       ƒM ƒW ƒa ƒr ƒs    ƒB ƒ \
-                ‚¤ ‚­ ‚· ‚Â ‚Ê ‚Ó ‚Ş ‚ä ‚é       ‚® ‚¸ ‚Ã ‚Ô ‚Õ ‚ã ‚£ ‚Á \
-                ƒE ƒN ƒX ƒc ƒk ƒt ƒ€ ƒ† ƒ‹    ƒ” ƒO ƒY ƒd ƒu ƒv ƒ… ƒD ƒb \
-                ‚¦ ‚¯ ‚¹ ‚Ä ‚Ë ‚Ö ‚ß    ‚ê       ‚° ‚º ‚Å ‚× ‚Ø    ‚¥ ‚ï \
-                ƒG ƒP ƒZ ƒe ƒl ƒw ƒ    ƒŒ       ƒQ ƒ[ ƒf ƒx ƒy    ƒF ƒ‘ \
-                ‚¨ ‚± ‚» ‚Æ ‚Ì ‚Ù ‚à ‚æ ‚ë ‚ğ    ‚² ‚¼ ‚Ç ‚Ú ‚Û ‚å ‚§    \
-                ƒI ƒR ƒ\ ƒg ƒm ƒz ƒ‚ ƒˆ ƒ ƒ’    ƒS ƒ] ƒh ƒ{ ƒ| ƒ‡ ƒH    \
-                ‚ñ ƒ“ J K ‹\
+  set kanaList {ã‚ ã‹ ã• ãŸ ãª ã¯ ã¾ ã‚„ ã‚‰ ã‚    ãŒ ã– ã  ã° ã± ã‚ƒ ã ã‚ \
+                ã‚¢ ã‚« ã‚µ ã‚¿ ãƒŠ ãƒ ãƒ ãƒ¤ ãƒ© ãƒ¯    ã‚¬ ã‚¶ ãƒ€ ãƒ ãƒ‘ ãƒ£ ã‚¡ ãƒ® \
+                ã„ ã ã— ã¡ ã« ã² ã¿    ã‚Š       ã ã˜ ã¢ ã³ ã´    ãƒ ã‚ \
+                ã‚¤ ã‚­ ã‚· ãƒ ãƒ‹ ãƒ’ ãƒŸ    ãƒª       ã‚® ã‚¸ ãƒ‚ ãƒ“ ãƒ”    ã‚£ ãƒ° \
+                ã† ã ã™ ã¤ ã¬ ãµ ã‚€ ã‚† ã‚‹       ã ãš ã¥ ã¶ ã· ã‚… ã… ã£ \
+                ã‚¦ ã‚¯ ã‚¹ ãƒ„ ãƒŒ ãƒ• ãƒ  ãƒ¦ ãƒ«    ãƒ´ ã‚° ã‚º ãƒ… ãƒ– ãƒ— ãƒ¥ ã‚¥ ãƒƒ \
+                ãˆ ã‘ ã› ã¦ ã­ ã¸ ã‚    ã‚Œ       ã’ ãœ ã§ ã¹ ãº    ã‡ ã‚‘ \
+                ã‚¨ ã‚± ã‚» ãƒ† ãƒ ãƒ˜ ãƒ¡    ãƒ¬       ã‚² ã‚¼ ãƒ‡ ãƒ™ ãƒš    ã‚§ ãƒ± \
+                ãŠ ã“ ã ã¨ ã® ã» ã‚‚ ã‚ˆ ã‚ ã‚’    ã” ã ã© ã¼ ã½ ã‚‡ ã‰    \
+                ã‚ª ã‚³ ã‚½ ãƒˆ ãƒ ãƒ› ãƒ¢ ãƒ¨ ãƒ­ ãƒ²    ã‚´ ã‚¾ ãƒ‰ ãƒœ ãƒ ãƒ§ ã‚©    \
+                ã‚“ ãƒ³ ã‚› ã‚œ Â°\
                 _ }
   if {[lsearch $kanaList $char] >= 0} {
     return 1
@@ -755,11 +755,11 @@ proc isKana {char} {
 }
 
 #---------------------------------------------------
-# char‚ªˆêƒ‚[ƒ‰‚È‚ç1‚ğAX‰¹‚È‚Ç‚È‚ç0‚ğ•Ô‚·
+# charãŒä¸€ãƒ¢ãƒ¼ãƒ©ãªã‚‰1ã‚’ã€æ‹—éŸ³ãªã©ãªã‚‰0ã‚’è¿”ã™
 #
 proc isMora {char} {
-  set notMora {‚Ÿ ‚¡ ‚£ ‚¥ ‚§ ‚á ‚ã ‚å ‚ì ‚Á \
-               ƒ@ ƒB ƒD ƒF ƒH ƒƒ ƒ… ƒ‡ ƒ ƒb J K ‹}
+  set notMora {ã ãƒ ã… ã‡ ã‰ ã‚ƒ ã‚… ã‚‡ ã‚ ã£ \
+               ã‚¡ ã‚£ ã‚¥ ã‚§ ã‚© ãƒ£ ãƒ¥ ãƒ§ ãƒ® ãƒƒ ã‚› ã‚œ Â°}
   if {[lsearch $notMora $char] >= 0} {
     return 0
   } else {
@@ -768,12 +768,12 @@ proc isMora {char} {
 }
 
 #---------------------------------------------------
-# ’P“Æ‰¹‚ÌUTAUŒ´‰¹ƒpƒ‰ƒ[ƒ^‚ğ„’è‚·‚éÛ‚Ìİ’è‘‹
+# å˜ç‹¬éŸ³ã®UTAUåŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ¨å®šã™ã‚‹éš›ã®è¨­å®šçª“
 #
 proc estimateParam {} {
   global epwindow power estimate v t
 
-  if [isExist $epwindow] return  ;# “ñd‹N“®‚ğ–h~
+  if [isExist $epwindow] return  ;# äºŒé‡èµ·å‹•ã‚’é˜²æ­¢
   toplevel $epwindow
   wm title $epwindow $t(estimateParam,title)
   wm resizable $epwindow 0 0
@@ -783,7 +783,7 @@ proc estimateParam {} {
   pack $w
   set row 0
 
-  ;# ƒpƒ[’Šo‚İ‚Ìİ’è
+  ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºåˆ»ã¿ã®è¨­å®š
   label $w.lfl -text $t(estimateParam,pFLen)
   entry $w.efl -textvar power(frameLength) \
     -validate all -validatecommand {
@@ -805,7 +805,7 @@ proc estimateParam {} {
   grid $w.lflu -sticky w -row $row -column 2 -columnspan 2
   incr row
 
-  ;# ƒvƒŠƒGƒ“ƒtƒ@ƒVƒX‚Ìİ’è
+  ;# ãƒ—ãƒªã‚¨ãƒ³ãƒ•ã‚¡ã‚·ã‚¹ã®è¨­å®š
   # frame $w.fem
   label $w.lem -text $t(estimateParam,preemph)
   entry $w.eem -textvar power(preemphasis)
@@ -813,7 +813,7 @@ proc estimateParam {} {
   grid $w.eem  -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# ƒpƒ[’Šo‘‹’·‚Ìİ’è
+  ;# ãƒ‘ãƒ¯ãƒ¼æŠ½å‡ºçª“é•·ã®è¨­å®š
   label $w.lwl -text $t(estimateParam,pWinLen)
   entry $w.ewlSec -textvar power(windowLength)
   label $w.lwlSec -text "(sec)"
@@ -822,7 +822,7 @@ proc estimateParam {} {
   grid $w.lwlSec   -sticky w -row $row -column 2 -columnspan 2
   incr row
 
-  ;# ‘‹‚Ì‘I‘ğ
+  ;# çª“ã®é¸æŠ
   # frame $w.fwn
   label $w.lwn -text $t(estimateParam,pWinkind)
   tk_optionMenu $w.mwn power(window) \
@@ -831,7 +831,7 @@ proc estimateParam {} {
   grid $w.mwn  -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# ”­˜b’†‚Æ‚İ‚È‚³‚ê‚éƒpƒ[‚Ìİ’è
+  ;# ç™ºè©±ä¸­ã¨ã¿ãªã•ã‚Œã‚‹ãƒ‘ãƒ¯ãƒ¼ã®è¨­å®š
   # frame $w.fhi
   label $w.lhi -text $t(estimateParam,pUttMin)
   entry $w.ehi -textvar power(uttHigh)
@@ -841,7 +841,7 @@ proc estimateParam {} {
   grid $w.lhiu -sticky w -row $row -column 2 -columnspan 2
   incr row
 
-  ;# ”­˜b’†‚Æ‚İ‚È‚³‚ê‚éŠÔ’·‚Ìİ’è
+  ;# ç™ºè©±ä¸­ã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·ã®è¨­å®š
   # frame $w.ful
   label $w.lul -text $t(estimateParam,pUttMinTime)
   entry $w.eulSec -textvar power(uttLengthSec) \
@@ -864,7 +864,7 @@ proc estimateParam {} {
   grid $w.lulSampu -sticky w -row $row -column 4
   incr row
 
-  ;# ”­º’†‚É¶‚¶‚éƒpƒ[‚Ì—h‚ç‚¬‚Ì‘å‚«‚³İ’è
+  ;# ç™ºå£°ä¸­ã«ç”Ÿã˜ã‚‹ãƒ‘ãƒ¯ãƒ¼ã®æºã‚‰ãã®å¤§ãã•è¨­å®š
   # frame $w.fhi
   label $w.lkp -text $t(estimateParam,uttLen)
   entry $w.ekp -textvar power(uttKeep)
@@ -874,7 +874,7 @@ proc estimateParam {} {
   grid $w.lkpu -sticky w -row $row -column 2 -columnspan 2
   incr row
 
-  ;# ƒ|[ƒY’†‚Æ‚İ‚È‚³‚ê‚éƒpƒ[‚Ìİ’è
+  ;# ãƒãƒ¼ã‚ºä¸­ã¨ã¿ãªã•ã‚Œã‚‹ãƒ‘ãƒ¯ãƒ¼ã®è¨­å®š
   # frame $w.flw
   label $w.llw -text $t(estimateParam,silMax)
   entry $w.elw -textvar power(uttLow)
@@ -884,7 +884,7 @@ proc estimateParam {} {
   grid $w.llwu -sticky w -row $row -column 2 -columnspan 2
   incr row
 
-  ;# •ê‰¹ƒpƒ[Å¬’l‚Ìİ’èi‚±‚Ì’l–¢–‚Íq‰¹•”‚Æ‚İ‚È‚·j
+  ;# æ¯éŸ³ãƒ‘ãƒ¯ãƒ¼æœ€å°å€¤ã®è¨­å®šï¼ˆã“ã®å€¤æœªæº€ã¯å­éŸ³éƒ¨ã¨ã¿ãªã™ï¼‰
   label $w.lmv -text $t(estimateParam,vLow)
   entry $w.emvSec -textvar power(vLow)
   label $w.lmvSec -text "(db)"
@@ -893,7 +893,7 @@ proc estimateParam {} {
   grid $w.lmvSec   -sticky w -row $row -column 2
   incr row
 
-  ;# ƒ|[ƒY‚Æ‚İ‚È‚³‚ê‚éŠÔ’·‚Ìİ’è
+  ;# ãƒãƒ¼ã‚ºã¨ã¿ãªã•ã‚Œã‚‹æ™‚é–“é•·ã®è¨­å®š
   # frame $w.fsl
   label $w.lsl -text $t(estimateParam,silMinTime)
   entry $w.eslSec -textvar power(silLengthSec) \
@@ -916,7 +916,7 @@ proc estimateParam {} {
   grid $w.lslSampu -sticky w -row $row -column 4
   incr row
 
-  ;# q‰¹’·Å¬’l‚Ìİ’èiq‰¹•”=0‚ÅUTAU‚ªƒGƒ‰[‚É‚È‚é‚Ì‚ğ‰ñ”ğ‚·‚é‚½‚ßj
+  ;# å­éŸ³é•·æœ€å°å€¤ã®è¨­å®šï¼ˆå­éŸ³éƒ¨=0ã§UTAUãŒã‚¨ãƒ©ãƒ¼ã«ãªã‚‹ã®ã‚’å›é¿ã™ã‚‹ãŸã‚ï¼‰
   label $w.lmc -text $t(estimateParam,minC)
   entry $w.emcSec -textvar estimate(minC)
   label $w.lmcSec -text "(sec)"
@@ -925,12 +925,12 @@ proc estimateParam {} {
   grid $w.lmcSec   -sticky w -row $row -column 2
   incr row
 
-  ;# F0‚ÉŠÖ‚·‚éà–¾•¶
+  ;# F0ã«é–¢ã™ã‚‹èª¬æ˜æ–‡
   label $w.lf0 -text $t(estimateParam,f0)
   grid $w.lf0      -sticky w -row $row -column 0 -columnspan 3
   incr row
 
-  ;# „’è‘ÎÛ‚Ìİ’è
+  ;# æ¨å®šå¯¾è±¡ã®è¨­å®š
   # frame $w.fem
   label $w.l$row -text $t(estimateParam,target)
   frame $w.fe$row
@@ -941,7 +941,7 @@ proc estimateParam {} {
   grid $w.fe$row -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# „’è‘ÎÛ‚Ìİ’è
+  ;# æ¨å®šå¯¾è±¡ã®è¨­å®š
   # frame $w.fem
   frame $w.fe$row
   checkbutton $w.fe$row.b -variable estimate(C)
@@ -950,7 +950,7 @@ proc estimateParam {} {
   grid $w.fe$row -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# „’è‘ÎÛ‚Ìİ’è
+  ;# æ¨å®šå¯¾è±¡ã®è¨­å®š
   # frame $w.fem
   frame $w.fe$row
   checkbutton $w.fe$row.b -variable estimate(E)
@@ -959,7 +959,7 @@ proc estimateParam {} {
   grid $w.fe$row -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# „’è‘ÎÛ‚Ìİ’è
+  ;# æ¨å®šå¯¾è±¡ã®è¨­å®š
   # frame $w.fem
   frame $w.fe$row
   checkbutton $w.fe$row.b -variable estimate(P)
@@ -968,7 +968,7 @@ proc estimateParam {} {
   grid $w.fe$row -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# „’è‘ÎÛ‚Ìİ’è
+  ;# æ¨å®šå¯¾è±¡ã®è¨­å®š
   # frame $w.fem
   frame $w.fe$row
   checkbutton $w.fe$row.b -variable estimate(O)
@@ -977,7 +977,7 @@ proc estimateParam {} {
   grid $w.fe$row -sticky w -row $row -column 1 -columnspan 3
   incr row
 
-  ;# ƒ{ƒ^ƒ“‚Ìİ’è
+  ;# ãƒœã‚¿ãƒ³ã®è¨­å®š
   # frame $w.fbt
   button $w.do -text $t(estimateParam,runAll) -command {
     if $v(paramChanged) {
@@ -985,7 +985,7 @@ proc estimateParam {} {
         question 1 $t(.confm.ok) $t(.confm.c)]
       if {$act == 1} return
     }
-    ;# ‚à‚µƒGƒ“ƒgƒŠ—“‚ª‹ó—“‚¾‚Á‚½‚È‚ç0‚ğ‘ã“ü
+    ;# ã‚‚ã—ã‚¨ãƒ³ãƒˆãƒªæ¬„ãŒç©ºæ¬„ã ã£ãŸãªã‚‰0ã‚’ä»£å…¥
     if {[string length $power(silLengthSec)] == 0} {
       set power(silLengthSec) 0
     }
@@ -996,7 +996,7 @@ proc estimateParam {} {
     if {$::tcl_platform(os) != "Darwin"} { grab set $epwindow }
     if {$v(appname) == "OREMO"}          { makeRecListFromDir 0 0 }
     doEstimateParam all
-    if {$::tcl_platform(os) == "Darwin"} { deleteProgressWindow } ;# ‚È‚º‚©mac‚Å‚ÍdoEstimateParam‚Ì’†‚ÅÁ‚¹‚È‚©‚Á‚½
+    if {$::tcl_platform(os) == "Darwin"} { deleteProgressWindow } ;# ãªãœã‹macã§ã¯doEstimateParamã®ä¸­ã§æ¶ˆã›ãªã‹ã£ãŸ
     if {$v(appname) == "OREMO"}          {
                                            set v(paramFile) "$v(saveDir)/oto.ini"
                                            saveParamFile
@@ -1011,7 +1011,7 @@ proc estimateParam {} {
   grid $w.do     -sticky we -row $row -column 0
   if {$v(appname) != "OREMO"} {
     button $w.do2 -text $t(estimateParam,runSel) -command {
-      ;# ‚à‚µƒGƒ“ƒgƒŠ—“‚ª‹ó—“‚¾‚Á‚½‚È‚ç0‚ğ‘ã“ü
+      ;# ã‚‚ã—ã‚¨ãƒ³ãƒˆãƒªæ¬„ãŒç©ºæ¬„ã ã£ãŸãªã‚‰0ã‚’ä»£å…¥
       if {[string length $power(silLengthSec)] == 0} {
         set power(silLengthSec) 0
       }
@@ -1019,9 +1019,9 @@ proc estimateParam {} {
         set power(uttLengthSec) 0
       }
 
-      grab set $epwindow     ;# „’è’†‚Í‘¼‚Ì‘€ì‚ªo—ˆ‚È‚¢‚æ‚¤‚É‚·‚é
+      grab set $epwindow     ;# æ¨å®šä¸­ã¯ä»–ã®æ“ä½œãŒå‡ºæ¥ãªã„ã‚ˆã†ã«ã™ã‚‹
       doEstimateParam sel
-      grab release $epwindow ;# „’è’†‚Í‘¼‚Ì‘€ì‚ªo—ˆ‚È‚¢‚æ‚¤‚É‚·‚é
+      grab release $epwindow ;# æ¨å®šä¸­ã¯ä»–ã®æ“ä½œãŒå‡ºæ¥ãªã„ã‚ˆã†ã«ã™ã‚‹
       destroy $epwindow
       Redraw all
     }
@@ -1033,10 +1033,10 @@ proc estimateParam {} {
 }
 
 #---------------------------------------------------
-# UTAUŒ´‰¹ƒpƒ‰ƒ[ƒ^‚Ì„’è
+# UTAUåŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®æ¨å®š
 #
 proc doEstimateParam {{mode all}} {
-  global power v paramS paramU paramUsize estimate t f0 ;# f0‚Í‘¼‚Å‚àg‚Á‚Ä‚¢‚é
+  global power v paramS paramU paramUsize estimate t f0 ;# f0ã¯ä»–ã§ã‚‚ä½¿ã£ã¦ã„ã‚‹
 
   set v(msg) $t(doEstimateParam,startMsg)
 
@@ -1044,7 +1044,7 @@ proc doEstimateParam {{mode all}} {
 
   initProgressWindow
 
-  ;# „’è‚·‚és”Ô†‚ÌƒŠƒXƒg‚ğì‚é
+  ;# æ¨å®šã™ã‚‹è¡Œç•ªå·ã®ãƒªã‚¹ãƒˆã‚’ä½œã‚‹
   set targetList {}
   if {$mode == "all"} {
     for {set i 1} {$i < $paramUsize} {incr i} {
@@ -1060,7 +1060,7 @@ proc doEstimateParam {{mode all}} {
   }
 
   foreach i $targetList {
-    ;# wavƒtƒ@ƒCƒ‹‚ğ“Ç‚Ş
+    ;# wavãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã‚€
     set fid $paramU($i,0)
     set filename $v(saveDir)/$fid.$v(ext)
     if {![file readable $filename]} continue
@@ -1072,22 +1072,22 @@ proc doEstimateParam {{mode all}} {
       set v(sndLength) [sWork length -unit SECONDS]
     }
 
-    ;# ƒpƒ[‚ğ’Šo‚·‚é
+    ;# ãƒ‘ãƒ¯ãƒ¼ã‚’æŠ½å‡ºã™ã‚‹
     set pw [sWork power -framelength $power(frameLength) \
       -windowtype $power(window) -preemphasisfactor $power(preemphasis) \
       -windowlength [expr int($power(windowLength) * $v(sampleRate))] \
       -start 0 -end -1]
 
-    ;# ‰Šú’lİ’è
+    ;# åˆæœŸå€¤è¨­å®š
     if $estimate(S) { set paramS($i,S) 0 }
     if $estimate(C) { set paramS($i,C) $estimate(minC) }
     if $estimate(E) { set paramS($i,E) [sWork length -unit SECONDS] }
-    set uttS 0           ;# ”­º‰¹—Ê‚ª\•ª‚È‘å‚«‚³‚É‚È‚Á‚Ä‚¢‚é‚Æ‚İ‚È‚³‚ê‚½ˆÊ’u
-    set uttE [expr [llength $pw] - 1]     ;# ”­º‰¹—Ê‚ªŒ¸Š‚µn‚ß‚éˆÊ’u
+    set uttS 0           ;# ç™ºå£°éŸ³é‡ãŒååˆ†ãªå¤§ãã•ã«ãªã£ã¦ã„ã‚‹ã¨ã¿ãªã•ã‚ŒãŸä½ç½®
+    set uttE [expr [llength $pw] - 1]     ;# ç™ºå£°éŸ³é‡ãŒæ¸›è¡°ã—å§‹ã‚ã‚‹ä½ç½®
 
     if {[llength $pw] > 0} {
-      ;# ¶‘¤‚Ì”­˜b’†Šm’è“_‚ğ’T‚·
-      set length 0   ;# ”­˜b‚ª˜A‘±‚µ‚Ä‚¢‚éƒTƒ“ƒvƒ‹”
+      ;# å·¦å´ã®ç™ºè©±ä¸­ç¢ºå®šç‚¹ã‚’æ¢ã™
+      set length 0   ;# ç™ºè©±ãŒé€£ç¶šã—ã¦ã„ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
       for {set j 0} {$j < [llength $pw]} {incr j} {
         if {[lindex $pw $j] >= $power(uttHigh)} {
           incr length
@@ -1095,11 +1095,11 @@ proc doEstimateParam {{mode all}} {
           set length 0
         }
         if {$length >= [expr $power(uttLength) + 1]} {
-          set uttS $j     ;# Œ»İˆÊ’u‚ğ•Û‘¶
+          set uttS $j     ;# ç¾åœ¨ä½ç½®ã‚’ä¿å­˜
           break
         }
       }
-      ;# ¶‚É‚½‚Ç‚Á‚Ä¶ƒuƒ‰ƒ“ƒNˆÊ’ui”­˜bŠJn“_j‚ğ’T‚·
+      ;# å·¦ã«ãŸã©ã£ã¦å·¦ãƒ–ãƒ©ãƒ³ã‚¯ä½ç½®ï¼ˆç™ºè©±é–‹å§‹ç‚¹ï¼‰ã‚’æ¢ã™
       if $estimate(S) {
         set length 0
         for {set k $j} {$k > 0} {incr k -1} {
@@ -1109,16 +1109,16 @@ proc doEstimateParam {{mode all}} {
             set length 0
           }
           if {$length >= [expr $power(silLength) + 1]} {
-            ;# Œ»İˆÊ’u‚ğ¶ƒuƒ‰ƒ“ƒN‚É‚·‚é
-            set tm [expr $k * $power(frameLength)] ;# [sec]‚ğŒvZ
+            ;# ç¾åœ¨ä½ç½®ã‚’å·¦ãƒ–ãƒ©ãƒ³ã‚¯ã«ã™ã‚‹
+            set tm [expr $k * $power(frameLength)] ;# æ™‚åˆ»[sec]ã‚’è¨ˆç®—
             set paramS($i,S) $tm
             break
           }
         }
       }
 
-      ;# ”­º‰¹—Ê‚ªŒ¸Š‚µn‚ß‚é“_‚ğ‹‚ß‚é
-      set length 0   ;# ”­˜b‚ª˜A‘±‚µ‚Ä‚¢‚éƒTƒ“ƒvƒ‹”
+      ;# ç™ºå£°éŸ³é‡ãŒæ¸›è¡°ã—å§‹ã‚ã‚‹ç‚¹ã‚’æ±‚ã‚ã‚‹
+      set length 0   ;# ç™ºè©±ãŒé€£ç¶šã—ã¦ã„ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
       for {set j [expr [llength $pw] - 1]} {$j > $uttS} {incr j -1} {
         if {[lindex $pw $j] >= $power(uttHigh)} {
           incr length
@@ -1126,12 +1126,12 @@ proc doEstimateParam {{mode all}} {
           set length 0
         }
         if {$length >= [expr $power(uttLength) + 1]} {
-          set uttE $j     ;# Œ»İˆÊ’u‚ğ•Û‘¶
+          set uttE $j     ;# ç¾åœ¨ä½ç½®ã‚’ä¿å­˜
           break
         }
       }
 
-      ;# uttS`uttEŠÔ‚Ì’†‰›•t‹ß‚Ì•½‹Ïƒpƒ[aveP‚ğ‹‚ß‚é
+      ;# uttSï½uttEé–“ã®ä¸­å¤®ä»˜è¿‘ã®å¹³å‡ãƒ‘ãƒ¯ãƒ¼avePã‚’æ±‚ã‚ã‚‹
       set Nmax 30
       set N 0
       set aveP 0
@@ -1146,17 +1146,17 @@ proc doEstimateParam {{mode all}} {
       }
       set aveP [expr $aveP / $N]
 
-      ;# ‰Eƒuƒ‰ƒ“ƒNˆÊ’u‚ğ’T‚·
+      ;# å³ãƒ–ãƒ©ãƒ³ã‚¯ä½ç½®ã‚’æ¢ã™
       if $estimate(E) {
         for {set j $center} {$j <= $uttE} {incr j} {
-;#koko, ƒpƒ[‚ª•½‹Ï’l‚æ‚è‘å‚«‚¢•û‚É—h‚ç‚¢‚Å‚¢‚é•ª‚ÍOK‚Æ‚µ‚½B
-;#koko, ƒpƒ[‚ª•½‹Ï’l‚æ‚è¬‚³‚­—h‚ç‚¢‚¾‚Æ‚«‚É”½‰‚³‚¹‚é‚æ‚¤‚É‚µ‚½
+;#koko, ãƒ‘ãƒ¯ãƒ¼ãŒå¹³å‡å€¤ã‚ˆã‚Šå¤§ãã„æ–¹ã«æºã‚‰ã„ã§ã„ã‚‹åˆ†ã¯OKã¨ã—ãŸã€‚
+;#koko, ãƒ‘ãƒ¯ãƒ¼ãŒå¹³å‡å€¤ã‚ˆã‚Šå°ã•ãæºã‚‰ã„ã ã¨ãã«åå¿œã•ã›ã‚‹ã‚ˆã†ã«ã—ãŸ
           if {[expr $aveP - [lindex $pw $j]] > [expr $power(uttKeep) / 2]} {
             break
           }
         }
-        ;# Œ»İˆÊ’u‚ğ‰Eƒuƒ‰ƒ“ƒN‚É‚·‚é
-        set tm [expr $j * $power(frameLength)] ;# [sec]‚ğŒvZ
+        ;# ç¾åœ¨ä½ç½®ã‚’å³ãƒ–ãƒ©ãƒ³ã‚¯ã«ã™ã‚‹
+        set tm [expr $j * $power(frameLength)] ;# æ™‚åˆ»[sec]ã‚’è¨ˆç®—
         if {$paramS($i,S) < $tm} {
           set paramS($i,E) $tm
         } else {
@@ -1164,17 +1164,17 @@ proc doEstimateParam {{mode all}} {
         }
       }
 
-      ;# q‰¹•”ˆÊ’u‚ğ’T‚·
+      ;# å­éŸ³éƒ¨ä½ç½®ã‚’æ¢ã™
       if $estimate(C) {
         for {set j $center} {$j >= $uttS} {incr j -1} {
-;#koko, ƒpƒ[‚ª•½‹Ï’l‚æ‚è‘å‚«‚¢•û‚É—h‚ç‚¢‚Å‚¢‚é•ª‚ÍOK‚Æ‚µ‚½B
-;#koko, ƒpƒ[‚ª•½‹Ï’l‚æ‚è¬‚³‚­—h‚ç‚¢‚¾‚Æ‚«‚É”½‰‚³‚¹‚é‚æ‚¤‚É‚µ‚½
+;#koko, ãƒ‘ãƒ¯ãƒ¼ãŒå¹³å‡å€¤ã‚ˆã‚Šå¤§ãã„æ–¹ã«æºã‚‰ã„ã§ã„ã‚‹åˆ†ã¯OKã¨ã—ãŸã€‚
+;#koko, ãƒ‘ãƒ¯ãƒ¼ãŒå¹³å‡å€¤ã‚ˆã‚Šå°ã•ãæºã‚‰ã„ã ã¨ãã«åå¿œã•ã›ã‚‹ã‚ˆã†ã«ã—ãŸ
           if {[expr $aveP - [lindex $pw $j]] > [expr $power(uttKeep) / 2]} {
             break
           }
         }
-        ;# Œ»İˆÊ’u‚ğq‰¹•”‚É‚·‚é
-        set tm [expr $j * $power(frameLength)] ;# [sec]‚ğŒvZ
+        ;# ç¾åœ¨ä½ç½®ã‚’å­éŸ³éƒ¨ã«ã™ã‚‹
+        set tm [expr $j * $power(frameLength)] ;# æ™‚åˆ»[sec]ã‚’è¨ˆç®—
         if {$tm >= [expr $paramS($i,S) + $estimate(minC)]} {
           set paramS($i,C) $tm
         } else {
@@ -1183,11 +1183,11 @@ proc doEstimateParam {{mode all}} {
       }
     }
 
-    ;# æs”­ºˆÊ’u‚ğ’T‚·
+    ;# å…ˆè¡Œç™ºå£°ä½ç½®ã‚’æ¢ã™
     if $estimate(P) {
       set paramS($i,P) $paramS($i,S)
 
-      ;# —LºŠJnˆÊ’u‚ğ‹‚ß‚é
+      ;# æœ‰å£°é–‹å§‹ä½ç½®ã‚’æ±‚ã‚ã‚‹
       set seriestmp {}
       if {[catch {set seriestmp [sWork pitch -method $f0(method) \
         -framelength $f0(frameLength) -windowlength $f0(windowLength) \
@@ -1204,15 +1204,15 @@ proc doEstimateParam {{mode all}} {
       }
       set votSec [expr $vot * $f0(frameLength)]
 
-      ;# vot‚©‚ç‰E‚És‚«A•ê‰¹ƒpƒ[Å¬’l‚ğ’´‚¦‚éŠ‚Ü‚ÅˆÚ“®‚·‚é
+      ;# votã‹ã‚‰å³ã«è¡Œãã€æ¯éŸ³ãƒ‘ãƒ¯ãƒ¼æœ€å°å€¤ã‚’è¶…ãˆã‚‹æ‰€ã¾ã§ç§»å‹•ã™ã‚‹
       for {set j [expr int($votSec / $power(frameLength))]} \
           {[expr $j * $power(frameLength)] < $paramS($i,C)} \
           {incr j} {
         if {[lindex $pw $j] >= $power(vLow)} break
       }
 
-      ;# Œ»İˆÊ’u‚ğæs”­º‚É‚·‚é
-      set tm [expr $j * $power(frameLength)] ;# [sec]‚ğŒvZ
+      ;# ç¾åœ¨ä½ç½®ã‚’å…ˆè¡Œç™ºå£°ã«ã™ã‚‹
+      set tm [expr $j * $power(frameLength)] ;# æ™‚åˆ»[sec]ã‚’è¨ˆç®—
       if {$tm <= $paramS($i,C)} {
         set paramS($i,P) $tm
       } else {
@@ -1220,12 +1220,12 @@ proc doEstimateParam {{mode all}} {
       }
     }
 
-    ;# ƒI[ƒo[ƒ‰ƒbƒvˆÊ’u‚ğ’T‚·BŒ»İ–¢À‘•B
+    ;# ã‚ªãƒ¼ãƒãƒ¼ãƒ©ãƒƒãƒ—ä½ç½®ã‚’æ¢ã™ã€‚ç¾åœ¨æœªå®Ÿè£…ã€‚
     if $estimate(O) {
       set paramS($i,O) $paramS($i,S)
     }
 
-    ;# paramU‚ğİ’è‚·‚é
+    ;# paramUã‚’è¨­å®šã™ã‚‹
     foreach kind {S E C P O} {
       if $estimate($kind) {
         set paramU($i,[kind2c $kind]) [sec2u $i $kind $paramS($i,$kind)]
@@ -1243,20 +1243,20 @@ proc doEstimateParam {{mode all}} {
 }
 
 #---------------------------------------------------
-# Œ´‰¹ƒpƒ‰ƒ[ƒ^‚ğ•Û‘¶‚·‚é
-# return: 1=•Û‘¶‚µ‚½B0=•Û‘¶‚µ‚È‚©‚Á‚½B
-# ˆø”1 fn: •Û‘¶ƒtƒ@ƒCƒ‹–¼Bw’è‚È‚µ‚Ìê‡ƒ_ƒCƒAƒƒO‘‹‚ğŠJ‚­
-# ˆø”2 autoBackup: 0=’Êí‚Ìoto.ini•Û‘¶B
-#         1=©“®ƒoƒbƒNƒAƒbƒv‚Ì‚½‚ß‚Ì•Û‘¶BƒLƒƒƒbƒVƒ…ƒtƒ@ƒCƒ‹‚ğ•Û‘¶‚µ‚È‚¢B
-#           •Û‘¶‚µ‚½Û‚ÉƒƒbƒZ[ƒW‚ğ•\¦‚µ‚È‚¢B
+# åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹
+# return: 1=ä¿å­˜ã—ãŸã€‚0=ä¿å­˜ã—ãªã‹ã£ãŸã€‚
+# å¼•æ•°1 fn: ä¿å­˜ãƒ•ã‚¡ã‚¤ãƒ«åã€‚æŒ‡å®šãªã—ã®å ´åˆãƒ€ã‚¤ã‚¢ãƒ­ã‚°çª“ã‚’é–‹ã
+# å¼•æ•°2 autoBackup: 0=é€šå¸¸ã®oto.iniä¿å­˜ã€‚
+#         1=è‡ªå‹•ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã®ãŸã‚ã®ä¿å­˜ã€‚ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ãªã„ã€‚
+#           ä¿å­˜ã—ãŸéš›ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ãªã„ã€‚
 #
 proc saveParamFile {{fn ""} {autoBackup 0}} {
   global paramU paramUsize v t
  
   ;#if {$v(paramChanged) == 0} {
-  ;#  set v(msg) "ƒpƒ‰ƒ[ƒ^‚ª•ÏX‚³‚ê‚Ä‚¢‚È‚¢‚Ì‚Å•Û‘¶‚µ‚Ü‚¹‚ñ‚Å‚µ‚½"
+  ;#  set v(msg) "ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒå¤‰æ›´ã•ã‚Œã¦ã„ãªã„ã®ã§ä¿å­˜ã—ã¾ã›ã‚“ã§ã—ãŸ"
   ;#  tk_dialog .confm "Warning" \
-  ;#    "ƒpƒ‰ƒ[ƒ^‚ª•ÏX‚³‚ê‚Ä‚¢‚È‚¢‚Ì‚Å•Û‘¶‚µ‚Ü‚¹‚ñ‚Å‚µ‚½" \
+  ;#    "ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãŒå¤‰æ›´ã•ã‚Œã¦ã„ãªã„ã®ã§ä¿å­˜ã—ã¾ã›ã‚“ã§ã—ãŸ" \
   ;#    warning 0 OK
   ;#  return 0
   ;#}
@@ -1273,14 +1273,14 @@ proc saveParamFile {{fn ""} {autoBackup 0}} {
   if {[file exists $v(saveDir)] == 0} {
     file mkdir $v(saveDir)
   }
-  ;# •Û‘¶ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+  ;# ä¿å­˜ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
   if [catch {open $fn w} fp] {
     tk_messageBox -message "error: can not open $fn" \
       -title $t(.confm.fioErr) -icon warning
     return
   }
   if {$::tcl_platform(os) != "Darwin"} {
-    set v(paramFile) $fn  ;# mac‚¾‚ÆƒpƒX‰ğÍ‚É¸”s‚µ‚ÄŸ‰ñ‚Ìmy_getSaveFile‚Å•s³Šm‚ÈƒtƒHƒ‹ƒ_‚ª‰Šúw’è‚³‚ê‚½‚Ì‚Å
+    set v(paramFile) $fn  ;# macã ã¨ãƒ‘ã‚¹è§£æã«å¤±æ•—ã—ã¦æ¬¡å›ã®my_getSaveFileã§ä¸æ­£ç¢ºãªãƒ•ã‚©ãƒ«ãƒ€ãŒåˆæœŸæŒ‡å®šã•ã‚ŒãŸã®ã§
   }
 
   for {set i 1} {$i < $paramUsize} {incr i} {
@@ -1293,18 +1293,18 @@ proc saveParamFile {{fn ""} {autoBackup 0}} {
       if {[array names paramU "$i,4"] != ""} { set C $paramU($i,4) }
       if {[array names paramU "$i,5"] != ""} { set E $paramU($i,5) }
       if {[array names paramU "$i,6"] != ""} { set A $paramU($i,6) }
-      puts $fp $name=$A,$S,$C,$E,$P,$O    ;# ƒtƒ@ƒCƒ‹‚Ö‘‚«o‚µ
+      puts $fp $name=$A,$S,$C,$E,$P,$O    ;# ãƒ•ã‚¡ã‚¤ãƒ«ã¸æ›¸ãå‡ºã—
     }
   }
-  close $fp        ;# ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+  close $fp        ;# ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 
   if {$::tcl_platform(os) == "Darwin"} {
     global nkf 
-    exec -- $nkf -s --in-place $fn      ;# Š¿šƒR[ƒh‚ğsjis‚É•ÏŠ·
+    exec -- $nkf -s --in-place $fn      ;# æ¼¢å­—ã‚³ãƒ¼ãƒ‰ã‚’sjisã«å¤‰æ›
   }
   if {$autoBackup == 0} {
     if {$v(appname) != "OREMO"} {
-      saveCacheFile    ;# ƒLƒƒƒbƒVƒ…ì¬B‚±‚ê‚Íoto.ini•Û‘¶‚æ‚èæ‚É‚â‚Á‚Ä‚Í‚¢‚¯‚È‚¢B
+      saveCacheFile    ;# ã‚­ãƒ£ãƒƒã‚·ãƒ¥ä½œæˆã€‚ã“ã‚Œã¯oto.iniä¿å­˜ã‚ˆã‚Šå…ˆã«ã‚„ã£ã¦ã¯ã„ã‘ãªã„ã€‚
       set v(paramChanged) 0
       setEPWTitle
     }
@@ -1314,21 +1314,21 @@ proc saveParamFile {{fn ""} {autoBackup 0}} {
 }
 
 #---------------------------------------------------
-# À”‚ğ¬”“_ˆÈ‰º6Œ…‚Å‘Å‚¿Ø‚é
+# å®Ÿæ•°ã‚’å°æ•°ç‚¹ä»¥ä¸‹6æ¡ã§æ‰“ã¡åˆ‡ã‚‹
 #
 proc cut6 {val} {
   return [expr int($val * 1000000) / 1000000.0 ]
 }
 
 #---------------------------------------------------
-# À”‚ğ¬”“_ˆÈ‰º3Œ…‚Å‘Å‚¿Ø‚é
+# å®Ÿæ•°ã‚’å°æ•°ç‚¹ä»¥ä¸‹3æ¡ã§æ‰“ã¡åˆ‡ã‚‹
 #
 proc cut3 {val} {
   return [expr int($val * 1000) / 1000.0 ]
 }
 
 #---------------------------------------------------
-# ’PˆÊ•ÏŠ·
+# å˜ä½å¤‰æ›
 #
 proc sec2samp {sec length} {
   if {[string length $sec] == 0 || [string length $length] == 0} {
@@ -1342,7 +1342,7 @@ proc sec2samp {sec length} {
 }
 
 #---------------------------------------------------
-# ƒpƒ‰ƒ[ƒ^í—Ş–¼‚ğparamU—ñ”Ô†‚É•ÏŠ·
+# ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç¨®é¡åã‚’paramUåˆ—ç•ªå·ã«å¤‰æ›
 #
 proc kind2c {k} {
   switch $k {
@@ -1359,7 +1359,7 @@ proc kind2c {k} {
 }
 
 #---------------------------------------------------
-# paramU‚Ì—ñ”Ô†‚ğƒpƒ‰ƒ[ƒ^í—Ş–¼‚É•ÏŠ·
+# paramUã®åˆ—ç•ªå·ã‚’ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç¨®é¡åã«å¤‰æ›
 #
 proc c2kind {c} {
   switch $c {
@@ -1376,8 +1376,8 @@ proc c2kind {c} {
 }
 
 #---------------------------------------------------
-# w’è‚µ‚½s‚ÌparamU‚ğparamS‚É•ÏŠ·‚·‚é
-# ”gŒ`’·‚ª$v(sndLength)‚É“ü‚Á‚Ä‚¢‚é‚±‚Æ‚ª‘O’ñ
+# æŒ‡å®šã—ãŸè¡Œã®paramUã‚’paramSã«å¤‰æ›ã™ã‚‹
+# æ³¢å½¢é•·ãŒ$v(sndLength)ã«å…¥ã£ã¦ã„ã‚‹ã“ã¨ãŒå‰æ
 #
 proc paramU2paramS {r} {
   global paramU paramS t
@@ -1391,15 +1391,15 @@ proc paramU2paramS {r} {
 }
 
 #---------------------------------------------------
-# ’PˆÊ•ÏŠ·(•b¨UTAUŒ´‰¹ƒpƒ‰ƒ[ƒ^)
+# å˜ä½å¤‰æ›(ç§’â†’UTAUåŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿)
 #
-proc sec2u {r kind newVal} {  ;# r=-1:ƒAƒNƒeƒBƒuƒZƒ‹‚ğ•ÏŠ·B
+proc sec2u {r kind newVal} {  ;# r=-1:ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚»ãƒ«ã‚’å¤‰æ›ã€‚
   global paramS paramU snd paDev v t
 
-  if {$r < 0} {set r $v(listSeq)}  ;# Œ»İ‚ÌƒAƒNƒeƒBƒuƒZƒ‹‚Ìs”Ô†
+  if {$r < 0} {set r $v(listSeq)}  ;# ç¾åœ¨ã®ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚»ãƒ«ã®è¡Œç•ªå·
 
   if {[llength $newVal] == 0} {
-    set newVal $paramS($r,$kind)   ;# •ÏŠ·‚µ‚½‚¢’l(•b’PˆÊ)‚ğŒˆ’èB
+    set newVal $paramS($r,$kind)   ;# å¤‰æ›ã—ãŸã„å€¤(ç§’å˜ä½)ã‚’æ±ºå®šã€‚
   }
 
   set fid $paramU($r,0)
@@ -1435,8 +1435,8 @@ proc sec2u {r kind newVal} {  ;# r=-1:ƒAƒNƒeƒBƒuƒZƒ‹‚ğ•ÏŠ·B
 }
 
 #---------------------------------------------------
-# ’PˆÊ•ÏŠ·(UTAUŒ´‰¹ƒpƒ‰ƒ[ƒ^¨•b)
-# snd ‚É”gŒ`‚ğ“Ç‚ñ‚Å‚¢‚é‚±‚Æ‚ª‘O’ñ
+# å˜ä½å¤‰æ›(UTAUåŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿â†’ç§’)
+# snd ã«æ³¢å½¢ã‚’èª­ã‚“ã§ã„ã‚‹ã“ã¨ãŒå‰æ
 #
 proc u2sec {kind r c} {
   global paramS paramU t v

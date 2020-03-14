@@ -1,16 +1,16 @@
-###################################################################
+﻿###################################################################
 
-  OREMO - UTAU�{�C�X���C�u�����쐬�\�t�g
+  OREMO - UTAUボイスライブラリ作成ソフト
 
-  �\�t�g���F   OREMO (�ǂ�=�����)
-  �o�[�W�����F 3.0-b190106
-  �z�z��URL�F  http://nwp8861.web.fc2.com/soft/oremo/
+  ソフト名：   OREMO (読み=おれも)
+  バージョン： 3.0-b190106
+  配布元URL：  http://nwp8861.web.fc2.com/soft/oremo/
                https://osdn.jp/users/nwp8861/pf/OREMO/files/
 
 ###################################################################
 
-    �e�o�[�W�����̐V�@�\�ɂ��Ă͂����ނˈȉ��̋L���ɂ܂Ƃ߂Ă���܂��̂�
-    �����ɂȂ��ĉ������B
+    各バージョンの新機能についてはおおむね以下の記事にまとめてありますので
+    ご覧になって下さい。
 
       http://nwp8861.blog92.fc2.com/blog-entry-410.html (ver. 3.0-b190106)
       http://nwp8861.blog92.fc2.com/blog-entry-377.html (ver. 3.0-b160505)
@@ -37,174 +37,174 @@
       http://nwp8861.blog92.fc2.com/blog-entry-77.html  (ver. 2.0-b090518)
       http://nwp8861.blog92.fc2.com/blog-entry-45.html  (ver. 2.0-b090213)
 
-    �������A��L�y�[�W�͊J���̐i���ɏ]���ē��e���㏑�����ꂽ�肵�܂��̂�
-    �����Ӊ������B����������Ƃ܂Ƃ߂悤�Ǝv����
-    �Ȃ��Ȃ�����ł����ɂ���܂��B
+    ただし、上記ページは開発の進捗に従って内容が上書きされたりしますので
+    ご注意下さい。いつかきちんとまとめようと思いつつ
+    なかなか着手できずにおります。
 
 
 -------------------------------------------------------------------
-���ڎ���
+＜目次＞
 
-�\�t�g�̊T�v
-�C���X�g�[���^�A���C���X�g�[��
-�g����
-���C�Z���X�ɂ���
-�X�V����
-
--------------------------------------------------------------------
-���\�t�g�̊T�v��
-
-OREMO �� UTAU �̃{�C�X���C�u�����p�̉��������^����t���[�\�t�g�ł��B
-
-UTAU �Ƃ́A�����^�Ҋ����� http://utau2008.web.fc2.com/ �Ŕz�z����Ă���
-�̐������\�t�g�ł��BUTAU�ł́u���v��u���v�Ȃǂ̌��t�ɑΉ�����
-wav�t�@�C������邱�ƂŁA�I���W�i���̐��ŉ̂킹�邱�Ƃ��ł��܂��B
-
-���������̎��^�͂���Ă݂�ƈӊO�ɑ�ςł��B
-50�ȏ�̉��𐳂����������A���ꂼ��wav�t�@�C���ɂ��ĕۑ����Ȃ����
-�����܂���B�P����ƂȂ̂ł������C������܂��B
-���̖ʓ|�ȍ�Ƃ������ł��y�����āA�N�ł��ȒP�E��y�E�C�y�Ɏ����̐���
-UTAU�{�C�X���C�u����������悤�ɂ������Ǝv���A�{�\�t�g���J�����܂����B
-�ڂ����̓j�R�j�R�����̐�������Ȃǂ�����������(URL�͌�q)�B
-
-OREMO ver.1.0 �n�ł́u���v�u���v�Ȃǂ̒P�Ɣ������̎��^��p�ł����B
-ver.2.0 �n�ł͎������^���[�h��p���āA�P�Ɣ������݂̂łȂ�
-�u�����������v�Ȃǂ̘A�������������^���邱�Ƃ��ł��܂��B
-ver.3.0 �n�ł�UTAU�����ɕK���K�v��oto.ini�t�@�C���̎���������
-��荂������wav���^���\�ł��B
-
-�Ȃ��A�������̃\�t�g���g�p�������Ƃł��g���� PC �Ȃǂɉ��炩�̃g���u����
-�����Ă���҂͐ӔC�����܂���̂ŁA�������炸�������������B
-
-�܂����^��ɂ͌����ݒ�Ƃ�����Ƃ��s���K�v������܂��B
-OREMO ver.3.0�n�ł͂��̍�Ƃ������ōs����oto.ini�t�@�C���𐶐��o���܂���
-�ǂ������ɂ��邽�߂Ɏ�C���͕K�{�ł��B
-�����Ō����ݒ�p��setParam�Ƃ����\�t�g���J�����Ă���܂��̂�
-��낵����΂������������B
+ソフトの概要
+インストール／アンインストール
+使い方
+ライセンスについて
+更新履歴
 
 -------------------------------------------------------------------
-���C���X�g�[���^�A���C���X�g�[����
+＜ソフトの概要＞
 
-�i�C���X�g�[���j
-�_�E�����[�h�������k�t�@�C����W�J���A�K���ȃt�H���_�ɕۑ����ĉ������B
-�t�H���_�ɂ���ȉ��̃t�@�C�������s�ɕK�v�ȃt�@�C���ł��B
+OREMO は UTAU のボイスライブラリ用の音声を収録するフリーソフトです。
 
-  ���{�́�
-  �EOREMO.exe           ... �\�t�g�{�́i�������^�p�j�B
+UTAU とは、飴屋／菖蒲さんが http://utau2008.web.fc2.com/ で配布されている
+歌声合成ソフトです。UTAUでは「あ」や「い」などの言葉に対応した
+wavファイルを作ることで、オリジナルの声で歌わせることができます。
 
-  �����^���X�g��
-  �Ereclist.txt         ... ���^���鉹�����󔒂܂��͉��s��؂��
-                            ���ׂ��e�L�X�g�t�@�C���B�i��F�� �� �� �� ���j
+しかし声の収録はやってみると意外に大変です。
+50個以上の音を正しく発声し、それぞれwavファイルにして保存しなければ
+いけません。単純作業なのですが根気がいります。
+その面倒な作業を少しでも軽くして、誰でも簡単・手軽・気軽に自分の声で
+UTAUボイスライブラリを作れるようにしたいと思い、本ソフトを開発しました。
+詳しくはニコニコ動画上の説明動画などをご覧下さい(URLは後述)。
 
-  �Etypelist.txt        ... ���^���锭�����X�g���󔒂܂��͉��s��؂��
-                            ���ׂ��e�L�X�g�t�@�C���B�i��F�� �� �� �� 2 3�j
+OREMO ver.1.0 系では「あ」「い」などの単独発声音の収録専用でした。
+ver.2.0 系では自動収録モードを用いて、単独発声音のみでなく
+「あいうえお」などの連続発声音を収録することができます。
+ver.3.0 系ではUTAU音源に必ず必要なoto.iniファイルの自動生成や
+より高音質なwav収録が可能です。
 
-  �Ereclist-renzoku-NHP.txt ...
-                        ... �A�����p�̉������X�g�ł��B
-                            ���̃��X�g�͎�����������̂ł͂Ȃ��F����(@tatsu3)���ȑO���삳��A
-                            NHP�̃T�C�g(http://utaunhp.info/)�Ŕz�z����Ă������̂ł��B
-                            ���T�C�g��2014�N3���ŕ����邽�߁AOREMO�ɓ�������
-                            �z�z�����Ē������ƂɂȂ�܂����B
+なお、もしこのソフトを使用したことでお使いの PC などに何らかのトラブルが
+生じても作者は責任を取りませんので、悪しからずご了承下さい。
 
-                            �A���������^����ꍇ�A�ʏ�͂��̃��X�g�����g�p�������B
+また収録後には原音設定という作業を行う必要があります。
+OREMO ver.3.0系ではこの作業を自動で行ってoto.iniファイルを生成出来ますが
+良い音源にするために手修正は必須です。
+そこで原音設定用にsetParamというソフトを開発しておりますので
+よろしければお試し下さい。
 
-  �Ereclist-renzoku-�P�Ɖ��𕹗p����K�v�L.txt ...
-                        ... ���������̓��{����ƘA���������؂���ۂ̃e�X�g�p�Ƃ��č쐬�����^�����X�g�ł��B
-                            ���ۂɍ��������f���͈ȉ��ɂ���܂�(��������쐬)�B
+-------------------------------------------------------------------
+＜インストール／アンインストール＞
+
+（インストール）
+ダウンロードした圧縮ファイルを展開し、適当なフォルダに保存して下さい。
+フォルダにある以下のファイルが実行に必要なファイルです。
+
+  ＜本体＞
+  ・OREMO.exe           ... ソフト本体（音声収録用）。
+
+  ＜収録リスト＞
+  ・reclist.txt         ... 収録する音名を空白または改行区切りで
+                            並べたテキストファイル。（例：あ い う え お）
+
+  ・typelist.txt        ... 収録する発声リストを空白または改行区切りで
+                            並べたテキストファイル。（例：↑ ↓ 強 弱 2 3）
+
+  ・reclist-renzoku-NHP.txt ...
+                        ... 連続音用の音名リストです。
+                            このリストは私が作ったものではなく巽さん(@tatsu3)が以前制作され、
+                            NHPのサイト(http://utaunhp.info/)で配布されていたものです。
+                            同サイトが2014年3月で閉鎖するため、OREMOに同梱して
+                            配布させて頂くことになりました。
+
+                            連続音を収録する場合、通常はこのリストをご使用下さい。
+
+  ・reclist-renzoku-単独音を併用する必要有.txt ...
+                        ... 桃音モモの藤本さんと連続音を検証する際のテスト用として作成した録音リストです。
+                            実際に合成したデモは以下にあります(飴屋さん作成)。
                             http://www.nicovideo.jp/watch/sm7808787
 
-                            �{���X�g���g���ۂɂ͒P�Ɖ������^���ĕ��p����K�v������܂��B
-                            �܂��A���̍ۂɃG�C���A�X����������Ɛݒ肷��K�v������܂��B
-                            �i�ٍ��setParam�́u�⊮�c�[���v���g���Ƒ���Ȃ��A�����G�C���A�X��
-                            �P�Ɖ��ō�邱�Ƃ��ł��܂��j
+                            本リストを使う際には単独音を収録して併用する必要があります。
+                            また、その際にエイリアスをしっかりと設定する必要があります。
+                            （拙作のsetParamの「補完ツール」を使うと足りない連続音エイリアスを
+                            単独音で作ることができます）
 
-                            �{���X�g�̓����͎��^�ʂ����Ȃ����Ƃ��Ǝv���܂��B���̂���
-                            ���^�҂̕��S�����Ȃ����ƁA�e���ɏW�����₷�����Ɠ���
-                            �{���X�g�̃����b�g���낤�Ǝv���܂��B
-                            ����A�������p�҂̗���ł́A�P�Ɖ����p�͉�����g������̖ʂ�
-                            �D�܂�Ȃ����Ƃ�����悤�ł��B
-                            ���̓_�ł͑O�q�́ureclist-renzoku-NHP.txt�v�̗��p�������߂ł��B
+                            本リストの特徴は収録量が少ないことだと思います。そのため
+                            収録者の負担が少ないこと、各音に集中しやすいこと等が
+                            本リストのメリットだろうと思います。
+                            一方、音源利用者の立場では、単独音併用は音質や使い勝手の面で
+                            好まれないこともあるようです。
+                            その点では前述の「reclist-renzoku-NHP.txt」の利用がお勧めです。
 
-                            �܂��A�������X�g��K�C�hBGM�͑��ɂ��F�X�ȕ������J����Ă��܂��̂ŁA
-                            �����ɍ��������̂ɓK�X�����ւ���Ɨǂ��Ǝv���܂��B
+                            また、音名リストやガイドBGMは他にも色々な方が公開されていますので、
+                            自分に合ったものに適宜差し替えると良いと思います。
 
-  ���e�탁�b�Z�[�W�\����
-  �Emessage/*-text.tcl          ... �e��\�����b�Z�[�W���w�肵���t�@�C���i���{��j�B
+  ＜各種メッセージ表示＞
+  ・message/*-text.tcl          ... 各種表示メッセージを指定したファイル（日本語）。
 
-  �Emessage/install-newLang.exe ... �p��Ȃǂ̊O����ɖ|�󂵂����b�Z�[�W�t�@�C����
-                                    ���p����ۂɎg���C���X�g�[���ł��B
+  ・message/install-newLang.exe ... 英語などの外国語に翻訳したメッセージファイルを
+                                    利用する際に使うインストーラです。
 
-  ���������^�̐ݒ�⃁�g���m�[���@�\��
-  �EguideBGM/click.wav     ... OREMO�Ń��g���m�[���@�\���g���ꍇ�̃N���b�N���B
+  ＜自動収録の設定やメトロノーム機能＞
+  ・guideBGM/click.wav     ... OREMOでメトロノーム機能を使う場合のクリック音。
 
-  �EguideBGM/F4-100bpm.wav ... OREMO�̎����^���@�\���g���ۂ̃K�C�hBGM�ł��B
-                               �t�@�C����44.1kHz�T���v�����O�A16bit�ʎq���A���m�����ł��B
-                               �ʂ̃K�C�hBGM�ɂ���ꍇ�͏�L�`���ɍ��킹�ĉ������B
-                               ���^�́A�L�[=F4�A�e���|=100bpm�A5���[����z�肵�Ă��܂��B
-                               �܂��A�u���[�v�u���[�v�Ƃ������P�Ɣ������^�ł͂Ȃ��A
-                               �A���������^�p�Ƃ��č��܂����B
+  ・guideBGM/F4-100bpm.wav ... OREMOの自動録音機能を使う際のガイドBGMです。
+                               ファイルは44.1kHzサンプリング、16bit量子化、モノラルです。
+                               別のガイドBGMにする場合は上記形式に合わせて下さい。
+                               収録は、キー=F4、テンポ=100bpm、5モーラを想定しています。
+                               また、「あー」「いー」といった単独発声収録ではなく、
+                               連続発声収録用として作りました。
 
-  �EguideBGM/F4-100bpm.txt ... ��Lwav�t�@�C���p�̐ݒ�t�@�C���ł��B
-                               �ǂ̃^�C�~���O�Ř^���J�n���邩�Ȃǂ������Ă��܂��B
-                               �ڍׂ�txt�ɏ����Ă���܂��B
+  ・guideBGM/F4-100bpm.txt ... 上記wavファイル用の設定ファイルです。
+                               どのタイミングで録音開始するかなどを書いています。
+                               詳細はtxtに書いてあります。
 
-  �EguideBGM/F4-100bpm-sample.wav ... F4-100bpm.mp3���g�������^�C���[�W���ł��B
+  ・guideBGM/F4-100bpm-sample.wav ... F4-100bpm.mp3を使った収録イメージ音です。
 
-  �EguideBGM/korede.exe           ... �K�C�hBGM�������ւ���ۂ̐ݒ�t�@�C���쐬�x���c�[���ł��B
+  ・guideBGM/korede.exe           ... ガイドBGMを差し替える際の設定ファイル作成支援ツールです。
 
-  �Etools/*                       ... oto.ini����������PortAudio�^��/�Đ��c�[���u����ł��B
+  ・tools/*                       ... oto.ini自動生成やPortAudio録音/再生ツール置き場です。
 
-  �����̑���
-  �Emanual/tutorial.html ... ver.1.0�̃}�j���A���B
+  ＜その他＞
+  ・manual/tutorial.html ... ver.1.0のマニュアル。
 
-  �Esource/*     ... OREMO��setParam��e��c�[���̃\�[�X�v���O�����B
+  ・source/*     ... OREMOとsetParamや各種ツールのソースプログラム。
 
-  �EREADME.txt ... �{�t�@�C���B
+  ・README.txt ... 本ファイル。
 
-�i�A���C���X�g�[���j
-�C���X�g�[�������t�H���_���폜���ĉ������B
-
-
--------------------------------------------------------------------
-���g������
-
-�P�Ɖ����^�iOREMO ver.1.0 �Ɋւ����{�I�Ȏg�����j�ɂ��Ă�
-http://nwp8861.web.fc2.com/soft/oremo/ �������������B
-
-�A�������^�ɂ��Ă͌����_�ł̓}�j���A�������ďW�񂳂��Ă��炸
-�{�t�@�C���̖`���ɗ񋓂����u���OURL�ɐ��������Ă��܂��B
-�J���łƂ������Ƃł������������B
-
-�g�������������������ȉ��̃A�h���X�ŉ{���\�ł��B
-�P�Ɖ������^����ꍇ�� ver.1.0 �n�̓�����A
-�A���������^����ꍇ�� ver.2.0 �n�̓���������������B
-
-�������N�F
-  [ver. 1.0�n]
-  �E http://www.nicovideo.jp/watch/sm5802285  (�T�v�������f�� ver. 0.1)
-  �E http://www.nicovideo.jp/watch/sm5977715  (�ǉ��@�\����   ver. 1.0)
-
-  �E http://nwp8861.web.fc2.com/soft/oremo/manual/tutorial.html
-     �� ver.1.0�̃I�����C���}�j���A���B
-        �{zip�t�@�C����manual/�ȉ��ɓ������̂�����܂��B
-
-  [ver. 2.0�n]
-  �E http://www.nicovideo.jp/watch/sm8744450  (�܂�@Loop���񂪍쐬���ꂽ�������B�O���ɘA�����̎��^�菇����������܂�)
-  �E http://www.nicovideo.jp/watch/sm7990652  (ver.2.0-b090724�Ŏ������������^���T��)
+（アンインストール）
+インストールしたフォルダを削除して下さい。
 
 
 -------------------------------------------------------------------
-�����C�Z���X�ɂ��ā�
+＜使い方＞
 
-OREMO �̓I�[�v���\�[�X�ȃt���[�\�t�g�ł���ATcl/Tk �ō�������̂����b�p�[��
-exe �����Ă��܂��B�������������ɂ� Tcl/Tk �̃��C�u�����̈�ł��� snack ��
-���p���Ă��܂��B
+単独音収録（OREMO ver.1.0 に関する基本的な使い方）については
+http://nwp8861.web.fc2.com/soft/oremo/ をご覧下さい。
+
+連続音収録については現時点ではマニュアル化して集約させておらず
+本ファイルの冒頭に列挙したブログURLに随時書いています。
+開発版ということでご理解下さい。
+
+使い方を解説した動画を以下のアドレスで閲覧可能です。
+単独音を収録する場合は ver.1.0 系の動画を、
+連続音を収録する場合は ver.2.0 系の動画をご覧下さい。
+
+直リンク：
+  [ver. 1.0系]
+  ・ http://www.nicovideo.jp/watch/sm5802285  (概要説明＆デモ ver. 0.1)
+  ・ http://www.nicovideo.jp/watch/sm5977715  (追加機能説明   ver. 1.0)
+
+  ・ http://nwp8861.web.fc2.com/soft/oremo/manual/tutorial.html
+     → ver.1.0のオンラインマニュアル。
+        本zipファイルのmanual/以下に同じものがあります。
+
+  [ver. 2.0系]
+  ・ http://www.nicovideo.jp/watch/sm8744450  (まる@Loopさんが作成された解説動画。前半に連続音の収録手順説明があります)
+  ・ http://www.nicovideo.jp/watch/sm7990652  (ver.2.0-b090724で実装した自動録音概説)
+
+
+-------------------------------------------------------------------
+＜ライセンスについて＞
+
+OREMO はオープンソースなフリーソフトであり、Tcl/Tk で作ったものをラッパーで
+exe 化しています。音声処理部分には Tcl/Tk のライブラリの一つである snack を
+利用しています。
   (snack web page)  http://www.speech.kth.se/snack/
 
-OREMO �̃��C�Z���X�� snack �̃��C�Z���X�ɕ���� GPL �Ƃ��Ă����܂��B
-������ snack �̐��������ɂ��ƁAsnack ���C�u�����̂��� MPEG ��
-�ւ���R�[�h����������� snack �� BSD ���C�Z���X�Ƃ��Ĉ�����悤�ł��B
-�i�ȉ��� snack2.2.10/README�̔����ł��B�j
+OREMO のライセンスは snack のライセンスに倣って GPL としておきます。
+ただし snack の説明書きによると、snack ライブラリのうち MPEG に
+関するコードを除去すれば snack は BSD ライセンスとして扱えるようです。
+（以下は snack2.2.10/READMEの抜粋です。）
   -----
   Snack is currently licensed under GPL, see the file COPYING.
   Contact the author if this kind of license is a problem.
@@ -214,262 +214,262 @@ OREMO �̃��C�Z���X�� snack �̃��C�Z���X�ɕ���� GPL �Ƃ��Ă����܂��B
   terms.
   -----
 
-OREMO �� version 2.0-b090720�ȍ~ mp3 ���ꕔ�Ɏg���Ă��邽��
-GPL �Ƃ������ƂɂȂ�܂����Amp3 ���g��Ȃ��悤�ɂ����ꍇ��
-BSD ���C�Z���X�ɂł���̂�������܂���B
+OREMO は version 2.0-b090720以降 mp3 を一部に使っているため
+GPL ということになりますが、mp3 を使わないようにした場合は
+BSD ライセンスにできるのかもしれません。
 
-��Ҍl�Ƃ��Ă� GPL ���C�� BSD ���C�Z���X�̕����D��
-�Ȃ̂ŁA������ OREMO �̍ė��p�ŏC�� BSD ���C�Z���X�̕����s�����ǂ�
-�Ƃ������Ƃ�����΃u���O���ł���񉺂����B
+作者個人としては GPL より修正 BSD ライセンスの方が好き
+なので、万が一 OREMO の再利用で修正 BSD ライセンスの方が都合が良い
+ということがあればブログ等でご一報下さい。
 
-���p�����Ē������\�t�g�E�F�A�̃��C�Z���X��Licenses�t�H���_�ɂ܂Ƃ߂Ă��܂��B
-snack�̃��C�Z���X�ɂ��Ă� COPYING-snack2.2.10.txt �������������B
-Tcl/Tk �̃��C�Z���X�ɂ��Ă� LICENSE-tcl8.6.4.txt �� LICENSE-tk8.6.4.txt�A
-LICENSE-tclkit.txt �Ȃǂ������������B
+利用させて頂いたソフトウェアのライセンスはLicensesフォルダにまとめています。
+snackのライセンスについては COPYING-snack2.2.10.txt をご覧下さい。
+Tcl/Tk のライセンスについては LICENSE-tcl8.6.4.txt や LICENSE-tk8.6.4.txt、
+LICENSE-tclkit.txt などをご覧下さい。
 
 -------------------------------------------------------------------
-���X�V������
+＜更新履歴＞
 
 version 3.0-b190106
-- (�ǉ�) �������X�gA.txt��ǂݍ��ނƂ��A�������t�H���_�ɃR�����g�t�@�C��A-comment.txt������΂����ǂݍ��ނ悤�ɂ����B
-- (�ǉ�) �t�@�C�����j���[����R�����g�t�@�C����ǂ߂�悤�ɂ����B���̍�setParam�̃R�����g����荞�߂�悤�ɂ����B
-- (�ǉ�) �t�H���g�T�C�Y��ς�����悤�ɂ����B�ݒ�ύX�͍ċN����ɗL���ɂȂ�B�܂��A�ݒ莟��ł͉����ꗗ�̏c�����Z���Ȃ�̂ŁA���̎��͑��T�C�Y�������ς���ƒ���B
-- (�ǉ�) �ݒ�ύX�������e��oremo-init.tcl�Ɏ����ۑ����A����N�����Ɏ�����������悤�ɂ����B�ȑO�͎蓮�ۑ�(�u�t�@�C���v���u���݂̐ݒ���������t�@�C���ɕۑ��v)�������B�����ۑ����Ȃ��悤�ɂ���Ȃ�oremo-setting.ini��autoSaveInitFile=1�̒l��0�ɂ���B
-- (�ǉ�) �������t�@�C��oremo-init.tcl�ɕۑ������p�����[�^�𑝂₵���B
-- (�ǉ�) ����L�[�̊��蓖�Ă��J�X�^�}�C�Y�ł���悤�ɂ����B
-- (�C��) �G���[�������ɓK�؂ȃG���[�����\������Ȃ������C������(3�ӏ�)�B
+- (追加) 音名リストA.txtを読み込むとき、もし同フォルダにコメントファイルA-comment.txtがあればそれを読み込むようにした。
+- (追加) ファイルメニューからコメントファイルを読めるようにした。その際setParamのコメントを取り込めるようにした。
+- (追加) フォントサイズを変えられるようにした。設定変更は再起動後に有効になる。また、設定次第では音名一覧の縦幅が短くなるので、その時は窓サイズを少し変えると直る。
+- (追加) 設定変更した内容をoremo-init.tclに自動保存し、次回起動時に自動復元するようにした。以前は手動保存(「ファイル」→「現在の設定を初期化ファイルに保存」)だった。自動保存しないようにするならoremo-setting.iniのautoSaveInitFile=1の値を0にする。
+- (追加) 初期化ファイルoremo-init.tclに保存されるパラメータを増やした。
+- (追加) 操作キーの割り当てをカスタマイズできるようにした。
+- (修正) エラー発生時に適切なエラー窓が表示されない問題を修正した(3箇所)。
 
 version 3.0-b160505
-- (�C��) Tcl/Tk�̃��C�Z���X�t�@�C�����C�������B
-         �ȑO�̃o�[�W�����ł�tclkit���̃��C�Z���X�t�@�C���łȂ�activetcl�̃��C�Z���X�t�@�C���𓯍����Ă��܂��Ă����B
-- (�C��) �w���v���j���[��URL���X�V����(freett��fc2�Asourceforge��osdn)�B
-- (�ύX) Tcl/Tk�̃o�[�W������8.5.4����8.6.4�ɕύX�����B
-- (�ύX) F0�p�l�����s�A�m���[���\���ɂ����B
-- (�ǉ�) �E�B���h�E���E�̃h���b�O�ő����ύX�ł���悤�ɂ����B
+- (修正) Tcl/Tkのライセンスファイルを修正した。
+         以前のバージョンではtclkit等のライセンスファイルでなくactivetclのライセンスファイルを同梱してしまっていた。
+- (修正) ヘルプメニューのURLを更新した(freett→fc2、sourceforge→osdn)。
+- (変更) Tcl/Tkのバージョンを8.5.4から8.6.4に変更した。
+- (変更) F0パネルをピアノロール表示にした。
+- (追加) ウィンドウ境界のドラッグで窓幅変更できるようにした。
 
 version 3.0-b140323
-- (�ǉ�) NHP�T�C�g���ɔ������T�C�g�Ŕz�z����Ă���5���[���A�����������X�g��OREMO�ɓ��������B�t�@�C�����́ureclist-renzoku-NHP.txt�v�B
-- (�ύX) �A�����̉������X�g�̃t�@�C�����ureclist-renzoku.txt�v���ureclist-renzoku-�P�Ɖ��𕹗p����K�v�L.txt�v�ɕύX�����B
-- (�ǉ�) �p���(��������p��Ńx�[�X)��z�z�B
-- (�ǉ�) �w���v�������web�y�[�W�ɃA�N�Z�X�ł���悤�ɂ����B
-- (�ύX) �R�����g�����{�^���E�B�W�F�b�g�̕������|��\�ɂ����B
+- (追加) NHPサイト閉鎖に伴い同サイトで配布されていた5モーラ連続音音名リストをOREMOに同梱した。ファイル名は「reclist-renzoku-NHP.txt」。
+- (変更) 連続音の音名リストのファイル名「reclist-renzoku.txt」を「reclist-renzoku-単独音を併用する必要有.txt」に変更した。
+- (追加) 英語版(魅亜さん英訳版ベース)を配布。
+- (追加) ヘルプから公式webページにアクセスできるようにした。
+- (変更) コメント検索ボタンウィジェットの文字列を翻訳可能にした。
 
 version 3.0-b140113
-- (�C��) �����^��������Ƃ���oto.ini���������s����ƃG���[���o����ɑΉ������B
-- (�C��) �e��ʂ̊g��k��(�c�̊g��k��=SHIFT+�z�C�[���X�N���[���A���̊g��k��=Ctrl+�z�C�[���X�N���[��)�������������Ȃ��G���[�ɑΉ������B
-- (�C��) oto.ini������oto.ini�ۑ��_�C�A���O�ŁA�t�H���_�̃f�t�H���g��wav�̂���t�H���_�Ɉ�v�������B
-- (�C��) ���^�����oto.ini���������ꍇ�ɃG���[���o��P�[�X�ɑΏ��B
-- (�C��) �X�e���I�^�����ꂽwav�t�@�C����oto.ini���������ɑΉ������B������UTAU�̓��m�����^����z�肵�Ă����͂��B
-- (�ǉ�) oto.ini�������O��wav��ۑ��������`�F�b�N����悤�ɂ����B
-- (�ύX) �P�Ɖ�oto.ini�����p��proc��proc-genParam.tcl��proc.tcl�̗����ɓ����Ă����̂ŁAproc-genParam.tcl�݂̂ɂ����B
-- (�ύX) �s�v�ȃ��b�Z�[�W�f�[�^��procedure���폜�����B
+- (修正) 未収録音があるときにoto.ini生成を実行するとエラーが出る問題に対応した。
+- (修正) 各画面の拡大縮小(縦の拡大縮小=SHIFT+ホイールスクロール、横の拡大縮小=Ctrl+ホイールスクロール)が正しく動かないエラーに対応した。
+- (修正) oto.ini生成のoto.ini保存ダイアログで、フォルダのデフォルトをwavのあるフォルダに一致させた。
+- (修正) 収録直後にoto.ini生成した場合にエラーが出るケースに対処。
+- (修正) ステレオ録音されたwavファイルのoto.ini自動生成に対応した。ただしUTAUはモノラル録音を想定していたはず。
+- (追加) oto.ini生成直前にwavを保存したかチェックするようにした。
+- (変更) 単独音oto.ini生成用のprocがproc-genParam.tclとproc.tclの両方に入っていたので、proc-genParam.tclのみにした。
+- (変更) 不要なメッセージデータやprocedureを削除した。
 
 version 3.0-b131127
-- (�C��) �p���[�Ȑ��̕`�揈���������������B
-- (�C��) SHIFT+�z�C�[�����ŏc����ς����Ƃ��A�������X�g�̒������ς��悤�ɂ����B
-- (�C��) �}�E�X����ƃL�[����Ō��݂ɉ����ύX�����ꍇ�ɁA�����Đ�����ƈ�O�ɑI������wav���\���E�Đ������G���[���C�������B
-- (�ǉ�) �e���ɃR�����g��t����@�\�A��������@�\��ǉ������B
-- (�ύX) �ڍאݒ�́uF0�^�[�Q�b�g�ɍ��킹�đ��̃p�����[�^��ύX�v�����Ƃ��̍ō�F0�A�Œ�F0�̌v�Z���@��ύX�����B(setParam 2.0-b130303����̈ڐA)
-- (�ύX) F0�A�p���[�̕\�����@��ύX�����BsetParam 2.0-b130530����̈ڐA�B����ɂ���Ėڐ��\�������F0�̏����\���ɑΉ������B(setParam����̈ڐA)
+- (修正) パワー曲線の描画処理を高速化した。
+- (修正) SHIFT+ホイール等で縦幅を変えたとき、音名リストの長さも変わるようにした。
+- (修正) マウス操作とキー操作で交互に音名変更した場合に、音を再生すると一つ前に選択したwavが表示・再生されるエラーを修正した。
+- (追加) 各音にコメントを付ける機能、検索する機能を追加した。
+- (変更) 詳細設定の「F0ターゲットに合わせて他のパラメータを変更」したときの最高F0、最低F0の計算方法を変更した。(setParam 2.0-b130303からの移植)
+- (変更) F0、パワーの表示方法を変更した。setParam 2.0-b130530からの移植。これによって目盛表示ずれやF0の小数表示に対応した。(setParamからの移植)
 
 version 3.0-b120520 (2012/05/21)
-- (�ǉ�) oto.ini���������@�\��ǉ������B
-- (�ǉ�) PortAudio�ɂ��Đ�/�^���@�\��ǉ������B
-- (�ǉ�) �g�`�\���̏c�����Œ艻�ł���悤�ɂ����B
-- (�ǉ�) �Đ����Ɉʒu�������o�[��\���������B
-- (�ǉ�) �K�C�hBGM�̐ݒ�t�@�C���쐬�c�[����t�������B
-- (�ύX) �f�t�H���g�̃K�C�hBGM��mp3����wav�ɕύX�����B
-- (�C��) �����̏ꍇ��F0���o���x���グ���i�������Ԃ͑������j�B
-- (�C��) �ׂ����C���B
+- (追加) oto.ini自動生成機能を追加した。
+- (追加) PortAudioによる再生/録音機能を追加した。
+- (追加) 波形表示の縦軸を固定化できるようにした。
+- (追加) 再生時に位置を示すバーを表示させた。
+- (追加) ガイドBGMの設定ファイル作成ツールを付属した。
+- (変更) デフォルトのガイドBGMをmp3からwavに変更した。
+- (修正) 小声の場合のF0抽出精度を上げた（処理時間は増えた）。
+- (修正) 細かい修正。
 
 version 2.0-b120309 (2012/03/09)
-  - (�C��) �\�����̊ԈႢ(FFT�̑����̒P�ʂȂ�)���C������
-  - (�ǉ�) �ڍאݒ�ŁAF0�^�[�Q�b�g�l�ɍ��킹�đ��̐ݒ�l�������ݒ肷��{�^����
-           �ǉ�����
-  - (�ύX) F0�ō��l�̃f�t�H���g�l��400����800�Ɉ����グ��
+  - (修正) 表示文の間違い(FFTの窓長の単位など)を修正した
+  - (追加) 詳細設定で、F0ターゲット値に合わせて他の設定値を自動設定するボタンを
+           追加した
+  - (変更) F0最高値のデフォルト値を400から800に引き上げた
 
 version 2.0-b110624 (2011/06/24)
-  - (�C��) �I�[�f�B�II/O�ݒ葋�ŃG���[���o������C������
-  - (�ǉ�) �I�[�f�B�II/O�ݒ葋�����Ɍx������ǋL����
-  - (�ǉ�) ust�t�@�C�����甭�����X�g���쐬�ł���悤�ɂ���
-  - (�ǉ�) ESC�L�[�Ŋe��ݒ葋�����悤�ɂ���
-  - (�ǉ�) �������ŉ����ɃV���[�g�J�b�g�L�[�ꗗ��\������
-  - (�폜) setParam�p�̃T�u���[�`�����폜����
+  - (修正) オーディオI/O設定窓でエラーが出る問題を修正した
+  - (追加) オーディオI/O設定窓下部に警告文を追記した
+  - (追加) ustファイルから発声リストを作成できるようにした
+  - (追加) ESCキーで各種設定窓を閉じるようにした
+  - (追加) 音叉窓最下部にショートカットキー一覧を表示した
+  - (削除) setParam用のサブルーチンを削除した
 
 version 2.0-b100509 (2010/05/10)
-  - (�C��) �I�[�f�B�I�f�o�C�X�̕�����������̃o�O�C��(setIODevice)
+  - (修正) オーディオデバイスの文字化け周りのバグ修正(setIODevice)
 
 version 2.0-b100204 (2010/02/04)
-  - (�ǉ�, reclist-renzoku) �ua �ρv�̔����������Ă����̂Œǉ��B
-  - (�ǉ�)           �g�`�̕\��/��\���؂�ւ��B
-  - (�ǉ�, OREMO)    �I�[�f�B�I�f�o�C�X�̃��C�e���V��ύX����@�\�B
-  - (�ǉ�, setParam) �ǂݍ��ݍς݂̃p�����[�^�ɕʂ̌����p�����[�^�t�@�C�����}�[�W����
-  - (�ǉ�, setParam) �I�𒆂͈̔͂̒l���ꊇ�ύX����@�\�B
-  - (�ύX, setParam) �����p�����[�^��ǂލۂ�wav�����݂��Ȃ��G���g���͍폜����悤�ɂ����B
-  - (�ǉ�)           �p��Ȃǂ̊O����ɖ|�󂵂����b�Z�[�W�t�@�C���̃C���X�g�[����ǉ��B
-  - (�C��)           �I�[�f�B�I�h���C�o���̕����������኱�����B
+  - (追加, reclist-renzoku) 「a ぱ」の発音が抜けていたので追加。
+  - (追加)           波形の表示/非表示切り替え。
+  - (追加, OREMO)    オーディオデバイスのレイテンシを変更する機能。
+  - (追加, setParam) 読み込み済みのパラメータに別の原音パラメータファイルをマージする
+  - (追加, setParam) 選択中の範囲の値を一括変更する機能。
+  - (変更, setParam) 原音パラメータを読む際にwavが存在しないエントリは削除するようにした。
+  - (追加)           英語などの外国語に翻訳したメッセージファイルのインストーラを追加。
+  - (修正)           オーディオドライバ名の文字化けを若干解消。
 
 version 2.0-b091205 (2009/12/05)
-  - (�ǉ�, OREMO)    �A�C�R���Ƀt�H���_���h���b�O���h���b�v���ċN���B
-  - (�ǉ�, setParam) �A�C�R����oto.ini�Ȃǂ��h���b�O���h���b�v���ċN��
-  - (�ǉ�, setParam) �g�`����oto.ini�Ȃǂ��h���b�O���h���b�v�B
-  - (�ǉ�, setParam) �����^�C�~���O�␳���[�h��ǉ��B
-  - (�ǉ�, setParam) ���j���[��ust�ǂݍ��݂�ǉ��B
-  - (�ǉ�, setParam) ���j���[�ɐ�s�����𓮂������ꍇ�̐ݒ��ǉ��B
-  - (�ǉ�, setParam) oto.ini�ǂݍ��ݍ������p�̃L���b�V���@�\
-  - (�ǉ�, setParam) F3��Alt-F3�ő��p�����[�^��A�����Ă���������悤�ɂ����B
-  - (�ǉ�, setParam) �G�C���A�X�ꊇ�ϊ��@�\��ǉ�(changeAlias)
-  - (�ǉ�, setParam) �v���O���X�o�[�\��
-  - (�C��, setParam) �ׂ����o�O�̏C���B
+  - (追加, OREMO)    アイコンにフォルダをドラッグ＆ドロップして起動。
+  - (追加, setParam) アイコンにoto.iniなどをドラッグ＆ドロップして起動
+  - (追加, setParam) 波形窓にoto.iniなどをドラッグ＆ドロップ。
+  - (追加, setParam) 発声タイミング補正モードを追加。
+  - (追加, setParam) メニューにust読み込みを追加。
+  - (追加, setParam) メニューに先行発声を動かした場合の設定を追加。
+  - (追加, setParam) oto.ini読み込み高速化用のキャッシュ機能
+  - (追加, setParam) F3やAlt-F3で他パラメータを連動してうごかせるようにした。
+  - (追加, setParam) エイリアス一括変換機能を追加(changeAlias)
+  - (追加, setParam) プログレスバー表示
+  - (修正, setParam) 細かいバグの修正。
 
 version 2.0-b091120 (2009/11/20)
-  - (�ύX) �S���b�Z�[�W���O���t�@�C�����B
-  - (�ǉ�) wav���[�̖������J�b�g����@�\��ǉ� �B
-  - (�C��) �p�����[�^�ꗗ�\�̐��l���폜�����"0"�ƕ\�������o�O?���C���B
+  - (変更) 全メッセージを外部ファイル化。
+  - (追加) wav両端の無音をカットする機能を追加 。
+  - (修正) パラメータ一覧表の数値を削除すると"0"と表示されるバグ?を修正。
 
 version 2.0-b091104 (2009/11/04)
-  - (�ǉ�) �������^�����A�����̃p�����[�^���������@�\��ǉ�(���������rengen�N���[��)�B
-  - (�ǉ�) ��s�����Ɋւ��鎎���@�\��ǉ�(F8�Ŏ���)�B
-  - (�ǉ�) �P�Ɖ��̃p�����[�^��������(�e�X�g��)�ŁA���E�u�����N�ɉ����Ďq����������B
-  - (�C��) �P�Ɖ��̃p�����[�^��������(�e�X�g��)�ŁA�E�u�����N�̌���@��ύX�B
-  - (�C��) �s��Control-i�ŕ�������ۂɃp�����[�^�ɋ󗓂�����ꍇ�̃o�O���C���B
+  - (追加) 自動収録した連続音のパラメータ自動生成機能を追加(飴屋さんのrengenクローン)。
+  - (追加) 先行発声に関する試聴機能を追加(F8で試聴)。
+  - (追加) 単独音のパラメータ自動推定(テスト中)で、左右ブランクに加えて子音部も推定。
+  - (修正) 単独音のパラメータ自動推定(テスト中)で、右ブランクの決定法を変更。
+  - (修正) 行をControl-iで複製する際にパラメータに空欄がある場合のバグを修正。
 
 version 2.0-b091007 (2009/10/12)
-  - (�ǉ�, setParam) �ȑO��������E�u�����N����������ŐV�o�[�W�����œ����悤�ɏC���B
+  - (追加, setParam) 以前作った左右ブランク自動推定を最新バージョンで動くように修正。
 
 version 2.0-b090903 (2009/09/03)
-  - (�C��, setParam) F0���\������Ȃ��o�O���C���B
-  - (�C��, setParam) �}�E�X�������(�h���b�O�ŕ����Z����I���ł��Ȃ��Ȃ�)���C���B
-  - (�C��, OREMO) �K�C�hBGM�̐ݒ�t�@�C���̉��s�R�[�h��Windows�����ɏC���B
-  - (�ǉ�, setParam) �Z�������@�\�B
-  - (�ǉ�, setParam) �ҏW���j���[��ǉ��i�R�s�[�A�\��t���A�����A���������A�O�������j�B
-  - (�ύX, setParam) F1�`F5�������Ȃ���p�����[�^���h���b�O���鑀����@�ɕύX�B
-  - (�ύX, setParam) �ꗗ�\�̑��̃^�C�g������������ꍇ�͐؂�l�߂ăt�@�C������\���B
-  - (�ύX) �e�푋���J�����Ƃ��ɁA���̑����t�H�[�J�X����悤�ɕύX�B
+  - (修正, setParam) F0が表示されないバグを修正。
+  - (修正, setParam) マウス操作周り(ドラッグで複数セルを選択できないなど)を修正。
+  - (修正, OREMO) ガイドBGMの設定ファイルの改行コードをWindows向けに修正。
+  - (追加, setParam) セル検索機能。
+  - (追加, setParam) 編集メニューを追加（コピー、貼り付け、検索、次を検索、前を検索）。
+  - (変更, setParam) F1～F5を押しながらパラメータをドラッグする操作方法に変更。
+  - (変更, setParam) 一覧表の窓のタイトルが長すぎる場合は切り詰めてファイル名を表示。
+  - (変更) 各種窓を開いたときに、その窓をフォーカスするように変更。
 
-  -�ysetParam�̃L�[�o�C���h�X�V(�g�`���)�z
-    - (�ύX, F1-F5) �����Ă���Ԃ͊e�p�����[�^���}�E�X�ʒu�ɒǐ��B
-    - (�ǉ�, Alt-F1) ��wav�t�@�C�����̂��ׂĂ̍��u�����N�ʒu�𓯎��Ƀh���b�O����B
-    - (�ǉ�, Alt-��) �O��wav�t�@�C���փW�����v(���̃Z���ł͂Ȃ�)�B
-    - (�ǉ�, Alt-��) ����wav�t�@�C���փW�����v(����̃Z���ł͂Ȃ�)�B
-    - (�ǉ�, �}�E�X�z�C�[��) �O��̉��ֈړ��B�㉺���L�[�Ɠ����B
+  -【setParamのキーバインド更新(波形画面)】
+    - (変更, F1-F5) 押している間は各パラメータがマウス位置に追随。
+    - (追加, Alt-F1) 同wavファイル内のすべての左ブランク位置を同時にドラッグする。
+    - (追加, Alt-↑) 前のwavファイルへジャンプ(一つ上のセルではなく)。
+    - (追加, Alt-↓) 次のwavファイルへジャンプ(一つ下のセルではなく)。
+    - (追加, マウスホイール) 前後の音へ移動。上下矢印キーと同じ。
 
-  -�ysetParam�̃L�[�o�C���h�X�V(�ꗗ�\)�z
-    - (�ύX, ctrl+f) �J�[�\���E�ړ� �� �����̃V���[�g�J�b�g�ɕύX�B
-    - (�ǉ�, ctrl+g, ctrl+n) ���������B
-    - (�ǉ�, ctrl+G, ctrl+N) �O�������B
-    - (�ǉ�, Alt-��) �O��wav�t�@�C���փW�����v(���̃Z���ł͂Ȃ�)�B
-    - (�ǉ�, Alt-��) ����wav�t�@�C���փW�����v(����̃Z���ł͂Ȃ�)�B
-    - (�ǉ�, ctrl+h, ctrl+j, ctrl+k, ctrl+l) �J�[�\���ړ�(vi��)�B
-    - (�ǉ�, Shift+Tab) �J�[�\�������̃Z���Ɉړ��B
+  -【setParamのキーバインド更新(一覧表)】
+    - (変更, ctrl+f) カーソル右移動 → 検索のショートカットに変更。
+    - (追加, ctrl+g, ctrl+n) 次を検索。
+    - (追加, ctrl+G, ctrl+N) 前を検索。
+    - (追加, Alt-↑) 前のwavファイルへジャンプ(一つ上のセルではなく)。
+    - (追加, Alt-↓) 次のwavファイルへジャンプ(一つ下のセルではなく)。
+    - (追加, ctrl+h, ctrl+j, ctrl+k, ctrl+l) カーソル移動(vi風)。
+    - (追加, Shift+Tab) カーソルを左のセルに移動。
 
 version 2.0-b090822 (2009/08/22)
-  - (�C��, setParam) �ꗗ�\�^�C�g���̃t�@�C�����\�����X�V����Ȃ��o�O���C���B
-  - (�C��, setParam) �ꗗ�\�̒l�ɑ}���E�폜�����Ƃ��J�[�\���������ɔ�ԃo�O���C���B
-                              �������ꕔ�̗�ł͂��܂������Ȃ��Ƃ�������
-                              (�����������A�����Ă���Ƃ���BS���������ꍇ)
-  - (�ύX, setParam) �S�p�����[�^���}�C�N��sec���x�ɂ����B
-  - (�ǉ�, setParam) �E�u�����N�̕��̒l�ɑΉ��B
-  - (�ǉ�, setParam) �I�v�V�����ŉE�u�����N�̐�����؂�ւ�����悤�ɂ����B
-  - (�ǉ�, setParam) �I�v�V�����ō��u�����N�̕ύX���̑��p�����[�^�̂ӂ�܂���
-                     �؂�ւ�����悤�ɂ���
-  - (�ύX, OREMO) ���X�g�X�N���[���łQ�O��̉���������悤�ɂ����B
-  - (�ǉ�) �������t�@�C��(setParam-init.tcl�Ȃ�)�𐶐��ł���悤�ɂ����B
+  - (修正, setParam) 一覧表タイトルのファイル名表示が更新されないバグを修正。
+  - (修正, setParam) 一覧表の値に挿入・削除したときカーソルが末尾に飛ぶバグを修正。
+                              ただし一部の例ではうまくいかないときがある
+                              (同じ文字が連続しているときにBSを押した場合)
+  - (変更, setParam) 全パラメータをマイクロsec精度にした。
+  - (追加, setParam) 右ブランクの負の値に対応。
+  - (追加, setParam) オプションで右ブランクの正負を切り替えられるようにした。
+  - (追加, setParam) オプションで左ブランクの変更時の他パラメータのふるまいを
+                     切り替えられるようにした
+  - (変更, OREMO) リストスクロールで２つ前後の音が見えるようにした。
+  - (追加) 初期化ファイル(setParam-init.tclなど)を生成できるようにした。
 
 version 2.0-b090803 (2009/08/03)
-  * (�C��, setParam) �G���g���̑���Ȃ�oto.ini��ǂݍ��ގ��̃o�O���C���B
-  * (�ύX, setParam) �ꗗ�\�̃L�[�o�C���h�ύX�B
-                     �E�Đ���space����ctrl+p��,
-                     �E���E�u�����N�ԍĐ���ctrl+space����ctrl+alt+p�ɕύX�B
-  * (�ύX, OREMO) �f�t�H���g�Ř^�����DC�������������Ȃ��悤�ɕύX�B
-  * (�ǉ�, setParam) �g�`���ŁActrl+p, ctrl+alt+p���g����悤�ǉ��B
-  * (�ǉ�, setParam) �c�[�����j���[��DC�����ꊇ������ǉ��B
-  * (�ǉ�, setParam) �c�[�����j���[��wav�t�@�C�����ύX�i�`����"_"��t����)��ǉ��B
-  * (�ǉ�, OREMO) �K�C�hBGM��MIDI�t�@�C���z�z�B
-  * (�ǉ�, OREMO) reclist-renzoku.txt�̕ύX(�������T���[���ɓ���B�擪�Ɂu_�v��ǉ�)
-  * (�ǉ�, OREMO) �������X�g�A�����^�C�v���X�g��ctrl+wheel����Ɖ������ς��悤�ɂ����B
+  * (修正, setParam) エントリの足りないoto.iniを読み込む時のバグを修正。
+  * (変更, setParam) 一覧表のキーバインド変更。
+                     ・再生をspaceからctrl+pに,
+                     ・左右ブランク間再生をctrl+spaceからctrl+alt+pに変更。
+  * (変更, OREMO) デフォルトで録音後のDC成分除去をしないように変更。
+  * (追加, setParam) 波形窓で、ctrl+p, ctrl+alt+pも使えるよう追加。
+  * (追加, setParam) ツールメニューにDC成分一括除去を追加。
+  * (追加, setParam) ツールメニューにwavファイル名変更（冒頭に"_"を付ける)を追加。
+  * (追加, OREMO) ガイドBGMのMIDIファイル配布。
+  * (追加, OREMO) reclist-renzoku.txtの変更(発声を５モーラに統一。先頭に「_」を追加)
+  * (追加, OREMO) 音名リスト、発声タイプリストでctrl+wheelすると横幅が変わるようにした。
 
 version 2.0-b090727 (2009/07/27)
 
-  * (�C��, OREMO) �����^��(loop)�ŁA�������X�g�����܂ł�������I������悤�ɂ����B
-  * (�C��, setParam) wav�t�@�C�����o�^���̃o�O(�u.�v�𕡐��܂ރt�@�C���̈���)���C���B
-  * (�ύX, setParam) �ꗗ�\�̏㉺���ړ��ŕ\�̏�[�E���[�Ń��[�v���Ȃ��悤�ɂ����B
-  * (�ύX) ��ʕ`�掞�̉��Z�񐔂������팸�B
-  * (�ǉ�, setParam) �ꗗ�\�̃^�C�g���o�[�Ƀt�@�C������\���B
-  * (�ǉ�, setParam) �g�`���ɃG�C���A�X��\���B
-  * (�ǉ�, OREMO) �K�C�hBGM�ݒ葋�ŁABGM�����A�^���C���[�W�������{�^����ǉ��B
-  * (�ǉ�) �I�[�f�B�II/O�ݒ葋�ɐ�������\���B
+  * (修正, OREMO) 自動録音(loop)で、音名リスト末尾までいったら終了するようにした。
+  * (修正, setParam) wavファイル名登録時のバグ(「.」を複数含むファイルの扱い)を修正。
+  * (変更, setParam) 一覧表の上下矢印移動で表の上端・下端でワープしないようにした。
+  * (変更) 画面描画時の演算回数を少し削減。
+  * (追加, setParam) 一覧表のタイトルバーにファイル名を表示。
+  * (追加, setParam) 波形窓にエイリアスを表示。
+  * (追加, OREMO) ガイドBGM設定窓で、BGM試聴、録音イメージ音試聴ボタンを追加。
+  * (追加) オーディオI/O設定窓に説明文を表示。
 
 version 2.0-b090724 (2009/07/24)
 
-  * (�C��, OREMO) �K�C�hBGM�̐ݒ�t�@�C���ǂݍ��ݕ��̃o�O���C���B
+  * (修正, OREMO) ガイドBGMの設定ファイル読み込み部のバグを修正。
 
 version 2.0-b090720 (2009/07/22)
 
-  * (�C��, OREMO) �um�v�L�[�������Ă����g���m�[���̍Đ����~�܂�Ȃ��̂�����B
-  * (�C��, setParam) �p�����[�^�ꗗ�\�őI�������Z���̔w�i�F��Z���D�F�ɕύX�B
+  * (修正, OREMO) 「m」キーを押してもメトロノームの再生が止まらないのを訂正。
+  * (修正, setParam) パラメータ一覧表で選択したセルの背景色を濃い灰色に変更。
 
-  * (�ǉ�, OREMO) �������^���[�h�B
-  * (�ǉ�, setParam) �I�𒆂̃Z���̉��ɍs��}�����A�I�𒆂̃Z���s�̊e�l�𕡐��B
-  * (�ǉ�, setParam) �I�𒆂̃Z���s���폜�B�������A1��wav�t�@�C���ɑΉ����錴���ݒ�s��0�ɂȂ��Ă��܂��ꍇ�͍폜���܂���B
-  * (�ǉ�, setParam) �ۑ��t�@�C����wav�t�@�C����oto.ini�Ƃ̐����������Ȃ��ꍇ�Ɍx���B
+  * (追加, OREMO) 自動収録モード。
+  * (追加, setParam) 選択中のセルの下に行を挿入し、選択中のセル行の各値を複製。
+  * (追加, setParam) 選択中のセル行を削除。ただし、1つのwavファイルに対応する原音設定行が0個になってしまう場合は削除しません。
+  * (追加, setParam) 保存ファイルのwavファイルとoto.iniとの整合性が取れない場合に警告。
 
-  * (�ύX, setParam) 1��wav�t�@�C���ɑ΂��ĕ����̃G���g���s�̂���oto.ini��ǂݍ���/�ۑ��ɑΉ��B
-  * (�ύX, setParam) �ꗗ�\������setParam���I������悤�ɂ���
-  * (�ύX, setParam) �ꗗ�\��space(�Đ�),ctrl-space(���E�u�����N�Ԃ̍Đ�)��L���ɂ���
-  * (�ύX) ���g���m�[�����A��K�C�hBGM�֌W�̃t�@�C����guideBGM/���Ɉړ�����
+  * (変更, setParam) 1つのwavファイルに対して複数のエントリ行のあるoto.iniを読み込み/保存に対応。
+  * (変更, setParam) 一覧表を閉じるとsetParamを終了するようにした
+  * (変更, setParam) 一覧表でspace(再生),ctrl-space(左右ブランク間の再生)を有効にした
+  * (変更) メトロノーム音、やガイドBGM関係のファイルをguideBGM/下に移動した
 
 version 2.0-b090709 (2009/07/09)
 
-  * (�ύX) oremo�{�̂��猴���p�����[�^�֌W�̋@�\�������A���^�ɓ����������̂ɂ���
-  * (�ύX) �����p�����[�^�̐ݒ�@�\�֌W��setParam�ɂ܂Ƃ߂�
-  * (�ύX) �T�u���[�`���A���ϐ���ʃt�@�C���ɂ܂Ƃ߂�(���J���p����)
-  * (�ύX) oremo�́u����ؑցv���j���[���폜�����B
-             * �I�v�V�������^���@�\�Ř^���@�\ON/OFF�؂�ւ�
-             * �t�@�C�����ۑ��t�H���_��wav�t�@�C������` ��reclist.txt����
-  * (�ǉ�) oremo�Ƀ��g���m�[���@�\��ǉ��B
-  * (�ǉ�) setParam�Ɍ����p�����[�^�ꗗ�������B���l���́Acopy&paste�ȂǁB
-  * (�ǉ�) setParam���玩�������ݒ�c�[��(�O���c�[���Autau_lib_analyze110�j���ĂԂ悤�ɂ����B
-  * (�ǉ�) reclist.txt�Ɂu�Ƃ��v�u�ǂ��v��ǉ��B
-  * (�ǉ�) oremo.exe�Ɠ����t�H���_��oremo-init.tcl������΋N�����Ɏ��s�B
-  * (�ǉ�) setParam.exe�Ɠ����t�H���_��setParam-init.tcl������΋N�����Ɏ��s�B
+  * (変更) oremo本体から原音パラメータ関係の機能を消し、収録に特化したものにした
+  * (変更) 原音パラメータの設定機能関係はsetParamにまとめた
+  * (変更) サブルーチン、大域変数を別ファイルにまとめた(←開発用メモ)
+  * (変更) oremoの「動作切替」メニューを削除した。
+             * オプション→録音機能で録音機能ON/OFF切り替え
+             * ファイル→保存フォルダのwavファイルから～ でreclist.txt生成
+  * (追加) oremoにメトロノーム機能を追加。
+  * (追加) setParamに原音パラメータ一覧を実装。数値入力、copy&pasteなど。
+  * (追加) setParamから自動原音設定ツール(外部ツール、utau_lib_analyze110）を呼ぶようにした。
+  * (追加) reclist.txtに「とぅ」「どぅ」を追加。
+  * (追加) oremo.exeと同じフォルダにoremo-init.tclがあれば起動時に実行。
+  * (追加) setParam.exeと同じフォルダにsetParam-init.tclがあれば起動時に実行。
 
 version 2.0-b090613 (2009/06/13)
 
-  * (�C��) oto.ini�̃G�C���A�X�ǂݍ���/�ۑ��ɑΉ��B
-  * (�ǉ�) oto.ini(�����p�����[�^�t�@�C��)�̓ǂݍ���/�ۑ����Ƀt�@�C�������w��B
-  * (�ǉ�) �������X�g��ŁuSHIFT+�z�C�[���X�N���[���v����ƁA���X�g�̒�����ύX�B
-  * (�C��) �R�}���h���C���N���I�v�V�����̕ύX�ƒǉ��B
-           * -saveDir �ۑ��t�H���_ ... �ۑ��t�H���_���w�肷��B
-           * -script  tcl�X�N���v�g ... �N�����Ɏ��s����X�N���v�g���w�肷��B
+  * (修正) oto.iniのエイリアス読み込み/保存に対応。
+  * (追加) oto.ini(原音パラメータファイル)の読み込み/保存時にファイル名を指定可。
+  * (追加) 音名リスト上で「SHIFT+ホイールスクロール」すると、リストの長さを変更。
+  * (修正) コマンドライン起動オプションの変更と追加。
+           * -saveDir 保存フォルダ ... 保存フォルダを指定する。
+           * -script  tclスクリプト ... 起動時に実行するスクリプトを指定する。
 
 version 2.0-b090611 (2009/06/11)
 
-  * �t�@�C�����j���[�Ɂu�������X�g�̓ǂݍ��݁v��ǉ� 
-  * �t�@�C�����j���[�Ɂu�������X�g�̕ۑ��v��ǉ� 
-  * �t�@�C�����j���[�Ɂu�����^�C�v���X�g�̓ǂݍ��݁v��ǉ� 
-  * �uc�v�L�[�������ƕ\�����̔g�`�������[�h
-  * �R�}���h���C���N�����Ɉ����ŕۑ��t�H���_���w���
+  * ファイルメニューに「音名リストの読み込み」を追加 
+  * ファイルメニューに「音名リストの保存」を追加 
+  * ファイルメニューに「発声タイプリストの読み込み」を追加 
+  * 「c」キーを押すと表示中の波形をリロード
+  * コマンドライン起動時に引数で保存フォルダを指定可
 
 version 2.0-b090518 (2009/05/18)
 
-  * �t�@�C�����j���[�Ɂuoto.ini�ǂݍ��݁v��ǉ� 
+  * ファイルメニューに「oto.ini読み込み」を追加 
 
 version 2.0-b090213 (2009/02/13)
 
-  * �����@�\�̋@�\����(���s�[�g�Đ��A�L�[�o�C���h���蓖��)
-  * �����ݒ�i�蓮�ݒ�(F1-F6�ɃL�[�o�C���h)�j
-  * �����ݒ�i�����ݒ�B���E�u�����N�̂݁j
-  * �����ݒ�i�t�@�C���ۑ��Boto.ini�Ƀp�����[�^��ۑ��j
-  * ���샂�[�h�ؑցi�^���@�\ON/OFF�A�����ݒ�@�\ON/OFF�j
-  * �������X�g�擾�i�ۑ��t�H���_�ɂ���wav�t�@�C�����特�����X�g���\���\�j
-  * ��ʍ\���ύX�i���^����������������������ɂȂ��Ă��\���\�Ɂj
+  * 音叉機能の機能向上(リピート再生、キーバインド割り当て)
+  * 原音設定（手動設定(F1-F6にキーバインド)）
+  * 原音設定（自動設定。左右ブランクのみ）
+  * 原音設定（ファイル保存。oto.iniにパラメータを保存）
+  * 動作モード切替（録音機能ON/OFF、原音設定機能ON/OFF）
+  * 音名リスト取得（保存フォルダにあるwavファイルから音名リストを構成可能）
+  * 画面構成変更（収録音がそこそこ長い文字列になっても表示可能に）
 
 version 1.01 (2009/01/31)
 
-  * �I�[�f�B�II/O�f�o�C�X�̐ݒ�i�I�v�V�������I�[�f�B�II/O�ݒ�j��ǉ�
+  * オーディオI/Oデバイスの設定（オプション→オーディオI/O設定）を追加
 
 version 1.0  (2009/01/28)
 
-  * ���J
+  * 公開
 

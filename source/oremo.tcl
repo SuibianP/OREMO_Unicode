@@ -2,71 +2,69 @@
 # the next line restarts using wish \
 exec wish "$0" "$@"
 
-#atode, Ú×İ’è‚Ì•Û‘¶
-#atode, ©“®ƒm[ƒ}ƒ‰ƒCƒY¨‘§.wav‚È‚Ç‰¹‚ª¬‚³‚¢G‰¹û˜^‚Ì‚Æ‚«‚É¨‚ª‰ó‚ê‚é‚©‚à
-#atode, ‰¹–¼Aƒ^ƒCƒv‚ÌƒŠƒXƒg‚ğƒ}ƒ‹ƒ`ƒJƒ‰ƒ€ƒŠƒXƒg‚É‚·‚é
-#atode, ˜^‰¹Ï‚İ‚Ì‰¹‚ğF•ª‚¯‚·‚é‚Æ‚©
-#atode, ˜^‰¹Ï‚İ‚Ìƒtƒ@ƒCƒ‹”‚ğƒJƒEƒ“ƒg‚µ‚Ä•\¦i‚ ‚Æ­‚µ!‚Æv‚¦‚é‚©‚à??j
+#atode, è©³ç´°è¨­å®šã®ä¿å­˜
+#atode, è‡ªå‹•ãƒãƒ¼ãƒãƒ©ã‚¤ã‚ºâ†’æ¯.wavãªã©éŸ³ãŒå°ã•ã„é›‘éŸ³åéŒ²ã®ã¨ãã«è€³ãŒå£Šã‚Œã‚‹ã‹ã‚‚
+#atode, éŸ³åã€ã‚¿ã‚¤ãƒ—ã®ãƒªã‚¹ãƒˆã‚’ãƒãƒ«ãƒã‚«ãƒ©ãƒ ãƒªã‚¹ãƒˆã«ã™ã‚‹
+#atode, éŒ²éŸ³æ¸ˆã¿ã®éŸ³ã‚’è‰²åˆ†ã‘ã™ã‚‹ã¨ã‹
+#atode, éŒ²éŸ³æ¸ˆã¿ã®ãƒ•ã‚¡ã‚¤ãƒ«æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆã—ã¦è¡¨ç¤ºï¼ˆã‚ã¨å°‘ã—!ã¨æ€ãˆã‚‹ã‹ã‚‚??ï¼‰
 
-# - ‰¹–¼ƒŠƒXƒg‚ÅSHIFT+ƒzƒC[ƒ‹ƒXƒNƒ[ƒ‹‚µ‚ÄƒŠƒXƒg‚ğ’Z‚­‚·‚éê‡A
-#   Å¬‚Rs‚Ü‚Åk¬‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+# - éŸ³åãƒªã‚¹ãƒˆã§SHIFT+ãƒ›ã‚¤ãƒ¼ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã—ã¦ãƒªã‚¹ãƒˆã‚’çŸ­ãã™ã‚‹å ´åˆã€
+#   æœ€å°ï¼“è¡Œã¾ã§ç¸®å°ã§ãã‚‹ã‚ˆã†ã«ã—ãŸã€‚
 
 # 2.0-b091205
-# - ƒAƒCƒRƒ“‚ÉD&D‚µ‚½‚Æ‚«‚É©“®‚Å‚»‚ÌƒtƒHƒ‹ƒ_‚ğ•Û‘¶ƒtƒHƒ‹ƒ_‚É‚µ‚Ä‹N“®‚·‚éB
+# - ã‚¢ã‚¤ã‚³ãƒ³ã«D&Dã—ãŸã¨ãã«è‡ªå‹•ã§ãã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã«ã—ã¦èµ·å‹•ã™ã‚‹ã€‚
 
 # 2.0-b090803
-# - ‰¹–¼A”­ºƒ^ƒCƒvƒŠƒXƒgƒ{ƒbƒNƒX‚Ì‰¡•‚ğctrl+wheel‚Å•ÏX‰Â‚É‚µ‚½B
-#   (‚½‚¾‚µAŒ»ó‚Å‚Í“®ì‚ªáŠ±‚æ‚ë‚µ‚­‚È‚¢)
+# - éŸ³åã€ç™ºå£°ã‚¿ã‚¤ãƒ—ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®æ¨ªå¹…ã‚’ctrl+wheelã§å¤‰æ›´å¯ã«ã—ãŸã€‚
+#   (ãŸã ã—ã€ç¾çŠ¶ã§ã¯å‹•ä½œãŒè‹¥å¹²ã‚ˆã‚ã—ããªã„)
 
 # 2.0-b090724
-# - ƒKƒCƒhBGM‚Ìİ’è“Ç‚İ‚İ•”•ª‚ÌƒoƒOC³B
+# - ã‚¬ã‚¤ãƒ‰BGMã®è¨­å®šèª­ã¿è¾¼ã¿éƒ¨åˆ†ã®ãƒã‚°ä¿®æ­£ã€‚
 
 # 2.0-b090720
-# - ©“®û˜^ƒ‚[ƒh‚ğ’Ç‰ÁB
-#   - ƒIƒvƒVƒ‡ƒ“¨û˜^•û–@‚Ìİ’è‘‹‚ğì¬B
-#   - rƒL[‚Å©“®û˜^ŠJn/’â~‚·‚é‚æ‚¤‚É•ÏXB
-#   - RƒL[‚Å©“®û˜^I—¹‚ÌƒoƒCƒ“ƒh‚ğ’Ç‰ÁB
-# - umvƒL[‚ğ‰Ÿ‚µ‚Ä‚àƒƒgƒƒm[ƒ€‚ÌÄ¶‚ª~‚Ü‚ç‚È‚¢‚Ì‚ğ’ù³B
+# - è‡ªå‹•åéŒ²ãƒ¢ãƒ¼ãƒ‰ã‚’è¿½åŠ ã€‚
+#   - ã‚ªãƒ—ã‚·ãƒ§ãƒ³â†’åéŒ²æ–¹æ³•ã®è¨­å®šçª“ã‚’ä½œæˆã€‚
+#   - rã‚­ãƒ¼ã§è‡ªå‹•åéŒ²é–‹å§‹/åœæ­¢ã™ã‚‹ã‚ˆã†ã«å¤‰æ›´ã€‚
+#   - Rã‚­ãƒ¼ã§è‡ªå‹•åéŒ²çµ‚äº†ã®ãƒã‚¤ãƒ³ãƒ‰ã‚’è¿½åŠ ã€‚
+# - ã€Œmã€ã‚­ãƒ¼ã‚’æŠ¼ã—ã¦ã‚‚ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ ã®å†ç”ŸãŒæ­¢ã¾ã‚‰ãªã„ã®ã‚’è¨‚æ­£ã€‚
 
 # 2.0-b090709
-# - û˜^ŠÖŒW‚ğoremo‚ÉAŒ´‰¹ƒpƒ‰ƒ[ƒ^İ’èŠÖŒW‚ğsetParam‚É•ª—£‚µ‚½
-# - ƒTƒuƒ‹[ƒ`ƒ“‚Í proc.tcl ‚ÉA‘åˆæ•Ï”‚ÍglobalVar.tcl‚É‚Ü‚Æ‚ß‚½
-#   (exe‰»‚ÌÛ‚É‚Í:r‚Åˆêƒtƒ@ƒCƒ‹‚ÉŒ‹‡)
-# - u“®ìØ‘Övƒƒjƒ…[‚ğíœ‚µ‚½B
-#   - ƒIƒvƒVƒ‡ƒ“¨˜^‰¹‹@”\‚Å˜^‰¹‹@”\ON/OFFØ‚è‘Ö‚¦
-#   - ƒtƒ@ƒCƒ‹¨•Û‘¶ƒtƒHƒ‹ƒ_‚Ìwavƒtƒ@ƒCƒ‹‚©‚ç` ‚Åreclist.txt¶¬
-# - ƒƒgƒƒm[ƒ€‹@”\‚ğ’Ç‰ÁB
-# - setParam‚ÉŒ´‰¹ƒpƒ‰ƒ[ƒ^ˆê——‚ğÀ‘•B”’l“ü—ÍAcopy&paste‚È‚ÇB
-# - setParam‚©‚ç©“®Œ´‰¹İ’èƒc[ƒ‹(ŠO•”ƒc[ƒ‹Autau_lib_analyze110j‚ğŒÄ‚Ô‚æ‚¤‚É‚µ‚½B
-# - reclist.txt‚Éu‚Æ‚£vu‚Ç‚£v‚ğ’Ç‰ÁB
-# - ƒAƒCƒRƒ“–„‚ß‚İB(exe‰»‚Éicoƒtƒ@ƒCƒ‹‚ğ*.vfs/tclkit.ico‚ÉƒRƒs[‚·‚é)
-# - oremo.exe ‚Æ“¯‚¶ƒtƒHƒ‹ƒ_‚É oremo-init.tcl‚ª‚ ‚ê‚Î©“®“I‚É“Ç‚İ‚Ş
+# - åéŒ²é–¢ä¿‚ã‚’oremoã«ã€åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿è¨­å®šé–¢ä¿‚ã‚’setParamã«åˆ†é›¢ã—ãŸ
+# - ã‚µãƒ–ãƒ«ãƒ¼ãƒãƒ³ã¯ proc.tcl ã«ã€å¤§åŸŸå¤‰æ•°ã¯globalVar.tclã«ã¾ã¨ã‚ãŸ
+#   (exeåŒ–ã®éš›ã«ã¯:rã§ä¸€ãƒ•ã‚¡ã‚¤ãƒ«ã«çµåˆ)
+# - ã€Œå‹•ä½œåˆ‡æ›¿ã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’å‰Šé™¤ã—ãŸã€‚
+#   - ã‚ªãƒ—ã‚·ãƒ§ãƒ³â†’éŒ²éŸ³æ©Ÿèƒ½ã§éŒ²éŸ³æ©Ÿèƒ½ON/OFFåˆ‡ã‚Šæ›¿ãˆ
+#   - ãƒ•ã‚¡ã‚¤ãƒ«â†’ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã®wavãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ï½ ã§reclist.txtç”Ÿæˆ
+# - ãƒ¡ãƒˆãƒ­ãƒãƒ¼ãƒ æ©Ÿèƒ½ã‚’è¿½åŠ ã€‚
+# - setParamã«åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ä¸€è¦§ã‚’å®Ÿè£…ã€‚æ•°å€¤å…¥åŠ›ã€copy&pasteãªã©ã€‚
+# - setParamã‹ã‚‰è‡ªå‹•åŸéŸ³è¨­å®šãƒ„ãƒ¼ãƒ«(å¤–éƒ¨ãƒ„ãƒ¼ãƒ«ã€utau_lib_analyze110ï¼‰ã‚’å‘¼ã¶ã‚ˆã†ã«ã—ãŸã€‚
+# - reclist.txtã«ã€Œã¨ã…ã€ã€Œã©ã…ã€ã‚’è¿½åŠ ã€‚
+# - ã‚¢ã‚¤ã‚³ãƒ³åŸ‹ã‚è¾¼ã¿ã€‚(exeåŒ–æ™‚ã«icoãƒ•ã‚¡ã‚¤ãƒ«ã‚’*.vfs/tclkit.icoã«ã‚³ãƒ”ãƒ¼ã™ã‚‹)
+# - oremo.exe ã¨åŒã˜ãƒ•ã‚©ãƒ«ãƒ€ã« oremo-init.tclãŒã‚ã‚Œã°è‡ªå‹•çš„ã«èª­ã¿è¾¼ã‚€
 
 # 2.0-b090613
-# - Œ´‰¹ƒpƒ‰ƒ[ƒ^‚Ì“Ç‚İ‚İ/•Û‘¶Fã‘‚«Šm”FBƒtƒ@ƒCƒ‹–¼w’è‰Â‚É‚µ‚½
-# - Œ´‰¹ƒpƒ‰ƒ[ƒ^‚ğ“Ç‚İ‚ñ‚¾‚ç•\¦’†‚Ì‰æ–Ê‚É‘¦”½‰f‚³‚¹‚é‚æ‚¤‚É‚µ‚½
-# - ƒtƒ@ƒCƒ‹ƒƒjƒ…[‚Ì•¶‚ğ•ÏX("oto.ini"¨"Œ´‰¹ƒpƒ‰ƒ[ƒ^")
+# - åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿/ä¿å­˜ï¼šä¸Šæ›¸ãç¢ºèªã€‚ãƒ•ã‚¡ã‚¤ãƒ«åæŒ‡å®šå¯ã«ã—ãŸ
+# - åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚“ã ã‚‰è¡¨ç¤ºä¸­ã®ç”»é¢ã«å³åæ˜ ã•ã›ã‚‹ã‚ˆã†ã«ã—ãŸ
+# - ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®æ–‡ã‚’å¤‰æ›´("oto.ini"â†’"åŸéŸ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿")
 
 # 2.0-b090611
-# - ƒtƒ@ƒCƒ‹ƒƒjƒ…[’Ç‰ÁF‰¹–¼ƒŠƒXƒg‚Ì“Ç‚İ‚İ/•Û‘¶A”­ºƒ^ƒCƒv‚Ì“Ç‚İ‚İ
-# - ‹N“®‚Éreclist.txtAtypelist.txt‚ª–³‚¢ê‡‚Éƒ_ƒCƒAƒƒO‚ğ•\¦
-# - ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚©‚ç‚Ì‹N“®‚Ì‘æˆêˆø”‚Å•Û‘¶ƒtƒHƒ‹ƒ_‚ğw’è
-# - ”gŒ`Ä“Ç‚İ‚İ(c‚ÉƒL[ƒoƒCƒ“ƒh)
+# - ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼è¿½åŠ ï¼šéŸ³åãƒªã‚¹ãƒˆã®èª­ã¿è¾¼ã¿/ä¿å­˜ã€ç™ºå£°ã‚¿ã‚¤ãƒ—ã®èª­ã¿è¾¼ã¿
+# - èµ·å‹•æ™‚ã«reclist.txtã€typelist.txtãŒç„¡ã„å ´åˆã«ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’è¡¨ç¤º
+# - ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã‹ã‚‰ã®èµ·å‹•æ™‚ã®ç¬¬ä¸€å¼•æ•°ã§ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã‚’æŒ‡å®š
+# - æ³¢å½¢å†èª­ã¿è¾¼ã¿(cã«ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰)
 
 # 2.0-b090506
-# oto.ini‚Ì“Ç‚İ‚İ
+# oto.iniã®èª­ã¿è¾¼ã¿
 
 # 2.0-b090213
-# - ‰¹³‹@”\‚Ì‹@”\Œüã(ƒŠƒs[ƒgÄ¶AƒL[ƒoƒCƒ“ƒhŠ„‚è“–‚Ä)
-# - Œ´‰¹İ’èiè“®İ’è(F1-F6‚ÉƒL[ƒoƒCƒ“ƒh)j
-# - Œ´‰¹İ’èi©“®İ’èB¶‰Eƒuƒ‰ƒ“ƒN‚Ì‚İj
-# - Œ´‰¹İ’èiƒtƒ@ƒCƒ‹•Û‘¶Boto.ini‚Éƒpƒ‰ƒ[ƒ^‚ğ•Û‘¶j
-# - “®ìƒ‚[ƒhØ‘Öi˜^‰¹‹@”\ON/OFFAŒ´‰¹İ’è‹@”\ON/OFFj
-# - ‰¹–¼ƒŠƒXƒgæ“¾i•Û‘¶ƒtƒHƒ‹ƒ_‚É‚ ‚éwavƒtƒ@ƒCƒ‹‚©‚ç‰¹–¼ƒŠƒXƒg‚ğ\¬‰Â”\j
-# - ‰æ–Ê\¬•ÏXiû˜^‰¹‚ª‚»‚±‚»‚±’·‚¢•¶š—ñ‚É‚È‚Á‚Ä‚à•\¦‰Â”\‚Éj
-# - ‚»‚Ì‘¼
-
-
+# - éŸ³å‰æ©Ÿèƒ½ã®æ©Ÿèƒ½å‘ä¸Š(ãƒªãƒ”ãƒ¼ãƒˆå†ç”Ÿã€ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰å‰²ã‚Šå½“ã¦)
+# - åŸéŸ³è¨­å®šï¼ˆæ‰‹å‹•è¨­å®š(F1-F6ã«ã‚­ãƒ¼ãƒã‚¤ãƒ³ãƒ‰)ï¼‰
+# - åŸéŸ³è¨­å®šï¼ˆè‡ªå‹•è¨­å®šã€‚å·¦å³ãƒ–ãƒ©ãƒ³ã‚¯ã®ã¿ï¼‰
+# - åŸéŸ³è¨­å®šï¼ˆãƒ•ã‚¡ã‚¤ãƒ«ä¿å­˜ã€‚oto.iniã«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¿å­˜ï¼‰
+# - å‹•ä½œãƒ¢ãƒ¼ãƒ‰åˆ‡æ›¿ï¼ˆéŒ²éŸ³æ©Ÿèƒ½ON/OFFã€åŸéŸ³è¨­å®šæ©Ÿèƒ½ON/OFFï¼‰
+# - éŸ³åãƒªã‚¹ãƒˆå–å¾—ï¼ˆä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã«ã‚ã‚‹wavãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰éŸ³åãƒªã‚¹ãƒˆã‚’æ§‹æˆå¯èƒ½ï¼‰
+# - ç”»é¢æ§‹æˆå¤‰æ›´ï¼ˆåéŒ²éŸ³ãŒãã“ãã“é•·ã„æ–‡å­—åˆ—ã«ãªã£ã¦ã‚‚è¡¨ç¤ºå¯èƒ½ã«ï¼‰
+# - ãã®ä»–
 
 package require -exact snack 2.2
 #if {$::tcl_platform(platform) == "windows"} {
@@ -76,28 +74,26 @@ package require -exact snack 2.2
 # package require Tktable
 # package require tkdnd
 
-source proc-genParam.tcl ;# oto.ini¶¬“Ç‚İ‚İ
-source proc.tcl          ;# ƒTƒuƒ‹[ƒ`ƒ““Ç‚İ‚İ
-source globalVar.tcl     ;# ‘åˆæ•Ï”“Ç‚İ‚İ
+source -encoding utf-8 [file join [file dirname [info script]] proc-genParam.tcl] ;# oto.iniç”Ÿæˆèª­ã¿è¾¼ã¿
+source -encoding utf-8 [file join [file dirname [info script]] proc.tcl]          ;# ã‚µãƒ–ãƒ«ãƒ¼ãƒãƒ³èª­ã¿è¾¼ã¿
+source -encoding utf-8 [file join [file dirname [info script]] globalVar.tcl]     ;# å¤§åŸŸå¤‰æ•°èª­ã¿è¾¼ã¿
 
 #---------------------------------------------------
-# main - ƒƒCƒ“ƒ‹[ƒ`ƒ“ (‰Šú‰»)
+# main - ãƒ¡ã‚¤ãƒ³ãƒ«ãƒ¼ãƒãƒ³ (åˆæœŸåŒ–)
 
 set v(appname) OREMO
-set v(version) 3.0-b190106         ;# ƒ\ƒtƒg‚Ìƒo[ƒWƒ‡ƒ“”Ô†
+set v(version) 3.0-b190106         ;# ã‚½ãƒ•ãƒˆã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç•ªå·
 set startup(readTypeList) 1
 set startup(readRecList) 1
 set startup(readCommentList) 1
 set startup(makeRecListFromDir) 0
 set startup(choosesaveDir) 0
 set startup(initFile)     $topdir/oremo-init.tcl
-set startup(sysIniFile)   $topdir/oremo-setting.ini ;# ƒtƒHƒ‹ƒ_g—p—š—ğ‚È‚Ç‚ğƒVƒXƒeƒ€‚ª•Û‘¶‚·‚éƒtƒ@ƒCƒ‹
-set startup(textFile)     $topdir/message/oremo-text.tcl
-set startup(procTextFile) $topdir/message/proc-text.tcl
+set startup(sysIniFile)   $topdir/oremo-setting.ini ;# ãƒ•ã‚©ãƒ«ãƒ€ä½¿ç”¨å±¥æ­´ãªã©ã‚’ã‚·ã‚¹ãƒ†ãƒ ãŒä¿å­˜ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«
 
 #---------------------------------------------------
-# ˆø”ƒ`ƒFƒbƒN
-# memo: oremo.tcl -- -option ‚Æ‚·‚é‚Ì‚ª–³“ïB--‚ª‚È‚¢‚Æwish‚ÌƒIƒvƒVƒ‡ƒ“‚Æv‚í‚ê‚é—lq
+# å¼•æ•°ãƒã‚§ãƒƒã‚¯
+# memo: oremo.tcl -- -option ã¨ã™ã‚‹ã®ãŒç„¡é›£ã€‚--ãŒãªã„ã¨wishã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¨æ€ã‚ã‚Œã‚‹æ§˜å­
 set i 0
 while {$i < $argc} {
   set opt [lindex $argv $i]
@@ -112,13 +108,13 @@ while {$i < $argc} {
       set startup(initFile) [lindex $argv $i]
     }
     default {
-      ;# ƒAƒCƒRƒ“‚ÉD&D‚³‚ê‚½‚Æ‚«‚Ì‘Î‰
-      set opt [encoding convertfrom $opt]  ;# tcl/tk“à•”ƒR[ƒh(utf-8)‚É‚·‚é
+      ;# ã‚¢ã‚¤ã‚³ãƒ³ã«D&Dã•ã‚ŒãŸã¨ãã®å¯¾å¿œ
+      set opt [encoding convertfrom $opt]  ;# tcl/tkå†…éƒ¨ã‚³ãƒ¼ãƒ‰(utf-8)ã«ã™ã‚‹
       set opt [file normalize $opt]
-      if [file isdirectory $opt] {            ;# ƒtƒHƒ‹ƒ_‚ÌD&D
+      if {[file isdirectory $opt]} {            ;# ãƒ•ã‚©ãƒ«ãƒ€ã®D&D
         set v(saveDir) $opt
         set startup(choosesaveDir) 0
-      } elseif [file isdirectory [file dirname $opt]] { ;# ‚»‚êˆÈŠO‚Ìƒtƒ@ƒCƒ‹
+      } elseif {[file isdirectory [file dirname $opt]]} { ;# ãã‚Œä»¥å¤–ã®ãƒ•ã‚¡ã‚¤ãƒ«
         set v(saveDir) [file dirname $opt]
         set startup(choosesaveDir) 0
       } else {
@@ -130,105 +126,46 @@ while {$i < $argc} {
   incr i
 }
 
-foreach fn [list $startup(textFile) $startup(procTextFile)] {
-  if {[file exists $fn]} {
-    source $fn
-  } else {
-    tk_messageBox -message "can not find textFile ($fn)" -title "Error" -icon error
-    exit
-  }
-}
-# ƒXƒ^[ƒgƒAƒbƒv‚ğ“Ç‚Ş
+# ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—ã‚’èª­ã‚€
 if {[file exists $startup(initFile)]} {
   doReadInitFile $startup(initFile)
 }
 
+for {set i 0} {$i < [llength $startup(textFiles)]} {incr i} {
+  while {[catch {source -encoding utf-8 [lindex $startup(textFiles) $i]}]} {
+    lset startup(textFiles) $i [tk_getOpenFile -initialfile [lindex $startup(textFiles) $i] -defaultextension "tcl" -filetypes {{{language file} {.tcl}}}]
+  }
+}
 
-audioSettings ;# ƒI[ƒfƒBƒIƒfƒoƒCƒXŠÖ˜A‚Ì‰Šú‰»
-fontSetting   ;# “ú–{ŒêƒtƒHƒ“ƒg‚ğİ’è‚·‚é
+audioSettings ;# ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒ‡ãƒã‚¤ã‚¹é–¢é€£ã®åˆæœŸåŒ–
+fontSetting   ;# æ—¥æœ¬èªãƒ•ã‚©ãƒ³ãƒˆã‚’è¨­å®šã™ã‚‹
 if {$startup(readRecList)}        { readRecList $v(recListFile) }
 if {$startup(readTypeList)}       { readTypeList $v(typeListFile) }
 if {$startup(readCommentList)}    { readCommentList "$v(saveDir)/$v(appname)-comment.txt" }
 if {$startup(choosesaveDir)}      { choosesaveDir }
 if {$startup(makeRecListFromDir)} { makeRecListFromDir }
-setSinScale   ;# •½‹Ï—¥‚ÌŠe‰¹ŠK‚Ìü”g”‚ğ‹‚ß‚é
-
-
-#---------------------------------------------------
-#
-# ƒƒjƒ…[‚Ìİ’è
-#
-snack::menuInit
-
-snack::menuPane    $t(file)
-snack::menuCommand $t(file) $t(file,choosesaveDir) {
-  choosesaveDir
-  resetDisplay
-}
-snack::menuCommand $t(file) $t(file,readRecList)   {readRecList; resetDisplay}
-snack::menuCommand $t(file) $t(file,saveRecList)   saveRecList
-snack::menuCommand $t(file) $t(file,readTypeList)  {readTypeList; resetDisplay}
-snack::menuCommand $t(file) $t(file,readCommentList) readCommentList
-snack::menuCommand $t(file) $t(file,makeRecList)   {
-  makeRecListFromDir
-  resetDisplay
-  set v(msg) $t(file,makeRecList,msg)
-}
-snack::menuCommand $t(file) $t(file,makeRecListFromUst)   {
-  makeRecListFromUst
-  resetDisplay
-  set v(msg) $t(file,makeRecListFromUst,msg)
-}
-snack::menuCommand $t(file) $t(file,saveSettings) saveSettings
-snack::menuCommand $t(file) $t(file,Exit)         Exit
-
-snack::menuPane    $t(show)
-snack::menuCheck   $t(show)   $t(show,showWave)     v(showWave) toggleWave
-snack::menuCheck   $t(show)   $t(show,showSpec)     v(showSpec) toggleSpec
-snack::menuCheck   $t(show)   $t(show,showpow)      v(showpow)  togglePow
-snack::menuCheck   $t(show)   $t(show,showf0)       v(showf0)   toggleF0
-snack::menuCommand $t(show)   $t(show,pitchGuide)   pitchGuide
-snack::menuCommand $t(show)   $t(show,tempoGuide)   tempoGuide
-
-snack::menuPane    $t(option)
-snack::menuCheck   $t(option) $t(option,removeDC)   v(removeDC) {}
-snack::menuCommand $t(option) $t(option,bgmGuide)   bgmGuide
-snack::menuCommand $t(option) $t(option,ioSettings) ioSettings
-snack::menuCommand $t(option) $t(option,setBind)    setBind
-snack::menuCommand $t(option) $t(option,setFontSize) setFontSize
-snack::menuCommand $t(option) $t(option,settings)   settings
-
-snack::menuPane    $t(oto)
-snack::menuCascade $t(oto)     $t(oto,auto)
-snack::menuCommand $t(oto,auto) $t(oto,auto,tandoku) {
-  checkWavForOREMO
-  estimateParam
-}
-snack::menuCommand $t(oto,auto) $t(oto,auto,renzoku) {
-  checkWavForOREMO
-  genParam
-}
-
-snack::menuPane    $t(help)
-snack::menuCommand $t(help) $t(help,onlineHelp) {execExternal http://nwp8861.web.fc2.com/soft/oremo/manual/tutorial.html}
-snack::menuCommand $t(help) $t(help,Version)    Version
-snack::menuCommand $t(help) $t(help,official1) {execExternal http://nwp8861.web.fc2.com/soft/oremo/}
-snack::menuCommand $t(help) $t(help,official2) {execExternal http://osdn.jp/users/nwp8861/pf/OREMO/files/}
-set rclickMenu  [menu .popmenu   -tearoff false]
+setSinScale   ;# å¹³å‡å¾‹ã®å„éŸ³éšã®å‘¨æ³¢æ•°ã‚’æ±‚ã‚ã‚‹
 
 #---------------------------------------------------
 #
-# ‘‹‚Ìİ’è
+# ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®è¨­å®š
 #
-snack::createIcons    ;# ƒAƒCƒRƒ“‚ğg—p‚·‚é
+
+resetMenu
+
+#---------------------------------------------------
+#
+# çª“ã®è¨­å®š
+#
+snack::createIcons    ;# ã‚¢ã‚¤ã‚³ãƒ³ã‚’ä½¿ç”¨ã™ã‚‹
 
 set rseq 0
 
-# 0. û˜^’†‚Ì‰¹–¼‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 0. åéŒ²ä¸­ã®éŸ³åã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 frame .recinfo
 grid  .recinfo -row $rseq -columnspan 2 -sticky new
 
-# 0-1. û˜^’†‚Ì‰¹‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 0-1. åéŒ²ä¸­ã®éŸ³ã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 frame .recinfo.showCurrent
 grid  .recinfo.showCurrent -sticky nw
 label .recinfo.showCurrent.lr -textvar v(recLab)  \
@@ -238,25 +175,25 @@ label .recinfo.showCurrent.lt -textvar v(typeLab) \
 pack .recinfo.showCurrent.lr .recinfo.showCurrent.lt -side left \
   -fill x -expand 1 -anchor center
 
-# ƒRƒƒ“ƒg‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# ã‚³ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 incr rseq
 frame .recComment
 grid  .recComment -row $rseq -columnspan 2 -sticky new
 entry .recComment.l -textvar v(recComment) -font commkfont -fg black -bg [. cget -bg]
-button .recComment.b -text $t(.recComment.midashi) -command searchComment
+button .recComment.b -textvariable t(.recComment.midashi) -command searchComment
 pack  .recComment.l -side left -fill both -expand 1 -anchor center -ipady 0
 pack  .recComment.b -side left                      -anchor center -ipady 0
 bind .recComment.l <<EditComment>> {
-  .recComment.l insert insert %A     ;# ƒJ[ƒ\ƒ‹ˆÊ’u‚É“ü—Í•¶š‚ğ‘}“ü
-  break                              ;# Šù‘¶‚ÌƒoƒCƒ“ƒh‚ğ–³Œø‚É‚·‚é‚½‚ß‚Ìbreak
+  .recComment.l insert insert %A     ;# ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã«å…¥åŠ›æ–‡å­—ã‚’æŒ¿å…¥
+  break                              ;# æ—¢å­˜ã®ãƒã‚¤ãƒ³ãƒ‰ã‚’ç„¡åŠ¹ã«ã™ã‚‹ãŸã‚ã®break
 }
 
-# 1. İ’èŠÖŒW‚ÌƒtƒŒ[ƒ€
+# 1. è¨­å®šé–¢ä¿‚ã®ãƒ•ãƒ¬ãƒ¼ãƒ 
 incr rseq
 frame .s
 grid  .s -row $rseq -column 0 -sticky nw
 
-# 1-1. ‰¹–¼‚ÌƒŠƒXƒgƒ{ƒbƒNƒX
+# 1-1. éŸ³åã®ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
 frame .s.listboxes
 grid  .s.listboxes -sticky nw
 set rec [listbox .s.listboxes.rec -listvar v(recList) -height 10 -width 5 \
@@ -268,7 +205,7 @@ set srec [scrollbar .s.listboxes.srec -command {$rec yview}]
 pack $rec $srec -side left -fill both -expand 1
 $rec selection set $v(recSeq)
 
-# 1-2. ”­ºƒ^ƒCƒv‚ÌƒŠƒXƒgƒ{ƒbƒNƒX
+# 1-2. ç™ºå£°ã‚¿ã‚¤ãƒ—ã®ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
 set type [listbox .s.listboxes.type -listvar v(typeList) -height 10 -width 4 \
   -bg $v(bg) -fg $v(fg) \
   -font kfont \
@@ -278,26 +215,25 @@ set stype [scrollbar .s.listboxes.stype -command {$type yview}]
 pack $type $stype -side left -fill both -expand 1
 $type selection set $v(typeSeq)
 
-# 2. ”gŒ`‚âƒXƒyƒNƒgƒ‹‚È‚Ç‚Ì}A•Û‘¶ƒtƒHƒ‹ƒ_‚È‚Ç‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 2. æ³¢å½¢ã‚„ã‚¹ãƒšã‚¯ãƒˆãƒ«ãªã©ã®å›³ã€ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ãªã©ã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 frame .fig
 grid  .fig -row $rseq -column 1 -sticky nw
 
-# 2-1. ”gŒ`‚È‚Ç‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 2-1. æ³¢å½¢ãªã©ã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 update
-set v(cWidth)  [expr $v(winWidth) - [winfo width .s] - $v(yaxisw) - 8]  ;# 4‚ÍƒLƒƒƒ“ƒoƒX‹«ŠE‚Ìƒ}[ƒWƒ“
-set v(cHeight) [expr $v(waveh) + $v(spech) + $v(powh) + $v(f0h) + $v(timeh)]
+set v(cWidth)  [expr {$v(winWidth) - [winfo width .s] - $v(yaxisw) - 8}]  ;# 4ã¯ã‚­ãƒ£ãƒ³ãƒã‚¹å¢ƒç•Œã®ãƒãƒ¼ã‚¸ãƒ³
+set v(cHeight) [expr {$v(waveh) + $v(spech) + $v(powh) + $v(f0h) + $v(timeh)}]
 set c [canvas .fig.c -width $v(cWidth) -height $v(cHeight) -bg $v(bg)]
 set cYaxis [canvas .fig.cYaxis -width $v(yaxisw) -height $v(cHeight) \
-  -bg $v(bg) \
-]
+  -bg $v(bg)]
 grid $c      -row 0 -column 1 -sticky nw
 grid $cYaxis -row 0 -column 0 -sticky nw
 
-# 3. û˜^’†‚Ì‰¹‚ğ•Û‘¶‚·‚éƒfƒBƒŒƒNƒgƒŠ‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 3. åéŒ²ä¸­ã®éŸ³ã‚’ä¿å­˜ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 incr rseq
 frame .saveDir
 grid  .saveDir -row $rseq -columnspan 2 -sticky new
-label .saveDir.midashi -text $t(.saveDir.midashi) -fg $v(fg) -bg $v(bg)
+label .saveDir.midashi -textvariable t(.saveDir.midashi) -fg $v(fg) -bg $v(bg)
 button .saveDir.dir -textvar v(saveDir)  \
   -fg $v(fg) -bg $v(bg) -relief solid \
   -command {
@@ -313,13 +249,13 @@ pack .saveDir.midashi -side left
 pack .saveDir.dir -side left -fill x -expand 1
 pack .saveDir.sel -side left
 
-# 4. ƒƒbƒZ[ƒW‚ğ•\¦‚·‚éƒtƒŒ[ƒ€
+# 4. ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ 
 incr rseq
 frame .msg
 grid  .msg -row $rseq -columnspan 2 -sticky new
 pack [label .msg.msg -textvar v(msg) -relief sunken -anchor nw] -fill x
 
-# 5. Ú×İ’è—p‚È‚Ç‚Ì‘‹
+# 5. è©³ç´°è¨­å®šç”¨ãªã©ã®çª“
 set swindow .settings
 set cmwindow .changeMode
 set epwindow .epwindow
@@ -330,12 +266,12 @@ set searchWindow .search
 set bindWindow .bindWindow
 set fontWindow .fontWindow
 
-# 6. audio I/O İ’è—p‚Ì‘‹
+# 6. audio I/O è¨­å®šç”¨ã®çª“
 set ioswindow .iosettings
 
 #---------------------------------------------------
 #
-# ƒoƒCƒ“ƒh
+# ãƒã‚¤ãƒ³ãƒ‰
 #
 proc nextRec0  {} { nextRec  0 }
 proc prevRec0  {} { prevRec  0 }
@@ -344,7 +280,7 @@ proc prevType0 {} { prevType 0 }
 proc waveReload {} {readWavFile; Redraw all}
 
 #---------------------------------------------------
-# ƒL[ƒ{[ƒhƒoƒCƒ“ƒh‚ğ‚Ü‚Æ‚ß‚½procB
+# ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ãƒã‚¤ãƒ³ãƒ‰ã‚’ã¾ã¨ã‚ãŸprocã€‚
 #
 proc setDefaultKeyBind {} {
   global conState
@@ -369,7 +305,7 @@ proc setDefaultKeyBind {} {
   bind . <KeyPress-o>          toggleOnsaPlay
   bind . <KeyPress-O>          toggleOnsaPlay
 
-  bind . <KeyPress-c>          waveReload  ;# ”gŒ`Ä“Ç‚İ‚İ
+  bind . <KeyPress-c>          waveReload  ;# æ³¢å½¢å†èª­ã¿è¾¼ã¿
   bind . <KeyPress-m>          toggleMetroPlay
   bind . <KeyPress-M>          toggleMetroPlay
 
@@ -380,12 +316,12 @@ proc setDefaultKeyBind {} {
 
   bind . <Alt-F4>              Exit
    
-  bind . <F11>                 waveShrink  ;# k¬
-  bind . <F12>                 waveExpand  ;# Šg‘å
+  bind . <F11>                 waveShrink  ;# ç¸®å°
+  bind . <F12>                 waveExpand  ;# æ‹¡å¤§
 
   bind . <Control-f>           searchComment
 
-  # ƒRƒ“ƒ\[ƒ‹‚Ì•\¦
+  # ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã®è¡¨ç¤º
   bind . <Control-Alt-d> {
     if {$conState} {
       console hide
@@ -396,7 +332,7 @@ proc setDefaultKeyBind {} {
     }
   }
 
-  # ƒRƒƒ“ƒg—“‚Å‚ÍƒfƒtƒHƒ‹ƒg‚ÌƒoƒCƒ“ƒhA‚»‚Ì‘¼‚Å‚ÍŠ’è‚ÌƒoƒCƒ“ƒh‚ğİ’è‚·‚é
+  # ã‚³ãƒ¡ãƒ³ãƒˆæ¬„ã§ã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒã‚¤ãƒ³ãƒ‰ã€ãã®ä»–ã§ã¯æ‰€å®šã®ãƒã‚¤ãƒ³ãƒ‰ã‚’è¨­å®šã™ã‚‹
   bind . <Down>                { if ![string equal .recComment.l %W] nextRec   }
   bind . <Up>                  { if ![string equal .recComment.l %W] prevRec   }
   bind . <Right>               { if ![string equal .recComment.l %W] nextType  }
@@ -408,16 +344,16 @@ proc setDefaultKeyBind {} {
 }
 setDefaultKeyBind
 
-# ƒRƒƒ“ƒg—“‚Å‚ÍƒoƒCƒ“ƒh‚ğ–³Œø‚É‚µ‚½‚¢‚Ì‚ÅA–³Œø‚É‚·‚éƒCƒxƒ“ƒg‚ğEditComment‚É“o˜^‚·‚é
+# ã‚³ãƒ¡ãƒ³ãƒˆæ¬„ã§ã¯ãƒã‚¤ãƒ³ãƒ‰ã‚’ç„¡åŠ¹ã«ã—ãŸã„ã®ã§ã€ç„¡åŠ¹ã«ã™ã‚‹ã‚¤ãƒ™ãƒ³ãƒˆã‚’EditCommentã«ç™»éŒ²ã™ã‚‹
 event add <<EditComment>> <KeyPress-r> <KeyPress-0> <KeyPress-R>
 event add <<EditComment>> <KeyPress-2> <KeyPress-4> <KeyPress-6> <KeyPress-8>
 event add <<EditComment>> <Control-KeyPress-2> <Control-KeyPress-4> <Control-KeyPress-6> <Control-KeyPress-8>
 event add <<EditComment>> <space> <KeyPress-5>
 event add <<EditComment>> <KeyPress-o> <KeyPress-O> <KeyPress-c> <KeyPress-m> <KeyPress-M>
 
-# atode ƒ}ƒEƒXƒzƒC[ƒ‹‚ğã‰º–îˆó‚É‘Î‰‚Ã‚¯‚éH
+# atode ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«ã‚’ä¸Šä¸‹çŸ¢å°ã«å¯¾å¿œã¥ã‘ã‚‹ï¼Ÿ
 
-# ƒŠƒXƒgƒ{ƒbƒNƒX‚Ìƒ}ƒEƒX‘€ì
+# ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã®ãƒã‚¦ã‚¹æ“ä½œ
 bind $rec  <<ListboxSelect>> { jumpRec  [$rec  curselection] }
 bind $type <<ListboxSelect>> { jumpType [$type curselection] }
 #bind $rec  <Button-1> { jumpRec  [$rec  curselection] }
@@ -425,10 +361,10 @@ bind $type <<ListboxSelect>> { jumpType [$type curselection] }
 bind $rec  <Control-1>       { jumpRec  [$rec  nearest %y] 0}
 bind $type <Control-1>       { jumpType [$type nearest %y] 0}
 
-# ƒNƒŠƒbƒN‚µ‚½‚Æ‚±‚ë‚ÉƒtƒH[ƒJƒX‚·‚é(ƒRƒƒ“ƒg—“‚È‚Ç‚©‚çƒNƒŠƒbƒN‚ÅƒtƒH[ƒJƒX‚ğŠO‚·‚½‚ß)
+# ã‚¯ãƒªãƒƒã‚¯ã—ãŸã¨ã“ã‚ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã™ã‚‹(ã‚³ãƒ¡ãƒ³ãƒˆæ¬„ãªã©ã‹ã‚‰ã‚¯ãƒªãƒƒã‚¯ã§ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ã‚’å¤–ã™ãŸã‚)
 bind . <Button-1> {focus %W}
 
-# ƒŠƒXƒgƒ{ƒbƒNƒX‚Å‚ÌƒzƒC[ƒ‹ƒXƒNƒ[ƒ‹
+# ãƒªã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã§ã®ãƒ›ã‚¤ãƒ¼ãƒ«ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
 bind $rec <Enter>   {+set scrollWidget %W}
 bind $rec <Leave>   {+set scrollWidget ""}
 bind $srec <Enter>  {+set scrollWidget $rec}
@@ -439,34 +375,34 @@ bind $stype <Enter> {+set scrollWidget $type}
 bind $stype <Leave> {+set scrollWidget ""}
 bind . <MouseWheel> {listboxScroll $scrollWidget %D}
 
-# koko, ƒŠƒXƒg‚ğ‘I‘ğŒã‚Éctrl+wheel‚·‚é‚ÆAƒŠƒXƒg‚ÌcƒXƒNƒ[ƒ‹‚à
-# “¯‚ÉŒø‚¢‚Ä‚µ‚Ü‚¤B¡‚Ì‚Æ‚±‚ë‰ğŒˆ–@‚ªŒ©‚Â‚©‚ç‚È‚¢B
+# koko, ãƒªã‚¹ãƒˆã‚’é¸æŠå¾Œã«ctrl+wheelã™ã‚‹ã¨ã€ãƒªã‚¹ãƒˆã®ç¸¦ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚‚
+# åŒæ™‚ã«åŠ¹ã„ã¦ã—ã¾ã†ã€‚ä»Šã®ã¨ã“ã‚è§£æ±ºæ³•ãŒè¦‹ã¤ã‹ã‚‰ãªã„ã€‚
 #
-# ‰¡•ûŒüŠg‘åk¬ 
+# æ¨ªæ–¹å‘æ‹¡å¤§ç¸®å° 
 bind . <Control-MouseWheel> {
   set x [expr %x + [winfo rootx %W] - [winfo rootx .]]
   set y [expr %y + [winfo rooty %W] - [winfo rooty .]]
   if {$y > [winfo y .s]} {
     if {$x > [winfo width .s]} {
-      # ”gŒ`‰¡•ûŒüŠg‘åk¬ 
+      # æ³¢å½¢æ¨ªæ–¹å‘æ‹¡å¤§ç¸®å° 
       if {%D > 0} {
-        changeWidth 0  ;# k¬
+        changeWidth 0  ;# ç¸®å°
       } else {
-        changeWidth 1  ;# Šg‘å
+        changeWidth 1  ;# æ‹¡å¤§
       }
     } elseif {$x <= [winfo width $rec]} {
-      # ‰¹–¼ƒŠƒXƒg‰¡•ûŒüŠg‘åk¬ 
+      # éŸ³åãƒªã‚¹ãƒˆæ¨ªæ–¹å‘æ‹¡å¤§ç¸®å° 
       if {%D > 0} {
-        changeRecListWidth 0  ;# k¬
+        changeRecListWidth 0  ;# ç¸®å°
       } else {
-        changeRecListWidth 1  ;# Šg‘å
+        changeRecListWidth 1  ;# æ‹¡å¤§
       }
     } else {
-      # ”­ºƒ^ƒCƒvƒŠƒXƒg‰¡•ûŒüŠg‘åk¬ 
+      # ç™ºå£°ã‚¿ã‚¤ãƒ—ãƒªã‚¹ãƒˆæ¨ªæ–¹å‘æ‹¡å¤§ç¸®å° 
       if {%D > 0} {
-        changeTypeListWidth 0  ;# k¬
+        changeTypeListWidth 0  ;# ç¸®å°
       } else {
-        changeTypeListWidth 1  ;# Šg‘å
+        changeTypeListWidth 1  ;# æ‹¡å¤§
       }
     }
   }
@@ -475,9 +411,9 @@ bind $rec <Control-MouseWheel> {
   if {%y > [expr [winfo height .recinfo] + [winfo height .recComment]]} {
     if {%x <= [winfo width $rec]} {
       if {%D > 0} {
-        changeRecListWidth 0  ;# k¬
+        changeRecListWidth 0  ;# ç¸®å°
       } else {
-        changeRecListWidth 1  ;# Šg‘å
+        changeRecListWidth 1  ;# æ‹¡å¤§
       }
     }
   }
@@ -486,49 +422,49 @@ bind $type <Control-MouseWheel> {
   if {%y > [expr [winfo height .recinfo] + [winfo height .recComment]]} {
     if {%x > [winfo width $rec] && %x <= [winfo width $type]} {
       if {%D > 0} {
-        changeTypeListWidth 0  ;# k¬
+        changeTypeListWidth 0  ;# ç¸®å°
       } else {
-        changeTypeListWidth 1  ;# Šg‘å
+        changeTypeListWidth 1  ;# æ‹¡å¤§
       }
     }
   }
 }
-proc waveShrink {} { changeWidth 0 }  ;# k¬
-proc waveExpand {} { changeWidth 1 }  ;# Šg‘å
+proc waveShrink {} { changeWidth 0 }  ;# ç¸®å°
+proc waveExpand {} { changeWidth 1 }  ;# æ‹¡å¤§
 
-# ”gŒ`Šg‘åk¬(c•ûŒü, Shift+ƒ}ƒEƒXƒzƒC[ƒ‹)
+# æ³¢å½¢æ‹¡å¤§ç¸®å°(ç¸¦æ–¹å‘, Shift+ãƒã‚¦ã‚¹ãƒ›ã‚¤ãƒ¼ãƒ«)
 bind . <Shift-MouseWheel> {
-  if {"%W" == "."} {                              ;# ƒtƒH[ƒJƒX‚È‚µ
+  if {"%W" == "."} {                              ;# ãƒ•ã‚©ãƒ¼ã‚«ã‚¹ãªã—
     set mx %x
     set my [expr %y - [winfo height .recinfo] - [winfo height .recComment]]
-  } elseif {[regexp {^\.recinfo} "%W"]} {         ;# ‰¹–¼•\¦‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.recinfo} "%W"]} {         ;# éŸ³åè¡¨ç¤ºã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx %x
     set my [expr %y - [winfo height .recinfo] - [winfo height .recComment]]
-  } elseif {[regexp {^\.recComment} "%W"]} {      ;# ƒRƒƒ“ƒg‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.recComment} "%W"]} {      ;# ã‚³ãƒ¡ãƒ³ãƒˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx %x
     set my [expr %y - [winfo height .recComment]]
-  } elseif {[regexp {^\.fig\.cYaxis} "%W"]} {     ;# ”gŒ`c²‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.fig\.cYaxis} "%W"]} {     ;# æ³¢å½¢ç¸¦è»¸ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx [expr %x + [winfo width .s]]
     set my %y
-  } elseif {[regexp {^\.fig\.c} "%W"]} {          ;# ”gŒ`ƒyƒCƒ“‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.fig\.c} "%W"]} {          ;# æ³¢å½¢ãƒšã‚¤ãƒ³ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx [expr %x + [winfo width .s] + [winfo width $cYaxis]]
     set my %y
-  } elseif {"%W" == ".s.listboxes.rec"} {         ;# ‰¹–¼ƒŠƒXƒg‚ÉƒtƒH[ƒJƒX
+  } elseif {"%W" == ".s.listboxes.rec"} {         ;# éŸ³åãƒªã‚¹ãƒˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx %x
     set my %y
-  } elseif {"%W" == ".s.listboxes.srec"} {        ;# ”­ºƒ^ƒCƒvƒŠƒXƒg‚ÌƒXƒNƒ[ƒ‹ƒo[‚ÉƒtƒH[ƒJƒX
+  } elseif {"%W" == ".s.listboxes.srec"} {        ;# ç™ºå£°ã‚¿ã‚¤ãƒ—ãƒªã‚¹ãƒˆã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx [expr %x + [winfo width .s.listboxes.rec]]
     set my %y
-  } elseif {"%W" == ".s.listboxes.type"} {        ;# ”­ºƒ^ƒCƒvƒŠƒXƒg‚ÉƒtƒH[ƒJƒX
+  } elseif {"%W" == ".s.listboxes.type"} {        ;# ç™ºå£°ã‚¿ã‚¤ãƒ—ãƒªã‚¹ãƒˆã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx [expr %x + [winfo width .s.listboxes.rec] + [winfo width .s.listboxes.srec]]
     set my %y
-  } elseif {[regexp {^\.s\.} "%W"]} {              ;# ”­ºƒ^ƒCƒvƒŠƒXƒg‚ÌƒXƒNƒ[ƒ‹ƒo[‚È‚Ç‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.s\.} "%W"]} {              ;# ç™ºå£°ã‚¿ã‚¤ãƒ—ãƒªã‚¹ãƒˆã®ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ãªã©ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx [expr %x + [winfo width .s.listboxes.rec] + [winfo width .s.listboxes.srec] + [winfo width .s.listboxes.type]]
     set my %y
-  } elseif {[regexp {^\.saveDir} "%W"]} {         ;# •Û‘¶ƒtƒHƒ‹ƒ_‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.saveDir} "%W"]} {         ;# ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx %x
     set my [expr %y + [winfo height .fig]]
-  } elseif {[regexp {^\.msg} "%W"]} {             ;# •Û‘¶ƒtƒHƒ‹ƒ_‚ÉƒtƒH[ƒJƒX
+  } elseif {[regexp {^\.msg} "%W"]} {             ;# ä¿å­˜ãƒ•ã‚©ãƒ«ãƒ€ã«ãƒ•ã‚©ãƒ¼ã‚«ã‚¹
     set mx %x
     set my [expr %y + [winfo height .fig] + [winfo height .saveDir]]
   } else {
@@ -538,33 +474,33 @@ bind . <Shift-MouseWheel> {
 
   if {$mx > [winfo width .s]} {
     if {%D > 0} {
-      set inc -20    ;# ãŒü‚«‰ñ“]
+      set inc -20    ;# ä¸Šå‘ãå›è»¢
     } else {
-      set inc +20    ;# ‰ºŒü‚«‰ñ“]
+      set inc +20    ;# ä¸‹å‘ãå›è»¢
     }
     if {$my <= $v(waveh)} {
-      # ”gŒ`‚ğŠg‘åEk¬
+      # æ³¢å½¢ã‚’æ‹¡å¤§ãƒ»ç¸®å°
       incr v(waveh) $inc
       if {$v(waveh) < $v(wavehmin)} {
         set v(waveh) $v(wavehmin)
       }
     } elseif {$my <= [expr $v(waveh) + $v(spech)]} {
-      # ƒXƒyƒNƒgƒ‹‚ğŠg‘åEk¬
+      # ã‚¹ãƒšã‚¯ãƒˆãƒ«ã‚’æ‹¡å¤§ãƒ»ç¸®å°
       incr v(spech) $inc
       if {$v(spech) < $v(spechmin)} {
         set v(spech) $v(spechmin)
       }
     } elseif {$my <= [expr $v(waveh) + $v(spech) + $v(powh)]} {
-      # ƒpƒ[‚ğŠg‘åEk¬
+      # ãƒ‘ãƒ¯ãƒ¼ã‚’æ‹¡å¤§ãƒ»ç¸®å°
       incr v(powh) $inc
       if {$v(powh) < $v(powhmin)} {
-        set v(powh) $v(powhmin)       ;# k¬‚ÌÅ¬’l
+        set v(powh) $v(powhmin)       ;# ç¸®å°ã®æœ€å°å€¤
       }
     } elseif {$my <= [expr $v(waveh) + $v(spech) + $v(powh) + $v(f0h)]} {
-      # F0‚ğŠg‘åEk¬
+      # F0ã‚’æ‹¡å¤§ãƒ»ç¸®å°
       incr v(f0h) $inc
       if {$v(f0h) < $v(f0hmin)} {
-        set v(f0h) $v(f0hmin)       ;# k¬‚ÌÅ¬’l
+        set v(f0h) $v(f0hmin)       ;# ç¸®å°ã®æœ€å°å€¤
       }
     }
     Redraw scale
@@ -572,15 +508,15 @@ bind . <Shift-MouseWheel> {
       + [winfo height .saveDir] + [winfo height .msg] + 4]
     wm geometry . "$v(winWidth)x$h"
   } else {
-#    # ƒ}ƒEƒX‚ª‰¹–¼ƒŠƒXƒg‚É‚ ‚éê‡
+#    # ãƒã‚¦ã‚¹ãŒéŸ³åãƒªã‚¹ãƒˆã«ã‚ã‚‹å ´åˆ
 #    set rech [$rec cget -height]
 #    if {%D > 0} {
-#      ;# ãŒü‚«‰ñ“]
+#      ;# ä¸Šå‘ãå›è»¢
 #      if {$rech > 3} { incr rech -1 }
 #      $rec configure -height $rech
 #      $type configure -height $rech
 #    } else {
-#      ;# ‰ºŒü‚«‰ñ“]
+#      ;# ä¸‹å‘ãå›è»¢
 #      incr rech
 #      $rec configure -height $rech
 #      $type configure -height $rech
@@ -589,14 +525,14 @@ bind . <Shift-MouseWheel> {
   unset -nocomplain mx my
 }
 
-;# ‰EƒNƒŠƒbƒNƒƒjƒ…[
+;# å³ã‚¯ãƒªãƒƒã‚¯ãƒ¡ãƒ‹ãƒ¥ãƒ¼
 bind $c <Button-3> { PopUpMenu %X %Y %x %y }
 
-;# ƒoƒCƒ“ƒh‚ÌƒJƒXƒ^ƒ}ƒCƒY‚ğ”½‰f
+;# ãƒã‚¤ãƒ³ãƒ‰ã®ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚ºã‚’åæ˜ 
 doSetBind
 
 #---------------------------------------------------
-# ‰Šú‰»
+# åˆæœŸåŒ–
 set f0(showMax) [tone2freq "$f0(showMaxTone)$f0(showMaxOctave)"]
 set f0(showMin) [tone2freq "$f0(showMinTone)$f0(showMinOctave)"]
 set f0(tgtFreq) [tone2freq "$f0(tgtTone)$f0(tgtOctave)"]
@@ -608,10 +544,10 @@ wm protocol . WM_DELETE_WINDOW Exit
 wm title . "$v(appname) $v(version)"
 wm resizable . 1 1
 update
-set v(winWidthMin) [expr [winfo x .fig] + $v(cWidthMin)]
-set v(winHeightMin) [expr [winfo y .fig] + $v(wavehmin) + $v(timeh) \
+set v(winWidthMin) [expr {[winfo x .fig] + $v(cWidthMin)}]
+set v(winHeightMin) [expr {[winfo y .fig] + $v(wavehmin) + $v(timeh) \
   + ($v(spech) ? $v(spechmin) : 0) + ($v(powh)  ? $v(powhmin)  : 0) \
-  + ($v(f0h)   ? $v(f0hmin)   : 0) + [winfo height .saveDir] + [winfo height .msg] ]
+  + ($v(f0h)   ? $v(f0hmin)   : 0) + [winfo height .saveDir] + [winfo height .msg]} ]
 wm minsize . $v(winWidthMin) $v(winHeightMin)
 
 set v(winWidth) [winfo width  .]

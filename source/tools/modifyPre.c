@@ -1,14 +1,14 @@
-//
-// wavƒtƒ@ƒCƒ‹‚Ææs”­ºˆÊ’u‚ğ“ü—Í‚·‚é‚ÆMFCC‹——£‚ğŠî‚ÉˆÊ’u•â³‚·‚éB
+ï»¿//
+// wavãƒ•ã‚¡ã‚¤ãƒ«ã¨å…ˆè¡Œç™ºå£°ä½ç½®ã‚’å…¥åŠ›ã™ã‚‹ã¨MFCCè·é›¢ã‚’åŸºã«ä½ç½®è£œæ­£ã™ã‚‹ã€‚
 //
 // % ./modifyPre.exe wavFile P1 [P2...]
-//   P1‚Íæs”­º‚É‘Š“–‚·‚éB’PˆÊ‚ÍsecB
-//   ‚½‚¾‚µAUTAU‚Å‚Í¶ƒuƒ‰ƒ“ƒN‚Æ‚Ì‹——£‚ªæs”­º’l‚É‚È‚é‚ª–{ƒ\ƒtƒg‚Å‚Íwavƒtƒ@ƒCƒ‹æ“ª‚©‚ç‚Ì•b”‚ğw’è‚·‚é‚±‚ÆB
+//   P1ã¯å…ˆè¡Œç™ºå£°ã«ç›¸å½“ã™ã‚‹ã€‚å˜ä½ã¯secã€‚
+//   ãŸã ã—ã€UTAUã§ã¯å·¦ãƒ–ãƒ©ãƒ³ã‚¯ã¨ã®è·é›¢ãŒå…ˆè¡Œç™ºå£°å€¤ã«ãªã‚‹ãŒæœ¬ã‚½ãƒ•ãƒˆã§ã¯wavãƒ•ã‚¡ã‚¤ãƒ«å…ˆé ­ã‹ã‚‰ã®ç§’æ•°ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã€‚
 //
-// •Ô‚è’l‚Í•â³Œã‚Ìæs”­ºˆÊ’uB’PˆÊ‚ÍsecB
-// „’è‚É¸”s‚µ‚½ê‡‚Í-1‚ğstdout‚Éreturn‚·‚éB
+// è¿”ã‚Šå€¤ã¯è£œæ­£å¾Œã®å…ˆè¡Œç™ºå£°ä½ç½®ã€‚å˜ä½ã¯secã€‚
+// æ¨å®šã«å¤±æ•—ã—ãŸå ´åˆã¯-1ã‚’stdoutã«returnã™ã‚‹ã€‚
 //
-// ƒhow to compile on Windows„
+// ï¼œhow to compile on Windowsï¼
 //   install MinGW and MSYS
 //   start c:\MinGW\msys\1.0\msys.bat
 //   change directory
@@ -28,33 +28,33 @@
 #  include <windows.h>
 #  define argc _argc
 #  define argv _argv
-#  define DSEP "\\"     // ƒfƒBƒŒƒNƒgƒŠ‹æØ‹L†‚ğ\‚É‚·‚é
+#  define DSEP "\\"     // ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåŒºåˆ‡è¨˜å·ã‚’\ã«ã™ã‚‹
 #else
-#  define DSEP "/"      // ƒfƒBƒŒƒNƒgƒŠ‹æØ‚è‹L†‚ğ/‚É‚·‚é
+#  define DSEP "/"      // ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåŒºåˆ‡ã‚Šè¨˜å·ã‚’/ã«ã™ã‚‹
 #endif
 
-int mfccN        = 30;   // mfcc‚ÌŸŒ³”
-int framePeriod  = 256;  // ƒtƒŒ[ƒ€‚ÌˆÚ“®ŠÔŠu
-int frameLength  = 4096; // ƒtƒŒ[ƒ€’·
-float borderT    = 0.8;  // ‹——£‚Ì·‚Ì•½‹Ï * borderT ˆÈã‚É‚È‚Á‚½’n“_‚ğæs”­ºˆÊ’u‚Æ‚·‚éB
-int searchRange1 = 100;  // •â³‚ÌÛ‚ÉˆÚ“®‰Â”\‚È•‚ÉŠÖ‚·‚éƒpƒ‰ƒ[ƒ^B
-int searchRange2 = 10;   // •â³‚ÌÛ‚ÉˆÚ“®‰Â”\‚È•‚ÉŠÖ‚·‚éƒpƒ‰ƒ[ƒ^B
-int outPpm       = 0;    // 1=ppm‰æ‘œ‚ğo—Í‚·‚é
+int mfccN        = 30;   // mfccã®æ¬¡å…ƒæ•°
+int framePeriod  = 256;  // ãƒ•ãƒ¬ãƒ¼ãƒ ã®ç§»å‹•é–“éš”
+int frameLength  = 4096; // ãƒ•ãƒ¬ãƒ¼ãƒ é•·
+float borderT    = 0.8;  // è·é›¢ã®å·®ã®å¹³å‡ * borderT ä»¥ä¸Šã«ãªã£ãŸåœ°ç‚¹ã‚’å…ˆè¡Œç™ºå£°ä½ç½®ã¨ã™ã‚‹ã€‚
+int searchRange1 = 100;  // è£œæ­£ã®éš›ã«ç§»å‹•å¯èƒ½ãªå¹…ã«é–¢ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
+int searchRange2 = 10;   // è£œæ­£ã®éš›ã«ç§»å‹•å¯èƒ½ãªå¹…ã«é–¢ã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã€‚
+int outPpm       = 0;    // 1=ppmç”»åƒã‚’å‡ºåŠ›ã™ã‚‹
 
 static char toolPathInit[] = ".";
-char *toolPath = toolPathInit;          // ƒc[ƒ‹ƒRƒ}ƒ“ƒh‚Ö‚ÌƒpƒX
+char *toolPath = toolPathInit;          // ãƒ„ãƒ¼ãƒ«ã‚³ãƒãƒ³ãƒ‰ã¸ã®ãƒ‘ã‚¹
 
 //-------------------------------------------------
-// Às¸”s“™‚É‚æ‚éI—¹
+// å®Ÿè¡Œå¤±æ•—ç­‰ã«ã‚ˆã‚‹çµ‚äº†
 //
 void exitFailure ()
 {
-  printf ("-1");           // „’è‚Å‚«‚È‚©‚Á‚½‚±‚Æ‚ğTcl/tk‚É“`‚¦‚éB
+  printf ("-1");           // æ¨å®šã§ããªã‹ã£ãŸã“ã¨ã‚’Tcl/tkã«ä¼ãˆã‚‹ã€‚
   exit(EXIT_FAILURE);
 }
 
 //-------------------------------------------------
-// wavƒtƒ@ƒCƒ‹‚©‚çmfccƒtƒ@ƒCƒ‹‚ğì‚é
+// wavãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰mfccãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‹
 //
 void makeMFCC (char* inFile, char *outFile)
 {
@@ -83,18 +83,18 @@ void makeMFCC (char* inFile, char *outFile)
   // whole command
   char *command = (char*) malloc((50 + strlen(wavdump) + strlen(frame) + strlen(window) + strlen(mfcc)) * sizeof(char));
 #if defined(WIN32)
-  // mingw”Å‚Å‚Ísystem()‚¾‚ÆƒRƒ“ƒ\[ƒ‹ƒEƒBƒ“ƒhƒE‚ª•\¦‚³‚ê‚Ä‚µ‚Ü‚¤‚Ì‚ÅˆÈ‰º‚Ìè‡‚Å‘‹‚ğ”ñ•\¦‚É‚µ‚ÄÀs‚·‚é
+  // mingwç‰ˆã§ã¯system()ã ã¨ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãŒè¡¨ç¤ºã•ã‚Œã¦ã—ã¾ã†ã®ã§ä»¥ä¸‹ã®æ‰‹é †ã§çª“ã‚’éè¡¨ç¤ºã«ã—ã¦å®Ÿè¡Œã™ã‚‹
   sprintf (command, "cmd.exe /c %s | %s | %s | %s", wavdump, frame, window, mfcc);
   PROCESS_INFORMATION pi;
   STARTUPINFO si;
   ZeroMemory( &si, sizeof(si) );
   si.cb = sizeof(si);
-  si.dwFlags = STARTF_USESHOWWINDOW;  // ‘‹‚ğ”ñ•\¦‚É‚·‚é
-  si.wShowWindow = SW_HIDE;           // ‘‹‚ğ”ñ•\¦‚É‚·‚é
+  si.dwFlags = STARTF_USESHOWWINDOW;  // çª“ã‚’éè¡¨ç¤ºã«ã™ã‚‹
+  si.wShowWindow = SW_HIDE;           // çª“ã‚’éè¡¨ç¤ºã«ã™ã‚‹
   ZeroMemory( &pi, sizeof(pi) );
   if (! CreateProcess(NULL, command, NULL,NULL, FALSE,NORMAL_PRIORITY_CLASS, NULL, NULL, &si, &pi)) exitFailure();
   CloseHandle(pi.hThread);
-  WaitForSingleObject(pi.hProcess,INFINITE);  // ƒvƒƒZƒXI—¹‚ğ‘Ò‚Â
+  WaitForSingleObject(pi.hProcess,INFINITE);  // ãƒ—ãƒ­ã‚»ã‚¹çµ‚äº†ã‚’å¾…ã¤
   CloseHandle(pi.hProcess);
 #else
   sprintf (command, "%s | %s | %s | %s", wavdump, frame, window, mfcc);
@@ -109,7 +109,7 @@ void makeMFCC (char* inFile, char *outFile)
 }
 
 //-------------------------------------------------
-// MFCC(float)Œ^Œn—ñƒf[ƒ^“Ç‚İ‚İ
+// MFCC(float)å‹æ™‚ç³»åˆ—ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
 //
 MFCC** readMFCC (char* fname, int* frameNum)
 {
@@ -117,12 +117,12 @@ MFCC** readMFCC (char* fname, int* frameNum)
   MFCC **mfcc;
   int i;
 
-  /* ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“ */
+  /* ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³ */
   if ((fp = fopen(fname, "rb")) == NULL) {
     fprintf (stderr, "readMFCC(): read open error(%s)\n", fname);
     exitFailure();
   }
-  /* ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾ */
+  /* ãƒ•ã‚¡ã‚¤ãƒ«ã‚µã‚¤ã‚ºå–å¾— */
   if (fseek(fp, 0, SEEK_END)){
     fprintf (stderr, "readMFCC(): seek error(%s)\n", fname);
     exitFailure();
@@ -143,7 +143,7 @@ MFCC** readMFCC (char* fname, int* frameNum)
 }
 
 //-------------------------------------------------
-// ppm‚ğo—Í
+// ppmã‚’å‡ºåŠ›
 //
 void writePpm (double** mr, double** mg, double** mb, int X, int Y)
 {
@@ -173,7 +173,7 @@ void writePpm (double** mr, double** mg, double** mb, int X, int Y)
 }
 
 //-------------------------------------------------
-// pgm‚ğo—Í
+// pgmã‚’å‡ºåŠ›
 //
 void writePgm (double** matrix, int X, int Y)
 {
@@ -197,7 +197,7 @@ void writePgm (double** matrix, int X, int Y)
 }
 
 //-------------------------------------------------
-// [XŒÂ][YŒÂ]‚È“ñŸŒ³”z—ñ‚ğì‚é
+// [Xå€‹][Yå€‹]ãªäºŒæ¬¡å…ƒé…åˆ—ã‚’ä½œã‚‹
 //
 double** make2DArray (int X, int Y)
 {
@@ -210,7 +210,7 @@ double** make2DArray (int X, int Y)
 }
 
 //-------------------------------------------------
-// [XŒÂ][YŒÂ]‚È“ñŸŒ³”z—ñ‚ğ‰Šú‰»‚·‚é
+// [Xå€‹][Yå€‹]ãªäºŒæ¬¡å…ƒé…åˆ—ã‚’åˆæœŸåŒ–ã™ã‚‹
 //
 void reset2DArray (double** matrix, int X, int Y)
 {
@@ -221,7 +221,7 @@ void reset2DArray (double** matrix, int X, int Y)
 }
 
 //-------------------------------------------------
-// [XŒÂ][YŒÂ]‚È“ñŸŒ³”z—ñ‚ğfree‚·‚é
+// [Xå€‹][Yå€‹]ãªäºŒæ¬¡å…ƒé…åˆ—ã‚’freeã™ã‚‹
 //
 void free2DArray (double** matrix, int X, int Y)
 {
@@ -254,8 +254,8 @@ void usage(char *cmd)
 //-------------------------------------------------
 //
 #if defined(WIN32)
-// tcl/tk‚©‚çexe‚ğŒÄ‚Ño‚·Û‚ÉƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ğ•\¦‚³‚¹‚È‚¢‚æ‚¤
-// GUIƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Æ‚µ‚ÄƒRƒ“ƒpƒCƒ‹‚³‚¹‚é
+// tcl/tkã‹ã‚‰exeã‚’å‘¼ã³å‡ºã™éš›ã«ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã•ã›ãªã„ã‚ˆã†
+// GUIã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¨ã—ã¦ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã•ã›ã‚‹
 int WINAPI WinMain(HINSTANCE hCurInst, HINSTANCE hPrevInst, LPSTR lpsCmdLine, int nCmdShow)
 #else
 int main(int argc, char *argv[])
@@ -311,9 +311,9 @@ int main(int argc, char *argv[])
   if (outPpm) diffB = make2DArray (searchRange1 * 2, searchRange2 * 2);
   while (++arg < argc){
 
-    srcSeq = atof(argv[arg]) * SAMPLE_RATE / framePeriod; // æs”­º’l‚Ì‰Šú’l(’PˆÊ:ƒtƒŒ[ƒ€”Ô†)
+    srcSeq = atof(argv[arg]) * SAMPLE_RATE / framePeriod; // å…ˆè¡Œç™ºå£°å€¤ã®åˆæœŸå€¤(å˜ä½:ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·)
 
-    // ’Tõ”ÍˆÍ‚ğ‹‚ß‚é
+    // æ¢ç´¢ç¯„å›²ã‚’æ±‚ã‚ã‚‹
     xl = srcSeq - searchRange1; if (xl < 0) xl = 0;
     xr = srcSeq + searchRange1; if (xr > frameNum) xr = frameNum;
     yl = srcSeq - searchRange2; if (yl < 0) yl = 0;
@@ -322,7 +322,7 @@ int main(int argc, char *argv[])
     ynum = yr - yl;
     sxd = srcSeq - xl - (srcSeq - yl);
 
-    // MFCC‹——£‚Ìs—ñ‚ğ‹‚ß‚é
+    // MFCCè·é›¢ã®è¡Œåˆ—ã‚’æ±‚ã‚ã‚‹
     for (x = xl; x < xr; x++) {
       xd = x - xl;
       for (y = yl; y < yr; y++) {
@@ -335,7 +335,7 @@ int main(int argc, char *argv[])
     }
 
 #if 0
-    //•½‹Ï•½ŠŠ‰»
+    //å¹³å‡å¹³æ»‘åŒ–
     for (xd = 0; xd < xnum; xd++) {
       for (yd = 0; yd < ynum; yd++) {
         diff2[xd][yd] = 0;
@@ -350,7 +350,7 @@ int main(int argc, char *argv[])
       }
     }
 
-    //•½‹Ï•½ŠŠ‰»
+    //å¹³å‡å¹³æ»‘åŒ–
     for (yd = 0; yd < ynum; yd++) {
       for (xd = 0; xd < xnum; xd++) {
         diff[xd][yd] = 0;
@@ -366,7 +366,7 @@ int main(int argc, char *argv[])
     }
 #endif
 
-    // •â³’lŒó•â‚ÌƒqƒXƒgƒOƒ‰ƒ€‚ğì‚é
+    // è£œæ­£å€¤å€™è£œã®ãƒ’ã‚¹ãƒˆã‚°ãƒ©ãƒ ã‚’ä½œã‚‹
     if (outPpm) reset2DArray (diffB, xnum, ynum);
     histo = (double*) malloc(xnum * sizeof(double));
     for (xd = 0; xd < xnum; xd++) histo[xd] = 0;
@@ -376,7 +376,7 @@ int main(int argc, char *argv[])
       for (xd = 0; xd < xnum; xd++) ave += diff[xd][yd];
       ave /= xnum;
 
-      // ¶•ûŒü‚Ö‹——£‚Ì‚‚­‚È‚é’n“_‚ğ’T‚·
+      // å·¦æ–¹å‘ã¸è·é›¢ã®é«˜ããªã‚‹åœ°ç‚¹ã‚’æ¢ã™
       for (xd = sxd + yd; xd >= 0; xd--){
         if (diff[xd][yd] >= ave * borderT) break;
 //        if (diff[xd][yd] >= borderT) break;
@@ -390,7 +390,7 @@ int main(int argc, char *argv[])
     for (xd = 0; xd < xnum; xd++)
       if (histo[sxdNew] < histo[xd]) sxdNew = xd;
 
-    if (! outPpm) printf ("%f\n", (double)(sxdNew + xl) * framePeriod / SAMPLE_RATE); // ’PˆÊ:sec
+    if (! outPpm) printf ("%f\n", (double)(sxdNew + xl) * framePeriod / SAMPLE_RATE); // å˜ä½:sec
 
     free(histo);
   }
